@@ -1,0 +1,59 @@
+@清风居
+
+createbox 1 18 5 4
+createbox 2 18 6 4
+createbox 20 18 8 3
+createbox 21 18 11 6
+createbox 22 18 5 12
+SETSCENENAME "清风居"
+SHOWSCENENAME
+callback
+
+三清宫:
+delallnpc
+loadmap 1 1 12 28
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+宝箱1:
+if 1010 宝箱1开
+GAINGOODS 1 1
+setevent 1010
+宝箱1开:
+callback
+宝箱2:
+if 1011 宝箱2开
+GAINGOODS 3 1
+setevent 1011
+宝箱2开:
+callback
+宝箱3:
+if 1012 宝箱3开
+GAINMONEY 200
+setevent 1012
+宝箱3开:
+callback
+
+休息:
+if 252 不休息
+IFCMP 1 1 已休息
+message "休息片刻 体力恢复"
+set 1 1
+RESUMEACTORHP 1 100
+callback
+已休息:
+say 1 "休息过了，精神不错，该出去了。"
+不休息:
+callback
+
+gutevent 1 休息
+gutevent 2 休息
+gutevent 20 宝箱1
+gutevent 21 宝箱2
+gutevent 22 宝箱3
+gutevent 41 三清宫
+

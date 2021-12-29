@@ -1,0 +1,28 @@
+@参虚阁
+
+if 220 第一次灭妖
+ENTERFIGHT 0 48 50 51 1 111 31 0 0 0 0 0 0 lossto winto1
+lossto:
+gameover
+callback
+winto1:
+ENTERFIGHT 0 52 53 54 1 111 31 0 0 0 0 0 0 lossto winto2
+winto2:
+ENTERFIGHT 0 55 57 58 1 111 31 0 0 0 0 0 0 lossto winto3
+winto3:
+setevent 220
+FIGHTDISENABLE
+STARTCHAPTER 8 12
+callback
+第一次灭妖:
+SETSCENENAME "参虚阁"
+callback
+
+钟山道院:
+delallnpc
+loadmap 1 44 7 3
+STARTCHAPTER 8 1
+callback
+
+gutevent 41 钟山道院
+

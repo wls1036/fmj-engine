@@ -1,0 +1,65 @@
+@蛇窟隐洞
+
+CREATEBOX 8 14 4 3
+NPCSTEP 8 0 0
+CREATEBOX 2 15 6 6
+CREATEBOX 3 15 6 7
+CREATEBOX 4 15 6 9
+CREATEBOX 5 15 12 6
+CREATEBOX 6 16 12 7
+CREATEBOX 7 17 13 7
+SETSCENENAME "蛇窟隐洞"
+callback
+
+蛇窟山洞:
+delallnpc
+loadmap 3 6 20 35
+STARTCHAPTER 4 6
+callback
+
+
+宝物1:
+if 1065 宝物1开
+setevent 1065
+GAINGOODS 9 25
+宝物1开:
+callback
+宝物2:
+if 1066 宝物2开
+setevent 1066
+GAINGOODS 10 1
+宝物2开:
+callback
+宝物3:
+if 1067 宝物3开
+setevent 1067
+GAINGOODS 3 9
+宝物3开:
+callback
+宝物4:
+if 1068 宝物4开
+setevent 1068
+GAINGOODS 6 11
+宝物4开:
+callback
+宝物5:
+if 1069 宝物5开
+setevent 1069
+GAINGOODS 8 30
+宝物5开:
+callback
+宝物6:
+if 1070 宝物6开
+setevent 1070
+GAINGOODS 9 5
+宝物6开:
+callback
+
+gutevent 2 宝物1
+gutevent 3 宝物2
+gutevent 4 宝物3
+gutevent 5 宝物4
+gutevent 6 宝物5
+gutevent 7 宝物6
+gutevent 41 蛇窟山洞
+

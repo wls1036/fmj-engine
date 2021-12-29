@@ -1,0 +1,141 @@
+@原野陌
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "原野陌"
+callback
+
+上出口:
+FIGHTDISENABLE
+if 101 原野陌2下
+if 102 转折路口4
+if 103 原野陌4下
+if 104 建业城
+if 105 转折路口2
+if 106 北海
+if 107 南北村下
+if 108 鹤鸣山
+message "上出口异常"
+callback
+
+原野陌2下:
+clrevent 101
+setevent 102
+loadmap 1 22 0 25
+STARTCHAPTER 6 2
+callback
+转折路口4:
+clrevent 102
+@setevent 103
+loadmap 1 29 0 9
+STARTCHAPTER 6 7
+callback
+原野陌4下:
+clrevent 103
+setevent 104
+loadmap 1 22 0 25
+STARTCHAPTER 6 2
+callback
+
+建业城:
+clrevent 104
+if 218 正常
+goto 认识袁
+正常:
+loadmap 1 39 11 21
+STARTCHAPTER 7 1
+callback
+认识袁:
+STARTCHAPTER 7 14
+callback
+
+转折路口2:
+clrevent 105
+loadmap 1 27 6 9
+STARTCHAPTER 6 5
+callback
+
+北海:
+clrevent 106
+loadmap 1 45 9 0
+STARTCHAPTER 6 14
+callback
+
+南北村下:
+clrevent 107
+loadmap 1 23 1 23
+STARTCHAPTER 10 1
+callback
+
+鹤鸣山:
+clrevent 108
+loadmap 1 41 7 8
+STARTCHAPTER 14 1
+callback
+
+
+
+下出口:
+FIGHTDISENABLE
+if 101 转折路口1-1
+if 102 原野陌1上
+if 103 转折路口1-2
+if 104 原野陌3上
+if 105 白水镇
+if 106 南北村上
+if 107 转折路口3-1
+if 108 转折路口3-2
+message "下出口异常"
+callback
+
+转折路口1-1:
+loadmap 1 26 6 1
+STARTCHAPTER 6 4
+callback
+原野陌1上:
+clrevent 102
+setevent 101
+loadmap 1 22 0 1
+STARTCHAPTER 6 2
+callback
+转折路口1-2:
+clrevent 103
+setevent 102
+loadmap 1 26 6 1
+STARTCHAPTER 6 4
+callback
+原野陌3上:
+clrevent 104
+setevent 103
+loadmap 1 22 0 1
+STARTCHAPTER 6 2
+callback
+
+白水镇:
+clrevent 105
+loadmap 1 42 7 1
+STARTCHAPTER 9 1
+callback
+
+南北村上:
+clrevent 106
+loadmap 1 23 11 1
+STARTCHAPTER 10 1
+callback
+
+转折路口3-1:
+clrevent 107
+setevent 101
+loadmap 1 28 0 1
+STARTCHAPTER 6 6
+callback
+转折路口3-2:
+clrevent 108
+setevent 102
+loadmap 1 28 0 1
+STARTCHAPTER 6 6
+callback
+
+
+
+gutevent 41 下出口
+gutevent 42 上出口

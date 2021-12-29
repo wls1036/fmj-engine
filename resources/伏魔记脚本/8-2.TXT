@@ -1,0 +1,36 @@
+@霸王钟洞口
+if 224 正常
+if 221 师叔回
+goto 正常
+师叔回:
+createnpc 1 1 11 10
+move 1 11 4
+say 0 "冲虚道人:清风，妖魔已经退了，……你们怎么出来了。"
+say 1 "师叔，都怪我学艺不精，霸王钟已经被抢跑了。"
+say 0 "冲虚道人:天意啊……，你们有没有受伤，……袁姑娘呢？"
+say 1 "我们没事，我和小梅被打晕了，醒来就不见她了。"
+say 0 "冲虚道人:此事关系天下苍生，一定要把霸王钟找回来。"
+say 1 "我前去愿寻回霸王钟。"
+say 0 "冲虚道人:好，你即刻下山，先寻找袁姑娘，我看此事与她关系甚大。"
+say 1 "是，师叔。"
+say 0 "冲虚道人:山上事务还需我主持，希望你们能尽快找回霸王钟，以免生灵涂炭。"
+move 1 11 10
+deletenpc 1
+setevent 224
+正常:
+SETSCENENAME "霸王钟洞口"
+callback
+
+钟山道院:
+delallnpc
+loadmap 1 44 13 6
+STARTCHAPTER 8 1
+callback
+霸王迷宫:
+delallnpc
+loadmap 3 10 39 15
+STARTCHAPTER 8 9
+callback
+
+gutevent 41 钟山道院
+gutevent 42 霸王迷宫

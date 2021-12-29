@@ -1,0 +1,35 @@
+@普通弟子居2
+
+createbox 21 18 14 13
+createbox 22 18 4 13
+SETSCENENAME "普通弟子居2"
+SHOWSCENENAME
+callback
+
+三清宫:
+delallnpc
+loadmap 1 1 25 25
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+宝箱2:
+if 1015 宝箱2开
+GAINGOODS 11 5
+setevent 1015
+宝箱2开:
+callback
+宝箱3:
+if 1016 宝箱3开
+GAINMONEY 80
+setevent 1016
+宝箱3开:
+callback
+
+gutevent 21 宝箱2
+gutevent 22 宝箱3
+gutevent 41 三清宫
+

@@ -1,0 +1,43 @@
+@老王家
+
+CREATENPC 1 18 11 13
+if 211 老王
+goto 正常
+老王:
+NPCMOVEMOD 1 0
+CREATENPC 2 13 12 13
+NPCMOVEMOD 2 0
+正常:
+SETSCENENAME "老王家"
+callback
+
+石梦城:
+loadmap 1 37 1 21
+STARTCHAPTER 5 1
+callback
+
+对话:
+if 212 客套话
+if 211 感谢
+goto 等待
+感谢:
+setevent 212
+say 0 "老王:大侠，您来啦？欢迎！"
+say 0 "老王:这是我娘子，她以前在李府当过奶妈，对李府的情况很熟悉。"
+say 0 "王妻:谢谢您放了我相公。"
+say 1 "得饶人处且饶人，况且老王也不是什么大恶人。"
+say 0 "王妻:我以前在李府当奶妈时，常常听其他下人议论李府有密道。"
+say 1 "是吗？"
+say 0 "老王:真的，我也听过。"
+callback
+客套话:
+say 0 "老王:大侠有空常来。"
+callback
+等待:
+say 0 "王妻:不知老王还回不回来吃饭。"
+callback
+
+gutevent 1 对话
+gutevent 2 对话
+gutevent 41 石梦城
+

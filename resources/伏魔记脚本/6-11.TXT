@@ -1,0 +1,11 @@
+@台子下
+
+SETSCENENAME "台子"
+callback
+
+下出口:
+loadmap 1 15 5 0
+STARTCHAPTER 6 9
+callback
+
+gutevent 41 下出口

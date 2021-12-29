@@ -1,0 +1,22 @@
+@武器店
+
+CREATENPC 1 14 12 10
+NPCMOVEMOD 1 0
+SETSCENENAME "武器店"
+callback
+
+酆都城:
+loadmap 1 43 16 2
+STARTCHAPTER 11 1
+callback
+
+交易事件:
+say 0 "我这里的武器都很不错，来，看看。"
+buy "7008 7009 7022 7029 7030 4007 4009 2006 2007 2013 2014 8007"
+callback
+
+
+gutevent 41 酆都城
+gutevent 42 交易事件
+
+

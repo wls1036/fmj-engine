@@ -1,0 +1,35 @@
+@武器店
+
+CREATEBOX 21 18 5 5
+CREATENPC 1 14 12 10
+NPCMOVEMOD 1 0
+SETSCENENAME "武器店"
+if 1043 已开
+goto 未开
+已开:
+deletebox 21
+未开:
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 13 12
+STARTCHAPTER 3 1
+callback
+
+买武器:
+facetoface 1 0
+say 0 "我这里有许多上好武器。"
+BUY "7001 7002 7015 7016 7024 7025 4001 4002 2001 2002 2008 2009 8001 8002 8017"
+callback
+
+宝箱1:
+if 1043 宝箱1开
+GAINGOODS 8 4
+setevent 1043
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 忘忧村
+gutevent 42 买武器

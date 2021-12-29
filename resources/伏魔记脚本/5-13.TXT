@@ -1,0 +1,51 @@
+@鲁斧家
+
+CREATENPC 1 26 16 10
+SETSCENENAME "鲁斧家"
+callback
+
+石梦城:
+delallnpc
+loadmap 1 37 21 5
+STARTCHAPTER 5 1
+callback
+
+鲁斧:
+if 223 好事
+if 210 想送
+if 208 道谢
+if 204 对话
+goto 闲话
+对话:
+say 1 "请问这是不是鲁公后人的住处？"
+say 0 "正是，在下鲁斧，请问道长有何事？"
+say 1 "由于要进忘忧村南瘴气林除妖，想借芦藤甲一用。"
+say 0 "哎，道长来得迟了点，昨天，城中恶霸李虎带了一班人将其抢了去。"
+if 207 算总帐
+say 1 "我这就帮你夺回来，不过之后，你得先借我一用。"
+say 0 "那是当然，先道谢了。"
+goto 道谢
+算总帐:
+say 1 "又是他，我这就帮你夺回来，不过之后，你得先借我一用。"
+say 0 "那是当然，先道谢了。"
+道谢:
+say 0 "先道谢了。"
+setevent 208
+callback
+callback
+想送:
+setevent 223
+say 1 "鲁先生，我已夺回宝物。"
+say 0 "除魔卫道，我愿将宝物相赠。"
+say 1 "多谢了。"
+callback
+好事:
+say 0 "做了件好事。"
+callback
+闲话:
+say 0 "我本是鲁公后裔，可惜家道没落啊……"
+callback
+
+gutevent 1 鲁斧
+gutevent 41 石梦城
+

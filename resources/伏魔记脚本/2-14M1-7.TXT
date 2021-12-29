@@ -1,0 +1,15 @@
+@三清坟场
+
+SETSCENENAME "三清坟场"
+SHOWSCENENAME
+callback
+
+竹林山道:
+delallnpc
+loadmap 1 3 14 2
+STARTCHAPTER 2 13
+callback
+
+
+gutevent 41 竹林山道
+

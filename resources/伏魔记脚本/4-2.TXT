@@ -1,0 +1,35 @@
+@猎人居
+
+CREATENPC 1 19 15 10
+SETSCENENAME "猎人居"
+callback
+
+毒瘴林入口:
+delallnpc
+loadmap 1 33 9 3
+STARTCHAPTER 4 1
+callback
+猎人:
+if 204 对话
+if 202 出发
+对话:
+facetoface 0 1
+say 0 "我家世代在此处以猎为生，对这里的环境非常熟悉。"
+callback
+出发:
+if 203 打探
+goto 对话
+打探:
+facetoface 0 1
+setevent 204
+say 1 "请问猎户，如何才能进此地的瘴气林？"
+say 0 "此地林中瘴气非常厉害，除非身穿“芦藤甲”，否则，就是进去了，半刻即死。"
+say 1 "这“芦藤甲”是何宝物？"
+say 0 "传说是鲁公所制的护甲，可以避毒，现在传到其后人鲁斧。其家便在离这里不远的石梦城。"
+say 1 "多谢！"
+callback
+
+gutevent 1 猎人
+gutevent 41 毒瘴林入口
+
+

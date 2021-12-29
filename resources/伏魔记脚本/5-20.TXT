@@ -1,0 +1,53 @@
+@李俯下房
+
+createbox 21 18 19 4
+createbox 22 18 7 4
+createbox 23 18 5 4
+createbox 24 18 16 7
+createbox 25 18 7 10
+SETSCENENAME "李俯下房"
+callback
+
+石梦城:
+loadmap 1 37 32 12
+STARTCHAPTER 5 1
+callback
+
+宝箱1:
+if 1061 宝箱1开
+GAINGOODS 12 5
+setevent 1061
+宝箱1开:
+callback
+宝箱2:
+if 1062 宝箱2开
+GAINGOODS 11 14
+setevent 1062
+宝箱2开:
+callback
+宝箱3:
+if 1063 宝箱3开
+GAINGOODS 9 26
+setevent 1063
+宝箱3开:
+callback
+宝箱4:
+if 1064 宝箱4开
+GAINGOODS 12 5
+setevent 1064
+宝箱4开:
+callback
+宝箱5:
+if 1065 宝箱5开
+GAINGOODS 8 4
+setevent 1065
+宝箱5开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 25 宝箱5
+gutevent 41 石梦城
+

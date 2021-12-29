@@ -1,0 +1,28 @@
+@钟山遇袁萍芷
+
+setevent 219
+CREATENPC 1 7 11 12
+NPCSTEP 1 2 0
+say 3 "我在这里等你们好久了，我想通了，我加入你们。"
+say 2 "太好了！"
+say 1 "那我们走吧！"
+CREATEACTOR 3 4 3
+message "袁萍芷加入队列"
+deletenpc 1
+ENTERFIGHT 0 14 14 14 1 111 31 0 0 0 1 0 0 lossto winto
+lossto:
+gameover
+callback
+winto:
+INITFIGHT 1 12 13 15 16 17 0 0 1 111 31
+say 1 "怎么这么奇怪？糟了，师叔有危险。"
+STARTCHAPTER 6 13
+callback
+
+小雷公:
+say 0 "小雷公:你们这班妖魔，竟敢在这撒野，我雷爷今儿个就把你们给收了。"
+say 1 "…………"
+say 0 "小雷公:受死吧。"
+callback
+
+gutevent 1 小雷公

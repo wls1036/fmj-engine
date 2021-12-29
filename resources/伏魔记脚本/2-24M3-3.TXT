@@ -1,0 +1,103 @@
+@灯洞6
+
+CREATEBOX 21 9 7 5
+CREATEBOX 22 9 28 5
+if 1029 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1030 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 22
+宝箱2未开:
+
+SETSCENENAME "灯洞6"
+SHOWSCENENAME
+CREATEBOX 1 7 17 5
+CREATEBOX 2 11 31 15
+CREATEBOX 3 9 6 5
+CREATEBOX 4 9 29 5
+if 63 宝箱一已开
+goto 宝箱二开否
+宝箱一已开:
+deletebox 3
+宝箱二开否:
+if 64 宝箱二已开
+goto 宝箱二未开
+宝箱二已开:
+deletebox 4
+宝箱二未开:
+NPCSTEP 2 0 1
+if 16 灯灭
+callback
+灯灭:
+NPCMOVEMOD 1 0
+NPCSTEP 1 0 0
+callback
+
+战护灯兽:
+if 16 已战胜
+ENTERFIGHT 0 0 10 0 2 112 32 0 0 0 10 0 0 lost win
+lost:
+gameover
+callback
+win:
+say 1 "搞定灯六。"
+setevent 16
+NPCMOVEMOD 1 0
+NPCSTEP 1 0 0
+已战胜:
+callback
+
+护灯兽话:
+say 0 "护灯兽六：谁在这里撒野。"
+callback
+
+
+伏魔洞:
+delallnpc
+loadmap 3 1 2 18
+STARTCHAPTER 2 18
+callback
+
+开宝箱一:
+if 63 宝箱一开
+deletebox 3
+GAINGOODS 8 13
+setevent 63
+宝箱一开:
+callback
+开宝箱二:
+if 64 宝箱二开
+deletebox 4
+GAINGOODS 6 1
+setevent 64
+宝箱二开:
+callback
+
+宝箱1:
+if 1029 宝箱1开
+deletebox 21
+GAINGOODS 8 9
+setevent 1029
+宝箱1开:
+callback
+宝箱2:
+if 1030 宝箱2开
+deletebox 21
+GAINGOODS 8 17
+setevent 1030
+宝箱2开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 1 战护灯兽
+gutevent 3 开宝箱一
+gutevent 4 开宝箱二
+gutevent 10 护灯兽话
+gutevent 42 伏魔洞
+
+

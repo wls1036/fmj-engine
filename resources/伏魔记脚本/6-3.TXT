@@ -1,0 +1,116 @@
+@森林道路
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "森林道路"
+callback
+
+左出口:
+FIGHTDISENABLE
+if 101 原野阡1右
+if 102 原野阡3右
+if 103 森林道路2右
+if 104 原野阡7右
+if 105 原野阡9右
+if 106 原野阡11右
+if 107 原野阡13右
+callback
+
+原野阡1右:
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+原野阡3右:
+clrevent 102
+setevent 103
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+森林道路2右:
+clrevent 103
+setevent 102
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+原野阡7右:
+clrevent 104
+setevent 107
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+原野阡9右:
+clrevent 105
+setevent 109
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+原野阡11右:
+clrevent 106
+setevent 111
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+原野阡13右:
+clrevent 107
+setevent 113
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+
+
+右出口:
+FIGHTDISENABLE
+if 101 原野阡2左
+if 102 森林道路3左
+if 103 原野阡4左
+if 104 原野阡6左
+if 105 原野阡8左
+if 106 原野阡10左
+if 107 原野阡12左
+callback
+
+原野阡2左:
+clrevent 101
+setevent 102
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+森林道路3左:
+clrevent 102
+setevent 103
+loadmap 1 21 1 0
+STARTCHAPTER 6 3
+callback
+原野阡4左:
+clrevent 103
+setevent 104
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+原野阡6左:
+clrevent 104
+setevent 106
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+原野阡8左:
+clrevent 105
+setevent 108
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+原野阡10左:
+clrevent 106
+setevent 110
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+原野阡12左:
+clrevent 107
+setevent 112
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+
+
+gutevent 41 左出口
+gutevent 42 右出口

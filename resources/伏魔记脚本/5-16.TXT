@@ -1,0 +1,35 @@
+@李俯东厢房
+
+if 214 得救
+say 0 "少女:救命啊……"
+CREATEBOX 1 22 8 3
+得救:
+SETSCENENAME "李俯东厢房"
+callback
+
+石梦城:
+delallnpc
+loadmap 1 37 39 3
+STARTCHAPTER 5 1
+callback
+
+小画家:
+say 1 "别怕，我来救你。"
+deletenpc 1
+CREATENPC 2 20 8 3
+facetoface 0 2
+say 0 "少女:多谢两位大侠救命之恩！"
+say 1 "你应该就是蔡婆婆的女儿小画家吧？"
+say 0 "小画家:是。"
+say 1 "蔡婆婆在家等你呢，快回家去吧。"
+say 0 "小画家:多谢大侠"
+movie 1 3 0 0 0
+deletenpc 2
+message "小画家离开"
+setevent 214
+say 1 "行侠仗义的感觉还真好。"
+callback
+
+gutevent 1 小画家
+gutevent 41 石梦城
+

@@ -1,0 +1,159 @@
+@建业城
+
+createbox 21 18 13 11
+SETSCENENAME "建业城"
+SHOWSCENENAME
+callback
+
+原野陌:
+if 255 非白水方向
+if 224 问人
+setevent 104
+delallnpc
+loadmap 1 22 0 0
+STARTCHAPTER 6 2
+callback
+问人:
+say 2 "这里人多，我们可以去问问有没有人见到袁姐姐。"
+say 1 "对，到上次的那家客栈去问问。"
+callback
+非白水方向:
+say 2 "到白水镇好象不是朝这个方向走。"
+callback
+原野阡:
+setevent 105
+delallnpc
+loadmap 1 21 0 0
+STARTCHAPTER 6 1
+callback
+去白水镇:
+if 225 寻袁
+if 224 问人
+if 216 方向错
+寻袁:
+delallnpc
+setevent 106
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+方向错:
+say 2 "到钟山好象不是朝这个方向走。"
+say 1 "对。"
+callback
+
+去建业客栈:
+delallnpc
+loadmap 2 22 9 14
+STARTCHAPTER 7 2
+callback
+武器店:
+delallnpc
+loadmap 2 17 4 9
+STARTCHAPTER 7 3
+callback
+杂货铺:
+delallnpc
+loadmap 2 16 5 0
+STARTCHAPTER 7 4
+callback
+当铺:
+delallnpc
+loadmap 2 19 6 0
+STARTCHAPTER 7 5
+callback
+药铺:
+delallnpc
+loadmap 2 9 6 9
+STARTCHAPTER 7 6
+callback
+民宅1:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 7 7
+callback
+民宅2:
+delallnpc
+loadmap 2 23 15 11
+STARTCHAPTER 7 8
+callback
+民宅3:
+delallnpc
+loadmap 2 24 0 11
+STARTCHAPTER 7 9
+callback
+民宅4:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 7 10
+callback
+民宅5:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 7 11
+callback
+
+宝箱1:
+if 1117 宝箱1开
+if 1118 宝箱1开
+say 1 "哇！这是谁把钱袋放在这里面啦？！"
+GAINMONEY 250
+createnpc 30 13 18 12
+createnpc 31 14 18 13
+createnpc 32 15 18 13
+move 30 14 12
+move 31 14 13
+move 32 15 13
+facetoface 30 0
+facetoface 31 0
+facetoface 32 0
+say 0 "游人:喂，那是我的钱袋，快给我！"
+NPCSTEP 0 2 0
+CHOICE "不给" "奉还" 奉还
+say 0 "游人:小子你想挨揍！兄弟们，给我打！！！"
+ENTERFIGHT 0 9 20 26 1 111 31 0 0 0 0 0 0 lost win
+win:
+say 1 "地上捡到宝，见官都没得讨！"
+say 0 "游人:算你狠，我们走。"
+move 30 18 12
+deletenpc 30
+move 32 18 13
+deletenpc 32
+move 31 18 13
+deletenpc 31
+setevent 1118
+callback
+lost:
+gameover
+callback
+奉还:
+USEMONEY 250
+say 0 "游人:算你小子识相，兄弟们，我们去喝酒去。"
+move 30 16 12
+move 30 16 7
+deletenpc 30
+move 32 16 13
+move 32 16 7
+deletenpc 32
+move 31 16 13
+move 31 16 7
+deletenpc 31
+setevent 1117
+say 1 "我怎么有点上当的感觉……"
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 原野陌
+gutevent 42 原野阡
+gutevent 43 去白水镇
+gutevent 44 去建业客栈
+gutevent 45 武器店
+gutevent 46 杂货铺
+gutevent 47 当铺
+gutevent 48 药铺
+gutevent 49 民宅1
+gutevent 50 民宅2
+gutevent 51 民宅3
+gutevent 52 民宅5
+gutevent 53 民宅4
+

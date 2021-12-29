@@ -1,0 +1,56 @@
+@竖桥
+
+SETSCENENAME "竖桥"
+callback
+
+上出口:
+if 101 竖桥2下
+if 102 竖桥3下
+if 103 台子
+callback
+竖桥2下:
+clrevent 101
+setevent 102
+loadmap 1 11 0 34
+STARTCHAPTER 6 8
+callback
+竖桥3下:
+clrevent 102
+setevent 103
+loadmap 1 11 0 34
+STARTCHAPTER 6 8
+callback
+台子:
+clrevent 103
+loadmap 1 15 4 10
+STARTCHAPTER 6 9
+callback
+
+
+下出口:
+if 101 钟山入口
+if 102 竖桥1上
+if 103 竖桥2上
+callback
+
+钟山入口:
+clrevent 101
+loadmap 1 40 7 0
+STARTCHAPTER 6 13
+callback
+竖桥1上:
+clrevent 102
+setevent 101
+loadmap 1 11 0 0
+STARTCHAPTER 6 8
+callback
+竖桥2上:
+clrevent 103
+setevent 102
+loadmap 1 11 0 0
+STARTCHAPTER 6 8
+callback
+
+gutevent 41 上出口
+gutevent 42 下出口
+

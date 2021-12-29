@@ -1,0 +1,64 @@
+@开始游戏
+
+@------------------调试---------------------
+@loadmap 1 39 23 6
+@CREATEACTOR 1 4 3
+@STARTCHAPTER 7 1
+@---------------------------------------
+
+SHOWGUT 1 0 "引：                 天地玄黄，宇宙洪荒  自古道魔不两立，    世虽以道为正，道魔  之争却从未休止。    究其因，何以道正而  魔始未灭，          属正邪者，心也！    正所谓：             道非道，魔非魔      善恶在人心！                            江湖中有耳朵的人，绝无一人没有听见过“无机道长”这人的名字，江湖中有眼睛的人，也绝无一人不想瞧瞧“无机道长”绝世风采和他的绝代神功。        只因为任何人都知道，世上绝没有一个少女能抵挡“无机道长”的微微一笑，也绝没有一个英雄能抵挡“无机道长”的轻轻一剑！      任何人都相信，“无机道长”的剑非但能在百万军中取主帅之首级，也能将一根头发分成两根，而他的笑，却可令少女的心碎。        3月28日晚，无机和 当时危害人间的大魔头——赤血天魔依约在三清山的伏魔洞前进行生死决斗。              决斗后，无机负伤而归，赤血天魔不知所终。决斗结果无人知晓。  二十年后……                                                                                      "
+loadmap 1 2 15 0   
+MOVIE 1 2 0 0 2
+CREATEACTOR 1 4 3
+NPCSTEP 0 0 1
+say 1 "小蝴蝶，不要跑……"
+NPCSTEP 0 1 1
+say 1 "小蝴蝶，不要跑……"
+NPCSTEP 0 2 1
+say 1 "小蝴蝶，快出来……"
+NPCSTEP 0 3 1
+say 1 "小蝴蝶……,哪去了？？"
+CREATENPC 1 2 17 6
+MOVE 1 17 3
+MOVE 1 18 3
+say 0 "师兄，原来你在这啊，师父找不到你，正在无机阁大发雷霆呢，你快点到无机阁见师傅吧。"
+say 1 "好，你先走，我就去。"
+MOVE 1 17 3
+MOVE 1 17 6
+DELETENPC 1
+NPCSTEP 0 0 1
+NPCSTEP 0 1 1
+NPCSTEP 0 2 1
+NPCSTEP 0 3 1
+say 1 "咦，我的小蝴蝶哪去了？？"
+say 1 "还是先去见师父吧。"
+setevent 1
+SETMONEY 500
+
+@======属性测试和修改示例S=======
+@ATTRIBSET 1 0 2
+@ATTRIBTEST 1 0 12 lowaddr2 higaddr2
+@MESSAGE "2级"
+@goto addnext
+@lowaddr2:
+@MESSAGE "小于2级"
+@goto addnext
+@higaddr2:
+@MESSAGE "大于2级"
+@
+@addnext:
+@ATTRIBADD 1 0 10
+@ATTRIBTEST 1 0 12 lowaddr12 higaddr12
+@MESSAGE "12级"
+@goto chapnext
+@lowaddr12:
+@MESSAGE "小于12级"
+@goto chapnext
+@higaddr12:
+@MESSAGE "大于12级"
+@======属性测试和修改示例E=======
+
+chapnext:
+STARTCHAPTER 2 12
+callback
+

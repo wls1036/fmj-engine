@@ -1,0 +1,35 @@
+@阿霞家
+
+CREATEBOX 21 18 13 12
+CREATENPC 1 21 15 5
+SETSCENENAME "阿霞家"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 2 11
+STARTCHAPTER 3 1
+callback
+
+阿霞:
+if 206 对话
+if 205 蔡大妈事
+对话:
+say 0 "阿霞:当开发部的文员要干的事也挺多的。"
+callback
+蔡大妈事:
+setevent 206
+say 0 "阿霞:好几天没见到蔡婆婆的女儿小画家了，石梦城中恶霸李虎经常在光天化日之下强抢民女，蔡婆婆几天前到石梦城赶集，不知会不会，真是可怕啊……"
+callback
+
+宝箱1:
+if 1039 宝箱1开
+GAINGOODS 6 2
+setevent 1039
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 1 阿霞
+gutevent 41 忘忧村
+

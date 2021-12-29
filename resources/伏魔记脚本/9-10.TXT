@@ -1,0 +1,12 @@
+@民宅2
+
+SETSCENENAME "民宅"
+callback
+
+
+白水镇:
+loadmap 1 42 2 15
+STARTCHAPTER 9 1
+callback
+
+gutevent 41 白水镇

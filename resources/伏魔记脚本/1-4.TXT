@@ -1,0 +1,160 @@
+@无机洞迷宫
+
+
+INITFIGHT 28 29 30 33 36 37 0 0 2 112 32
+createbox 21 9 40 26
+createbox 22 9 37 46
+createbox 23 9 20 46
+createbox 24 9 4 34
+createbox 25 9 14 21
+createbox 26 9 13 8
+createbox 27 9 44 6
+createbox 28 9 23 19
+createbox 29 9 25 8
+
+if 1105 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1106 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 22
+宝箱2未开:
+if 1107 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 23
+宝箱3未开:
+if 1108 宝箱4已开
+goto 宝箱5开否
+宝箱4已开:
+deletebox 24
+宝箱5开否:
+if 1109 宝箱5已开
+goto 宝箱5未开
+宝箱5已开:
+deletebox 25
+宝箱5未开:
+if 1110 宝箱6已开
+goto 宝箱6未开
+宝箱6已开:
+deletebox 26
+宝箱6未开:
+if 1111 宝箱7已开
+goto 宝箱8开否
+宝箱7已开:
+deletebox 27
+宝箱8开否:
+if 1112 宝箱8已开
+goto 宝箱8未开
+宝箱8已开:
+deletebox 28
+宝箱8未开:
+if 1113 宝箱9已开
+goto 宝箱9未开
+宝箱9已开:
+deletebox 29
+宝箱9未开:
+
+createbox 1 14 17 29
+NPCSTEP 1 0 0
+createbox 2 11 43 19
+NPCSTEP 2 0 2
+SETSCENENAME "无机洞"
+SHOWSCENENAME
+
+callback
+
+
+无机洞:
+FIGHTDISENABLE
+delallnpc
+loadmap 3 9 9 4
+STARTCHAPTER 1 5
+callback
+
+无机阁:
+INITFIGHT 55 56 28 29 30 31 0 0 1 111 31
+delallnpc
+loadmap 2 8 9 0
+STARTCHAPTER 1 3
+callback
+
+宝箱1:
+if 1105 宝箱1开
+deletebox 21
+GAINGOODS 2 16
+setevent 1105
+宝箱1开:
+callback
+宝箱2:
+if 1106 宝箱2开
+deletebox 22
+GAINGOODS 1 6
+setevent 1106
+宝箱2开:
+callback
+宝箱3:
+if 1107 宝箱3开
+deletebox 23
+GAINGOODS 4 11
+setevent 1107
+宝箱3开:
+callback
+宝箱4:
+if 1108 宝箱4开
+deletebox 24
+GAINGOODS 3 15
+setevent 1108
+宝箱4开:
+callback
+宝箱5:
+if 1109 宝箱5开
+deletebox 25
+GAINGOODS 11 14
+setevent 1109
+宝箱5开:
+callback
+宝箱6:
+if 1110 宝箱6开
+deletebox 26
+GAINGOODS 11 6
+setevent 1110
+宝箱6开:
+callback
+宝箱7:
+if 1111 宝箱7开
+deletebox 27
+GAINGOODS 11 12
+setevent 1111
+宝箱7开:
+callback
+宝箱8:
+if 1112 宝箱8开
+deletebox 28
+GAINGOODS 9 14
+setevent 1112
+宝箱8开:
+callback
+宝箱9:
+if 1113 宝箱9开
+deletebox 29
+GAINGOODS 4 12
+setevent 1113
+宝箱9开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 25 宝箱5
+gutevent 26 宝箱6
+gutevent 27 宝箱7
+gutevent 28 宝箱8
+gutevent 29 宝箱9
+gutevent 49 无机洞
+gutevent 54 无机阁
+

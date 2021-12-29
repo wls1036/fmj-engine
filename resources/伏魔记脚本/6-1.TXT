@@ -1,0 +1,230 @@
+@原野阡
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "原野阡"
+callback
+
+左出口:
+FIGHTDISENABLE
+if 101 转折路口5
+if 102 森林道路1右
+if 103 转折路口4
+if 104 森林道路3右
+if 105 建业城右
+if 106 森林道路4右
+if 107 白水镇右
+if 108 森林道路5右
+if 109 南北村右
+if 110 森林道路6右
+if 111 酆都城右
+if 112 森林道路7右
+if 113 转折路口3
+
+callback
+
+转折路口5:
+if 216 贪玩
+clrevent 101
+setevent 102
+loadmap 1 30 15 7
+STARTCHAPTER 2 50
+callback
+贪玩:
+say 1 "还是师叔的事要紧。"
+callback
+
+森林道路1右:
+clrevent 102
+setevent 101
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+
+转折路口4:
+clrevent 103
+setevent 104
+loadmap 1 29 6 0
+STARTCHAPTER 6 7
+callback
+
+森林道路3右:
+clrevent 104
+setevent 103
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+
+建业城右:
+if 224 下山寻钟
+if 216 贪玩
+下山寻钟:
+clrevent 105
+loadmap 1 39 22 5
+STARTCHAPTER 7 1
+callback
+
+森林道路4右:
+@message "正常"
+clrevent 106
+setevent 104
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+
+白水镇右:
+clrevent 107
+loadmap 1 42 14 5
+STARTCHAPTER 9 1
+callback
+
+森林道路5右:
+clrevent 108
+setevent 105
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+
+南北村右:
+clrevent 109
+loadmap 1 23 18 6
+STARTCHAPTER 10 1
+callback
+
+森林道路6右:
+clrevent 110
+setevent 106
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+
+酆都城右:
+clrevent 111
+loadmap 1 43 21 2
+STARTCHAPTER 11 1
+callback
+
+森林道路7右:
+clrevent 112
+setevent 107
+loadmap 1 34 22 0
+STARTCHAPTER 6 3
+callback
+
+转折路口3:
+clrevent 113
+setevent 102
+loadmap 1 28 6 9
+STARTCHAPTER 6 6
+callback
+
+
+右出口:
+FIGHTDISENABLE
+if 101 森林道路1左
+if 102 转折路口1-1
+if 103 森林道路2左
+if 104 转折路口1-2
+if 105 转折路口1-3
+if 106 建业城左
+if 107 森林道路4左
+if 108 转折路口2
+if 109 森林道路5左
+if 110 南北村左
+if 111 森林道路6左
+if 112 酆都城左
+if 113 森林道路7左
+
+callback
+
+森林道路1左:
+loadmap 1 34 1 0
+STARTCHAPTER 6 3
+callback
+
+转折路口1-1:
+clrevent 102
+setevent 101
+loadmap 1 26 1 9
+STARTCHAPTER 6 4
+callback
+
+森林道路2左:
+clrevent 103
+setevent 102
+loadmap 1 34 1 0
+STARTCHAPTER 6 3
+callback
+
+转折路口1-2:
+clrevent 104
+setevent 102
+loadmap 1 26 1 9
+STARTCHAPTER 6 4
+callback
+
+转折路口1-3:
+clrevent 105
+setevent 103
+loadmap 1 26 1 9
+STARTCHAPTER 6 4
+callback
+
+建业城左:
+@message "也正常"
+clrevent 106
+loadmap 1 39 1 6
+STARTCHAPTER 7 1
+callback
+
+森林道路4左:
+clrevent 107
+setevent 104
+loadmap 1 34 1 0
+STARTCHAPTER 6 3
+callback
+
+转折路口2:
+clrevent 108
+loadmap 1 27 1 1
+STARTCHAPTER 6 5
+callback
+
+森林道路5左:
+clrevent 109
+setevent 105
+loadmap 1 34 1 0
+STARTCHAPTER 6 3
+callback
+
+南北村左:
+clrevent 110
+loadmap 1 23 1 5
+STARTCHAPTER 10 1
+callback
+
+森林道路6左:
+clrevent 111
+setevent 106
+loadmap 1 34 1 0
+STARTCHAPTER 6 3
+callback
+
+酆都城左:
+@clrevent 112
+@loadmap 1 43 0 2
+@STARTCHAPTER 11 1
+say 1 "我看我们要快点赶去鹤鸣山。"
+callback
+
+森林道路7左:
+clrevent 113
+setevent 107
+loadmap 1 34 1 0
+STARTCHAPTER 6 3
+callback
+
+
+gutevent 41 左出口
+gutevent 42 右出口
+
+

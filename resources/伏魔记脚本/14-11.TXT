@@ -1,0 +1,48 @@
+@天师陵墓
+
+createbox 1 36 9 5
+SETSCENENAME "天师陵墓"
+SHOWSCENENAME
+callback
+
+天师精魄:
+say 1 "老伯伯你好……"
+ENTERFIGHT 0 0 45 0 1 111 31 0 2 0 30 31 0 lossto 打败天师精魄
+打败天师精魄:
+GAINGOODS 6 14 
+setevent 254
+say 1 "你究竟是谁？"
+say 0 "天师精魄:我是张道陵的一个魂魄，因六根未净，不能升仙，今日你们刚好帮我解脱了。"
+say 1 "你是天师魂魄，那你应该知道我师父无机子是什么样的人了？"
+say 0 "天师精魄:真是道门的不幸，竟然出了天道和无机两个丧心病狂的魔头……"
+say 1 "师父真的成魔，怎么会……这样……"
+movie 1 3 0 0 0
+message "柳清风昏厥过去"
+movie 1 3 0 0 0
+loadmap 1 31 10 4
+createnpc 20 6 13 7
+facetoface 20 0
+say 1 "这是哪里？"
+say 2 "这里离忘忧村很近，是天师的魂魄升仙时送我们过来的，你刚才昏迷了，不知道。他要我转告你，要尽快将无机除掉，不然等他修炼成魔后，恐怕人世间又是一场空前灾难。"
+say 1 "那我们走吧。"
+deletenpc 20		@高国军添加
+STARTCHAPTER 2 52
+callback
+
+天师精魄话:
+say 0 "谁又来扰我清修，我不得正果，你也休逃……"
+callback
+
+柳清风话:
+say 1 "你到底是谁？"
+say 0 "我是你祖师爷！"
+callback
+
+lossto:
+gameover
+callback
+
+gutevent 1 天师精魄
+gutevent 30 天师精魄话
+gutevent 31 柳清风话
+

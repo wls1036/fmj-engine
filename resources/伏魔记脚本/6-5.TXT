@@ -1,0 +1,18 @@
+@转折路口2
+
+SETSCENENAME "转折路口"
+callback
+
+左出口:
+setevent 108
+loadmap 1 21 22 0
+STARTCHAPTER 6 1
+callback
+下出口:
+setevent 105
+loadmap 1 22 0 1
+STARTCHAPTER 6 2
+callback
+
+gutevent 41 左出口
+gutevent 42 下出口

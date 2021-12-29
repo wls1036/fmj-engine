@@ -1,0 +1,77 @@
+@建业客栈
+
+SETSCENENAME "建业客栈"
+if 221 钟山回
+if 1117 追捡到的钱
+钟山回:
+callback
+追捡到的钱:
+createnpc 30 13 12 15
+createnpc 31 14 12 14
+createnpc 32 15 13 15
+facetoface 30 0
+facetoface 31 0
+facetoface 32 0
+say 0 "游人:你小子又追来干吗？想挨揍。"
+ENTERFIGHT 0 9 20 26 1 111 31 0 0 0 0 0 0 lost win
+lost:
+gameover
+callback
+win:
+gaingoods 6 12
+GAINMONEY 250
+say 0 "游人:算你狠，我们走。"
+move 30 12 19
+deletenpc 30
+move 31 12 19
+deletenpc 31
+move 32 12 15
+move 32 12 19
+deletenpc 32
+setevent 1118
+callback
+
+callback
+
+建业城:
+delallnpc
+loadmap 1 39 12 2
+STARTCHAPTER 7 1
+callback
+提示信息:
+say 0 "客官，楼上正在建设中，目前不开放。"
+say 1 "我只是想随便走走。"
+callback
+客栈客房:
+delallnpc
+loadmap 2 4 0 5
+STARTCHAPTER 7 12
+callback
+客栈厨房:
+delallnpc
+loadmap 2 5 0 6
+STARTCHAPTER 7 13
+callback
+交易事件:
+if 225 做生意
+if 224 问袁
+goto 做生意
+问袁:
+say 0 "掌柜：请问客官有什么吩咐？"
+say 1 "请问掌柜的是否见到过上次和我们在一起的那位姑娘？"
+say 0 "哦，见过，昨天还在这里吃过午饭呢。她出门时好象是往白水镇方向。"
+say 1 "多谢！"
+setevent 225
+callback
+做生意:
+say 0 "掌柜：请问客官是住店还是吃饭？"
+say 1 "不了，我们还要赶路。"
+callback
+
+gutevent 41 建业城
+gutevent 42 提示信息
+gutevent 43 客栈客房
+gutevent 44 客栈厨房
+gutevent 45 交易事件
+
+

@@ -1,0 +1,20 @@
+@森林道路2
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "森林道路2"
+callback
+
+
+森林道路:
+FIGHTDISENABLE
+loadmap 1 34 22 0
+STARTCHAPTER 4 3
+callback
+人蛇窟入口:
+FIGHTDISENABLE
+loadmap 1 35 0 11
+STARTCHAPTER 4 5
+callback
+
+gutevent 41 森林道路
+gutevent 42 人蛇窟入口

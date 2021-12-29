@@ -1,0 +1,22 @@
+@伏魔山道
+
+SETSCENENAME "伏魔山道"
+SHOWSCENENAME
+callback
+
+后山浮桥:
+delallnpc
+loadmap 1 4 1 1
+STARTCHAPTER 2 15
+callback
+
+伏魔洞口:
+delallnpc
+loadmap 1 6 3 14
+STARTCHAPTER 2 17
+callback
+
+gutevent 41 后山浮桥
+gutevent 42 伏魔洞口
+
+

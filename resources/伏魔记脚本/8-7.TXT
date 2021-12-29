@@ -1,0 +1,13 @@
+@弟子居
+
+SETSCENENAME "弟子居"
+callback
+
+钟山道院:
+delallnpc
+loadmap 1 44 10 9
+STARTCHAPTER 8 1
+callback
+
+gutevent 41 钟山道院
+

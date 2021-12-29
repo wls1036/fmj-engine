@@ -1,0 +1,20 @@
+@当铺
+
+SETSCENENAME "当铺"
+callback
+
+酆都城:
+loadmap 1 43 5 3
+STARTCHAPTER 11 1
+callback
+
+交易事件:
+say 0 "当铺不需要大，但一定要公道。"
+sale
+callback
+
+
+gutevent 41 酆都城
+gutevent 42 交易事件
+
+

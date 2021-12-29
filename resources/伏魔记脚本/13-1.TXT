@@ -1,0 +1,80 @@
+@北海迷宫
+
+
+INITFIGHT 59 60 61 62 55 0 0 0 2 112 32
+createbox 21 9 31 28
+createbox 22 9 29 12
+createbox 23 9 40 26
+createbox 24 9 45 34
+
+if 1090 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1091 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 22
+宝箱2未开:
+if 1092 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 23
+宝箱3未开:
+if 1093 宝箱4已开
+goto 宝箱5开否
+宝箱4已开:
+deletebox 24
+宝箱5开否:
+
+createbox 1 14 19 14
+NPCSTEP 1 0 0
+say 1 "怎么到处是血红的水，一点生机都没有，就仿佛时间在这里停止了。"
+say 2 "这里好恐怖哦！"
+SETSCENENAME "北海迷宫"
+callback
+
+北海龙潭:
+FIGHTDISENABLE
+delallnpc
+loadmap 3 3 13 12
+STARTCHAPTER 13 2
+callback
+
+宝箱1:
+if 1090 宝箱1开
+deletebox 21
+GAINGOODS 9 14
+setevent 1090
+宝箱1开:
+callback
+宝箱2:
+if 1091 宝箱2开
+deletebox 22
+GAINGOODS 9 25
+setevent 1091
+宝箱2开:
+callback
+宝箱3:
+if 1092 宝箱3开
+deletebox 23
+GAINGOODS 11 1
+setevent 1092
+宝箱3开:
+callback
+宝箱4:
+if 1093 宝箱4开
+deletebox 24
+GAINGOODS 12 3
+setevent 1093
+宝箱4开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 44 北海龙潭
+
+

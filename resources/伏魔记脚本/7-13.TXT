@@ -1,0 +1,14 @@
+@客栈厨房
+
+SETSCENENAME "客栈厨房"
+callback
+
+建业客栈:
+delallnpc
+loadmap 2 22 17 10
+STARTCHAPTER 7 2
+callback
+
+gutevent 41 建业客栈
+
+

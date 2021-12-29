@@ -1,0 +1,15 @@
+@小客栈
+
+SETSCENENAME "小客栈"
+callback
+
+南北村:
+loadmap 1 23 6 5
+STARTCHAPTER 10 1
+交易事件:
+callback
+
+
+gutevent 41 南北村
+gutevent 42 交易事件
+

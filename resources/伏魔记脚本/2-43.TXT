@@ -1,0 +1,66 @@
+@三清山入口
+
+FIGHTDISENABLE
+CREATEBOX 21 18 6 4
+CREATEBOX 22 18 4 8
+SETSCENENAME "三清山入口"
+callback
+
+歇息台:
+if 254 回马枪
+if 216 去钟山
+if 215 正常
+if 19 除妖
+回马枪:
+INITFIGHT 55 56 28 29 30 33 0 0 1 111 31
+正常:
+setevent 122
+delallnpc
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+除妖:
+say 1 "还没完成师父交代的事，怎么可以回去呢！"
+callback
+去钟山:
+say 1 "去支援师叔要紧。"
+callback
+
+
+告示:
+say 0 "告示：三清山"
+callback
+野外斜路:
+if 254 没回头
+if 216 支援
+if 215 复命
+支援:
+delallnpc
+loadmap 1 25 1 5
+STARTCHAPTER 2 44
+callback
+复命:
+say 1 "还是先回山复命吧。"
+callback
+没回头:
+say 0 "我们已经不能回头了。"
+callback
+
+宝箱1:
+if 1032 宝箱1开
+GAINGOODS 8 27
+setevent 1032
+宝箱1开:
+callback
+宝箱2:
+if 1033 宝箱2开
+GAINGOODS 9 3
+setevent 1033
+宝箱2开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 41 歇息台
+gutevent 42 野外斜路
+gutevent 43 告示
+

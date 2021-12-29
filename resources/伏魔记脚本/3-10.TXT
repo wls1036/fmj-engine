@@ -1,0 +1,13 @@
+@慕容厨房
+
+SETSCENENAME "慕容厨房"
+callback
+
+村长家:
+delallnpc
+loadmap 1 24 1 3
+STARTCHAPTER 3 9
+callback
+
+gutevent 41 村长家
+

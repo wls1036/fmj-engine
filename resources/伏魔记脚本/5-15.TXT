@@ -1,0 +1,56 @@
+@李俯客厅
+
+createbox 21 18 10 3
+if 210 打败李虎
+CREATENPC 1 25 12 7
+INITFIGHT 6 7 8 0 0 0 0 0 1 111 31
+打败李虎:
+SETSCENENAME "李俯客厅"
+callback
+
+石梦城:
+loadmap 1 37 34 3
+STARTCHAPTER 5 1
+callback
+
+打李虎:
+ENTERFIGHT 0 6 9 7 1 111 31 0 6 0 39 40 0 lossto winto
+lossto:
+gameover
+callback
+winto:
+setevent 210
+DELETENPC 1
+say 1 "多行不义必自毙。"
+GAINGOODS 4 13
+GAINGOODS 4 14
+if 207 得钥匙
+goto 正常
+得钥匙:
+GAINGOODS 14 4
+setevent 1130
+正常:
+FIGHTDISENABLE
+callback
+李虎话:
+say 0 "不知死活的小辈，土都动到太岁头上来了。"
+say 1 "李虎，你作恶多端，今天我要替天行道！"
+callback
+战斗话:
+say 0 "小子，有两下子。"
+say 1 "少废话，看招！"
+callback
+
+宝箱1:
+if 1060 宝箱1开
+GAINGOODS 9 19
+setevent 1060
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 1 打李虎
+gutevent 39 李虎话
+gutevent 40 战斗话
+gutevent 41 石梦城
+

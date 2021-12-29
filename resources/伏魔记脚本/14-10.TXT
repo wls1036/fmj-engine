@@ -1,0 +1,34 @@
+@陵墓迷宫
+
+INITFIGHT 55 56 57 58 14 51 52 53 2 112 32
+createbox 1 14 17 3
+NPCSTEP 1 0 0
+SETSCENENAME "陵墓迷宫"
+callback
+
+天师陵墓:
+FIGHTDISENABLE
+@ENTERFIGHT 0 0 43 0 2 112 32 0 2 0 30 31 0 lossto 打败玄武
+@打败玄武:
+delallnpc
+loadmap 3 11 5 14
+STARTCHAPTER 14 11
+callback
+
+@lossto:
+@gameover
+@callback
+@玄武话1:
+@say 0 "玄武:闯陵者死。"
+@callback
+@玄武话2:
+@say 0 "玄武:哼哼，知道我玄武的厉害了吧！"
+@say 2 "你是玄武，那你有玄武之精咯？"
+@say 0 "玄武:哦，那就要看你们的本事了。"
+@callback
+@gutevent 30 玄武话1
+@gutevent 31 玄武话2
+
+gutevent 50 天师陵墓
+
+

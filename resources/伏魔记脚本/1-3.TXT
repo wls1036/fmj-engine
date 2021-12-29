@@ -1,0 +1,23 @@
+@无机阁
+
+SETSCENENAME "无机阁"
+SHOWSCENENAME
+
+callback
+
+
+三清宫:
+delallnpc
+loadmap 1 1 18 6
+STARTCHAPTER 1 2
+callback
+
+无机洞:
+delallnpc
+loadmap 3 10 39 15
+STARTCHAPTER 1 4
+callback
+
+gutevent 41 三清宫
+gutevent 42 无机洞
+

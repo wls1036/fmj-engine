@@ -1,0 +1,76 @@
+@钟山道院
+
+createbox 21 18 9 17
+if 220 第一次灭妖
+INITFIGHT 1 12 13 15 16 17 0 0 1 111 31
+第一次灭妖:
+SETSCENENAME "钟山道院"
+callback
+
+横桥:
+if 224 下山寻钟
+if 216 继续留
+下山寻钟:
+delallnpc
+loadmap 1 10 31 1
+STARTCHAPTER 6 12
+callback
+继续留:
+say 1 "这里还有要紧是要办呢！"
+callback
+
+霸王钟洞口:
+delallnpc
+loadmap 1 35 0 12
+STARTCHAPTER 8 2
+callback
+参虚阁:
+delallnpc
+loadmap 2 7 8 18
+STARTCHAPTER 8 3
+callback
+药房:
+delallnpc
+loadmap 2 9 6 9
+STARTCHAPTER 8 4
+callback
+炼丹房:
+delallnpc
+loadmap 2 6 6 14
+STARTCHAPTER 8 5
+callback
+冲虚居:
+delallnpc
+loadmap 2 2 12 7
+STARTCHAPTER 8 6
+callback
+弟子居:
+delallnpc
+loadmap 2 4 0 5
+STARTCHAPTER 8 7
+callback
+厨房:
+delallnpc
+loadmap 2 5 0 6
+STARTCHAPTER 8 8
+callback
+
+宝箱1:
+if 1066 宝箱1开
+GAINGOODS 1 10
+setevent 1066
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 横桥
+gutevent 42 霸王钟洞口
+gutevent 43 参虚阁
+gutevent 44 药房
+gutevent 45 炼丹房
+gutevent 46 冲虚居
+gutevent 47 弟子居
+gutevent 48 厨房
+
+
+

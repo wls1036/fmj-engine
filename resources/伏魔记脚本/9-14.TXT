@@ -1,0 +1,26 @@
+@离开白水镇
+
+movie 1 3 0 0 0
+loadmap 2 10 10 7
+createnpc 1 26 15 10
+createnpc 2 6 15 11
+createnpc 3 7 14 11
+facetoface 1 0
+say 0 "镇长:几位恩公真的不再多留会儿？"
+say 1 "不了，我们还有要事在身，就不多留了，多谢你的热情招待。"
+say 0 "镇长:应该的，不知有什么事我能帮的上忙的？"
+say 3 "不知镇长可见到近两天有人带着一个大钟从此经过？"
+say 0 "镇长:那还真是有，前天，有一帮长象古怪的人，拖着一个大钟从本镇经过。"
+say 2 "知不知道他们的身份？"
+say 0 "镇长:不清楚，只知道他们往北走去。"
+say 1 "多谢，我们要走了。"
+say 0 "镇长:我送你们。"
+say 1 "不用了。"
+say 0 "镇长:那几位有空常来。"
+deletenpc 2
+deletenpc 3
+message "慕容小梅袁萍芷加入队列"
+setevent 234
+STARTCHAPTER 9 4
+callback
+

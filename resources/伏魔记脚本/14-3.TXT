@@ -1,0 +1,29 @@
+@台子3
+
+SETSCENENAME "台子"
+callback
+
+台子5:
+loadmap 1 17 5 9
+STARTCHAPTER 14 4
+callback
+竖桥3:
+setevent 103
+loadmap 1 11 0 0
+STARTCHAPTER 14 2
+callback
+台子6:
+loadmap 1 18 0 4
+STARTCHAPTER 14 5
+callback
+横桥1:
+setevent 101
+loadmap 1 10 31 1
+STARTCHAPTER 14 6
+callback
+
+gutevent 41 台子5
+gutevent 42 竖桥3
+gutevent 43 台子6
+gutevent 44 横桥1
+

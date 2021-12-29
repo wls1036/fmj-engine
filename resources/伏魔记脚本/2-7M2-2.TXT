@@ -1,0 +1,34 @@
+@大师兄居
+
+createbox 1 18 7 3
+createbox 2 18 7 12
+SETSCENENAME "大师兄居"
+SHOWSCENENAME
+callback
+
+三清宫:
+delallnpc
+loadmap 1 1 12 25
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+宝箱1:
+if 1008 宝箱1开
+GAINGOODS 2 1
+setevent 1008
+宝箱1开:
+callback
+宝箱2:
+if 1009 宝箱2开
+GAINMONEY 150
+setevent 1009
+宝箱2开:
+callback
+
+gutevent 1 宝箱1
+gutevent 2 宝箱2
+gutevent 41 三清宫

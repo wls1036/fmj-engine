@@ -1,0 +1,24 @@
+@三清宫药房
+
+SETSCENENAME "三清宫药房"
+SHOWSCENENAME
+callback
+
+三清宫:
+delallnpc
+loadmap 1 1 5 11
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+买卖:
+say 0 "这里有不少的好药才供选择。"
+BUY "9001 9002 9003 9008 9009 9010 9021 9026 9027 10001 12001 12002 12003 8022 8027"
+callback
+
+gutevent 41 三清宫
+gutevent 42 买卖
+

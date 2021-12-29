@@ -1,0 +1,118 @@
+@愚人居
+
+CREATEBOX 21 18 15 10
+SETSCENENAME "愚人居"
+if 254 回马枪
+callback
+回马枪:
+if 2008 虫子
+goto 不点卡片
+虫子:
+createnpc 30 32 4 11
+不点卡片:
+if 2010 不点
+goto 小鬼卡片
+不点:
+createnpc 31 34 8 4
+小鬼卡片:
+if 2009 小鬼
+callback
+小鬼:
+createnpc 32 33 8 6
+callback
+
+
+转折路口:
+delallnpc
+setevent 101
+loadmap 1 30 0 7
+STARTCHAPTER 2 50
+callback
+
+宝箱1:
+if 1044 宝箱1开
+GAINGOODS 11 13
+setevent 1044
+宝箱1开:
+callback
+
+虫子话:
+if 263 不换破衣
+if 262 不还虫子卡片
+say 0 "异域人通宵虫:哎，我的卡片怎么在你手上？"
+CHOICE "不给" "奉还" 奉还虫子
+不还虫子卡片:
+@say 0 "异域人通宵虫:哎，这世道怎么这样呢？"
+@setevent 262
+say 0 "异域人通宵虫:那我这里有件破衣服，不过要你拿身上所有的钱来换，怎么样？"
+CHOICE "不换" "交换" 交换
+不换破衣:
+say 0 "异域人通宵虫:年轻人，有头脑，但是缺乏冒险精神。"
+setevent 263
+callback
+交换:
+setmoney 0
+gaingoods 2 18
+say 0 "异域人通宵虫:哈哈，有钱啦！！哈……哈……哈……哈……"
+deletenpc 30
+callback
+奉还虫子:
+usegoods 14 5 没虫子卡片
+say 0 "异域人通宵虫:好，看你还我卡片的份上，我教你一招。"
+LEARNMAGIC 1 1 11
+deletenpc 30
+callback
+
+
+没虫子卡片:
+message "没有虫子卡片"
+say 0 "异域人通宵虫:我最讨厌骗我的人了，你会后悔的！"
+setmoney 0
+deletenpc 30
+callback
+
+不点话:
+say 0 "异域人不点点:我BF说你要去大战了，让我趁机来发点财，不过，你得给我不点卡片才行哦。呵呵！"
+CHOICE "不给" "交出" 不点发财
+没不点卡片:
+say 0 "异域人不点点:哼，没卡片我是不会卖东西给你的。"
+deletenpc 31
+callback
+不点发财:
+usegoods 14 7 没不点卡片
+buy "7010 7011 7012 7031 4010 2017 2015 1014 8019 8020 8026 8007 9006 9007 9014 9015 9020 10004 12004 12005 12006"
+say 0 "异域人不点点:我发完财了，拜拜，我去也……"
+deletenpc 31
+callback
+
+小鬼话:
+if 261 不还小鬼卡片
+say 0 "异域人南方小鬼:我的游戏组成员卡丢了，不知道你见到没有？"
+say 1 "……"
+say 0 "异域人南方小鬼:哦？！你找到了我的卡片？把它还给我吧，我教你一招绝世武功。"
+CHOICE "不给" "奉还" 奉还
+say 0 "异域人南方小鬼:哼，你小子别后悔。"
+setevent 261
+callback
+奉还:
+usegoods 14 7 没小鬼卡片
+LEARNMAGIC 1 3 8
+say 0 "异域人南方小鬼:哈哈哈哈，年轻人，有前途。"
+deletenpc 32
+callback
+不还小鬼卡片:
+say 0 "异域人南方小鬼:现在想还啊，我现在不要了。"
+callback
+没小鬼卡片:
+say 0 "异域人南方小鬼:你怎么能卖了呢，我要你陪。"
+USEMONEY 8000
+say 0 "异域人南方小鬼:哈哈"
+deletenpc 32
+callback
+
+
+gutevent 21 宝箱1
+gutevent 30 虫子话
+gutevent 31 不点话
+gutevent 32 小鬼话
+gutevent 41 转折路口

@@ -1,0 +1,152 @@
+@横桥
+
+SETSCENENAME "横桥"
+callback
+
+左出口:
+if 100 观星亭
+if 101 台4
+if 102 横桥1右
+if 103 横桥2右
+if 104 台11右
+if 105 台14右
+if 106 台21右
+if 107 横桥6右
+if 108 台22右
+if 109 台23右
+callback
+观星亭:
+clrevent 100
+loadmap 1 12 10 5
+STARTCHAPTER 2 33
+callback
+台4:
+clrevent 101
+setevent 104
+loadmap 1 15 8 5
+STARTCHAPTER 2 38
+callback
+横桥1右:
+clrevent 102
+setevent 101
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+横桥2右:
+clrevent 103
+setevent 102
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+台11右:
+clrevent 104
+setevent 111
+loadmap 1 15 8 5
+STARTCHAPTER 2 38
+callback
+台14右:
+clrevent 105
+setevent 114
+loadmap 1 14 8 5
+STARTCHAPTER 2 37
+callback
+台21右:
+clrevent 106
+setevent 121
+loadmap 1 15 8 5
+STARTCHAPTER 2 38
+callback
+横桥6右:
+clrevent 107
+setevent 101
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+台22右:
+clrevent 108
+setevent 122
+loadmap 1 15 8 5
+STARTCHAPTER 2 38
+callback
+台23右:
+clrevent 109
+setevent 123
+loadmap 1 14 8 5
+STARTCHAPTER 2 37
+callback
+
+
+右出口:
+if 100 摩天顶
+if 101 横桥2左
+if 102 横桥3左
+if 103 台6左
+if 104 台12左
+if 105 台15左
+if 106 横桥7左
+if 107 台22左
+if 108 台23左
+if 109 台24左
+callback
+摩天顶:
+clrevent 100
+loadmap 1 9 1 7
+STARTCHAPTER 2 32
+callback
+横桥2左:
+clrevent 101
+setevent 102
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+横桥3左:
+clrevent 102
+setevent 103
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+台6左:
+clrevent 103
+setevent 106
+loadmap 1 15 1 5
+STARTCHAPTER 2 38
+callback
+台12左:
+clrevent 104
+setevent 112
+loadmap 1 15 1 5
+STARTCHAPTER 2 38
+callback
+台15左:
+clrevent 105
+setevent 115
+loadmap 1 14 1 5
+STARTCHAPTER 2 37
+callback
+横桥7左:
+clrevent 106
+setevent 107
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+台22左:
+clrevent 107
+setevent 122
+loadmap 1 15 1 5
+STARTCHAPTER 2 38
+callback
+台23左:
+clrevent 108
+setevent 123
+loadmap 1 14 1 5
+STARTCHAPTER 2 37
+callback
+台24左:
+clrevent 109
+setevent 124
+loadmap 1 15 1 5
+STARTCHAPTER 2 38
+callback
+
+gutevent 41 右出口
+gutevent 42 左出口

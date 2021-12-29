@@ -1,0 +1,306 @@
+@歇息台子3
+
+
+SETSCENENAME "歇息台子"
+callback
+
+上出口:
+if 103 台1下
+if 104 竖桥1下
+if 106 竖桥2下
+if 111 台8下
+if 112 竖桥6下
+if 113 台9下
+if 116 竖桥7下
+if 121 台19下
+if 122 竖桥14下
+if 124 台20下
+callback
+台1下:
+clrevent 103
+setevent 101
+loadmap 1 17 4 8
+STARTCHAPTER 2 40
+callback
+竖桥1下:
+clrevent 104
+setevent 101
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥2下:
+clrevent 106
+setevent 102
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+台8下:
+clrevent 111
+setevent 108
+loadmap 1 17 4 8
+STARTCHAPTER 2 40
+callback
+竖桥6下:
+clrevent 112
+setevent 106
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+台9下:
+clrevent 113
+setevent 109
+loadmap 1 13 4 6
+STARTCHAPTER 2 36
+callback
+竖桥7下:
+clrevent 116
+setevent 107
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+台19下:
+clrevent 121
+setevent 119
+loadmap 1 13 4 6
+STARTCHAPTER 2 36
+callback
+竖桥14下:
+clrevent 122
+setevent 114
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+台20下:
+clrevent 124
+setevent 120
+loadmap 1 13 4 6
+STARTCHAPTER 2 36
+callback
+
+
+下出口:
+if 103 竖桥3上
+if 104 竖桥4上
+if 106 竖桥5上
+if 111 竖桥8上
+if 112 台18上
+if 113 竖桥9上
+if 116 竖桥10上
+if 121 台28上
+if 122 三清山入口
+if 124 台26上
+callback
+竖桥3上:
+@clrevent 103
+@setevent 103
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+竖桥4上:
+@clrevent 104
+@setevent 104
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+竖桥5上:
+clrevent 106
+setevent 105
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+竖桥8上:
+clrevent 111
+setevent 108
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台18上:
+clrevent 112
+setevent 118
+loadmap 1 16 4 1
+STARTCHAPTER 2 39
+callback
+竖桥9上:
+clrevent 113
+setevent 109
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+竖桥10上:
+clrevent 116
+setevent 110
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台28上:
+clrevent 121
+setevent 128
+loadmap 1 16 4 1
+STARTCHAPTER 2 39
+callback
+三清山入口:
+clrevent 122
+loadmap 1 20 7 1
+STARTCHAPTER 2 43
+callback
+台26上:
+clrevent 124
+setevent 126
+loadmap 1 16 4 1
+STARTCHAPTER 2 39
+callback
+
+
+
+左出口:
+if 103 台2右
+if 104 台3右
+if 106 横桥3右
+if 111 台10右
+if 112 横桥4右
+if 113 台12右
+if 116 台15右
+if 121 台27右
+if 122 横桥7右
+if 124 横桥9右
+callback
+台2右:
+clrevent 103
+setevent 102
+loadmap 1 19 8 4
+STARTCHAPTER 2 42
+callback
+台3右:
+clrevent 104
+setevent 103
+loadmap 1 15 8 5
+STARTCHAPTER 2 38
+callback
+横桥3右:
+clrevent 106
+setevent 103
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+台10右:
+clrevent 111
+setevent 110
+loadmap 1 19 8 4
+STARTCHAPTER 2 42
+callback
+横桥4右:
+clrevent 112
+setevent 104
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+台12右:
+clrevent 113
+setevent 112
+loadmap 1 15 8 5
+STARTCHAPTER 2 38
+callback
+台15右:
+clrevent 116
+setevent 115
+loadmap 1 14 8 5
+STARTCHAPTER 2 37
+callback
+台27右:
+clrevent 121
+setevent 127
+loadmap 1 19 8 4
+STARTCHAPTER 2 42
+callback
+横桥7右:
+clrevent 122
+setevent 107
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+横桥9右:
+clrevent 124
+setevent 109
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+callback
+
+
+
+右出口:
+if 103 台4左
+if 104 横桥1左
+if 106 台7左
+if 111 横桥4左
+if 112 台13左
+if 113 台14左
+if 116 台17左
+if 121 横桥6左
+if 122 横桥8左
+if 124 台25左
+callback
+台4左:
+clrevent 103
+setevent 104
+loadmap 1 15 1 5
+STARTCHAPTER 2 38
+callback
+横桥1左:
+clrevent 104
+setevent 101
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+台7左:
+clrevent 106
+setevent 107
+loadmap 1 18 1 4
+STARTCHAPTER 2 41
+callback
+横桥4左:
+clrevent 111
+setevent 104
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+台13左:
+clrevent 112
+setevent 113
+loadmap 1 15 1 5
+STARTCHAPTER 2 38
+callback
+台14左:
+clrevent 113
+setevent 114
+loadmap 1 14 1 5
+STARTCHAPTER 2 37
+callback
+台17左:
+clrevent 116
+setevent 117
+loadmap 1 18 1 4
+STARTCHAPTER 2 41
+callback
+横桥6左:
+clrevent 121
+setevent 106
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+横桥8左:
+clrevent 122
+setevent 108
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+台25左:
+clrevent 124
+setevent 125
+loadmap 1 18 1 4
+STARTCHAPTER 2 41
+callback
+
+gutevent 41 上出口
+gutevent 42 下出口
+gutevent 43 右出口
+gutevent 44 左出口

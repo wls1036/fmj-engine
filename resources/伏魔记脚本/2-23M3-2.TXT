@@ -1,0 +1,60 @@
+@灯洞5
+
+CREATEBOX 21 9 17 5
+if 1028 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+SETSCENENAME "灯洞5"
+SHOWSCENENAME
+CREATEBOX 1 7 8 3
+CREATEBOX 2 11 20 3
+CREATEBOX 3 10 4 3
+NPCSTEP 2 0 1
+if 15 灯灭
+callback
+灯灭:
+NPCMOVEMOD 1 0
+NPCSTEP 1 0 0
+callback
+
+战护灯兽:
+if 15 已战胜
+ENTERFIGHT 0 0 10 0 2 112 32 0 0 0 10 0 0 lost win
+lost:
+gameover
+callback
+win:
+say 1 "搞定灯五。"
+setevent 15
+NPCMOVEMOD 1 0
+NPCSTEP 1 0 0
+已战胜:
+callback
+
+护灯兽话:
+say 0 "护灯兽五：谁在这里撒野。"
+callback
+
+
+伏魔洞:
+delallnpc
+loadmap 3 1 4 18
+STARTCHAPTER 2 18
+callback
+
+宝箱1:
+if 1028 宝箱1开
+deletebox 21
+GAINGOODS 8 1
+setevent 1028
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 1 战护灯兽
+gutevent 10 护灯兽话
+gutevent 42 伏魔洞
+
+

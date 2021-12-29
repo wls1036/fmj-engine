@@ -1,0 +1,18 @@
+@当铺
+
+
+SETSCENENAME "当铺"
+callback
+
+白水镇:
+loadmap 1 42 11 13
+STARTCHAPTER 9 1
+callback
+交易事件:
+say 0 "我这里是最公道的。"
+sale
+say 0 "欢迎下次再来。"
+callback
+
+gutevent 41 白水镇
+gutevent 42 交易事件

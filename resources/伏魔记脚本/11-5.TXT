@@ -1,0 +1,20 @@
+@药店
+
+SETSCENENAME "药店"
+callback
+
+酆都城:
+loadmap 1 43 1 2
+STARTCHAPTER 11 1
+callback
+
+交易事件:
+say 0 "我的药材，不论人鬼神通通能用。"
+buy "9003 9004 9005 9006 9010 9011 9012 9013 9019 9023 8022 8027 8019 8018 12001 12002 12003 12006 10004"
+callback
+
+
+gutevent 41 酆都城
+gutevent 42 交易事件
+
+

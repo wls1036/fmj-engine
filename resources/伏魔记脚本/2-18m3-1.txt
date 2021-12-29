@@ -1,0 +1,236 @@
+@伏魔洞
+SETSCENENAME "伏魔洞"
+SHOWSCENENAME
+if 260 回马枪
+INITFIGHT 2 3 4 0 0 0 0 0 2 112 32
+if 19 light1
+CREATEBOX 1 8 16 11
+light1:
+if 11 light2
+goto 有门
+light2:
+if 12 light3
+goto 有门
+light3:
+if 13 light4
+goto 有门
+light4:
+if 14 light5
+goto 有门
+light5:
+if 15 light6
+goto 有门
+light6:
+if 16 light7
+goto 有门
+light7:
+if 17 light8
+goto 有门
+light8:
+if 18 开门
+有门:
+CREATEBOX 2 6 16 14
+CREATEBOX 3 6 17 14
+开门:
+callback
+回马枪:
+createbox 18 18 16 11
+createbox 19 18 17 11
+createbox 17 18 16 10
+createbox 20 18 17 10
+createnpc 21 28 13 10
+createnpc 22 29 12 13
+createnpc 23 30 19 13
+createnpc 24 31 20 10
+callback
+
+取剑:
+setevent 19
+say 1 "果然是好剑！可以跟师父复命下山了。"
+ENTERFIGHT 0 10 11 10 2 112 32 0 0 0 10 0 0 lost win    @打护剑神
+lost:
+gameover
+callback
+win:
+say 1 "这护剑神果然厉害，差点我就打不过了。"
+DELETENPC 1
+showscreen
+gaingoods 14 12
+say 1 "好剑！"
+say 1 "感觉好象有点不对……，什么声音？？？"
+NPCSTEP 0 0 1
+NPCSTEP 0 1 1
+NPCSTEP 0 2 1
+NPCSTEP 0 3 1
+MOVIE 1 1 0 0 2
+delallnpc
+loadmap 1 6 3 2
+STARTCHAPTER 2 17
+callback
+
+伏魔洞口:
+delallnpc
+loadmap 1 6 3 1
+STARTCHAPTER 2 17
+callback
+
+灯洞1:
+delallnpc
+loadmap 3 2 0 9
+STARTCHAPTER 2 19
+callback
+
+
+灯洞2:
+delallnpc
+loadmap 3 3 0 1
+STARTCHAPTER 2 20
+callback
+
+灯洞3:
+delallnpc
+loadmap 3 4 15 18
+STARTCHAPTER 2 21
+callback
+
+灯洞4:
+delallnpc
+loadmap 3 5 0 0
+STARTCHAPTER 2 22
+callback
+
+灯洞5:
+delallnpc
+loadmap 3 2 0 9
+STARTCHAPTER 2 23
+callback
+
+灯洞6:
+delallnpc
+loadmap 3 3 0 1
+STARTCHAPTER 2 24
+callback
+
+灯洞7:
+delallnpc
+loadmap 3 4 15 18
+STARTCHAPTER 2 25
+callback
+
+灯洞8:
+delallnpc
+loadmap 3 5 0 0
+STARTCHAPTER 2 26
+callback
+
+护剑兽话:
+say 0 "护剑神:谁人如此大胆，竟敢触动伏魔宝剑？"
+say 1 "差点忘了，还有护剑神。"
+say 0 "你是谁？"
+say 1 "废话少说，看招！"
+callback
+
+放混元金斗:
+createnpc 39 25 17 10
+facetoface 39 0
+say 0 "护剑神:小子，又回来干吗？上次输给你我不服气，这次我不用帮手也能赢你。"
+CHOICE "免战" "欠扁" 比试
+say 1 "现在妖魔为患，除妖要紧。"
+say 0 "护剑神:好，今天你先除妖，改日我们再比。"
+goto 除妖要紧
+比试:
+ENTERFIGHT 0 0 63 0 2 112 32 0 0 0 30 0 0 lost 打赢超打护剑神
+打赢超打护剑神:
+say 0 "护剑神:哎，后生可畏呀！没想到我又输了。罢罢罢，好没面子呀，我去也。"
+除妖要紧:
+delallnpc
+createbox 30 41 16 11
+createbox 31 18 17 11
+message "混元金斗正位"
+showscreen
+message "妖魔立即消失"
+movie 1 3 0 0 0
+delallnpc
+message "若干年后"
+loadmap 2 7 7 5
+NPCSTEP 0 0 0
+CREATENPC 1 3 9 11
+CREATENPC 2 3 9 12
+CREATENPC 3 3 9 13
+CREATENPC 4 3 9 14
+NPCSTEP 1 0 0
+NPCSTEP 2 0 0
+NPCSTEP 3 0 0
+NPCSTEP 4 0 0
+
+CREATENPC 5 3 16 11
+CREATENPC 6 3 16 12
+CREATENPC 7 3 16 13
+CREATENPC 8 3 16 14
+NPCSTEP 5 0 1
+NPCSTEP 6 0 1
+NPCSTEP 7 0 1
+NPCSTEP 8 0 1
+
+createnpc 20 2 11 13
+move 20 11 9
+say 0 "道士:禀报掌门师兄，我已经找到蟋蟀和蝴蝶最多的地方了。"
+NPCSTEP 0 2 0
+say 1 "哦，快带我去。"
+say 0 "道士:是。"
+createnpc 21 6 17 7
+move 21 12 7
+say 2 "儿子都那么大了，还只知道玩，没有一点像做父亲的样儿！"
+say 1 "哎呀！老婆子又来啦，我们快逃，不然我非被念叨的爆牙而亡不可。"
+SHOWGUT 0 0 "  ====制作群组====    游戏引擎：          通宵虫  南方小鬼                        游戏制作：          通宵虫  南方小鬼                        游戏测试：          众多网友                                游戏序：            纯蓝守护者(网友)                            步步高游戏组           2004年6月                                                              "
+movie 1 4 0 0 0
+gameover
+callback
+
+战斗1:
+ENTERFIGHT 0 17 28 16 2 112 32 0 0 0 0 0 0 lost 战斗1胜
+战斗1胜:
+deletenpc 21
+callback
+战斗2:
+ENTERFIGHT 0 15 29 14 2 112 32 0 0 0 0 0 0 lost 战斗2胜
+战斗2胜:
+deletenpc 22
+callback
+战斗3:
+ENTERFIGHT 0 13 30 12 2 112 32 0 0 0 0 0 0 lost 战斗3胜
+战斗3胜:
+deletenpc 23
+callback
+战斗4:
+ENTERFIGHT 0 17 31 12 2 112 32 0 0 0 0 0 0 lost 战斗4胜
+战斗4胜:
+deletenpc 24
+callback
+
+超打护剑神:
+say 0 "护剑神:让你看看我的新绝招！"
+say 1 "我也不会很菜，看谁厉害。"
+callback
+
+gutevent 1 取剑
+gutevent 10 护剑兽话
+gutevent 17 放混元金斗
+gutevent 18 放混元金斗
+gutevent 19 放混元金斗
+gutevent 20 放混元金斗
+gutevent 21 战斗1
+gutevent 22 战斗2
+gutevent 23 战斗3
+gutevent 24 战斗4
+gutevent 30 超打护剑神
+gutevent 41 伏魔洞口
+gutevent 42 灯洞1
+gutevent 43 灯洞2
+gutevent 44 灯洞3
+gutevent 45 灯洞4
+gutevent 46 灯洞5
+gutevent 47 灯洞6
+gutevent 48 灯洞7
+gutevent 49 灯洞8
+

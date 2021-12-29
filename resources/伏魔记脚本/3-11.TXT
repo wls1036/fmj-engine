@@ -1,0 +1,43 @@
+@慕容主房
+
+CREATEBOX 21 18 4 21
+if 217 正常
+if 216 小梅
+goto 正常
+小梅:
+CREATENPC 1 6 12 8
+正常:
+SETSCENENAME "慕容主房"
+callback
+
+村长家:
+delallnpc
+loadmap 1 24 3 7
+STARTCHAPTER 3 9
+callback
+
+小梅话:
+say 1 "小梅。"
+say 2 "柳大哥，你来看我，太好了。"
+say 1 "我这次要去钟山帮我师叔除妖，路过就随便来看看你。"
+say 2 "除妖……我也要去。"
+say 1 "这次与上次不同，连我师叔都告急了，很危险。"
+say 2 "我不怕，现在就剩我一人了，没什么牵挂，相信我爹在的话，也会赞成的！"
+say 1 "…………好吧。"
+CREATEACTOR 2 4 3
+deletenpc 1
+message "慕容小梅加入队列"
+setevent 217
+callback
+
+宝箱1:
+if 1042 宝箱1开
+GAINGOODS 2 8
+setevent 1042
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 1 小梅话
+gutevent 41 村长家
+

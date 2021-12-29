@@ -1,0 +1,59 @@
+@村长家
+
+if 215 村长已死
+CREATENPC 1 9 18 6
+村长已死:
+SETSCENENAME "村长家"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 12 23
+STARTCHAPTER 3 1
+callback
+
+慕容厨房:
+delallnpc
+loadmap 2 14 5 4
+STARTCHAPTER 3 10
+callback
+
+慕容主房:
+delallnpc
+loadmap 2 15 7 1
+STARTCHAPTER 3 11
+callback
+
+村长:
+if 202 去除妖
+say 1 "您好，我是三清宫无机子的弟子柳清风，请问您是忘忧村村长吗？"
+say 0 "正是，老夫慕容玄，请问道长有何指教？"
+say 1 "师父说这里有妖魔，我是奉师命而来的。"
+say 0 "道长原来是来帮我们除妖的，终于有救星了！"
+say 1 "果真有妖，师父还真是当之无愧。"
+say 0 "那妖怪是个半人半蛇的怪物，两天前来我们村里索要童男，如若不给就要灭我全村。我村已有四人被害。"
+say 1 "可知妖怪现在何处？"
+say 0 "只知其出入村南瘴气林。"
+say 1 "村长放心，我这就去把他除了。"
+say 0 "老夫有一女，自幼习医，可助你一臂之力。"
+CREATENPC 2 6 9 6
+MOVE 2 16 6
+@facetoface 1 2
+facetoface 0 2
+say 2 "我愿与道长前去除妖。"
+say 1 "那就即可起程。"
+say 0 "道长，小梅，多加小心啊！"
+CREATEACTOR 2 4 3
+deletenpc 2
+message "慕容小梅加入队列"
+setevent 202
+去除妖:
+@facetoface 0 1
+say 0 "多加小心啊！"
+callback
+
+gutevent 1 村长
+gutevent 41 忘忧村
+gutevent 42 慕容主房
+gutevent 43 慕容厨房
+

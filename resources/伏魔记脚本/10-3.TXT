@@ -1,0 +1,19 @@
+@武器店
+
+CREATENPC 1 14 12 10
+NPCMOVEMOD 1 0
+SETSCENENAME "武器店"
+callback
+
+南北村:
+loadmap 1 23 13 12
+STARTCHAPTER 10 1
+交易事件:
+say 0 "最近不是很太平，有武器防身最好。"
+buy "7007 7008 7021 7022 7028 7029 4007 4008 2005 2012 2013 8002 8005 8020 8023 8025"
+callback
+
+
+gutevent 41 南北村
+gutevent 42 交易事件
+

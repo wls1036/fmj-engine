@@ -1,0 +1,157 @@
+@摩天顶
+
+if 259 正常
+if 254 回马枪
+goto 正常
+回马枪:
+createbox 1 40 11 7
+createbox 2 18 12 7
+createbox 3 40 7 11
+createbox 4 18 8 11
+createbox 5 40 11 15
+createbox 6 18 12 15
+createbox 7 40 15 11
+createbox 8 18 16 11
+createbox 9 41 11 11
+createbox 10 18 12 11
+正常:
+SETSCENENAME "摩天顶"
+SHOWSCENENAME
+callback
+
+步云桥:
+if 259 上山
+if 254 lossto
+上山:
+loadmap 1 8 0 43
+STARTCHAPTER 2 31
+callback
+观星亭:
+setevent 100
+loadmap 1 10 30 1
+STARTCHAPTER 2 34
+
+@loadmap 1 12 10 5
+@STARTCHAPTER 2 33
+callback
+竖桥:
+竖桥1上:
+setevent 101
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+callback
+
+东苍龙:
+if 255 败苍龙
+if 2002 斗苍龙
+斗苍龙:
+CHOICE "    取消" "使用苍龙之精" 打败苍龙
+goto lossto
+打败苍龙:
+usegoods 14 8 没此物品
+setevent 255
+败苍龙:
+callback
+西白虎:
+if 256 败白虎
+if 2002 斗白虎
+goto lossto
+斗白虎:
+CHOICE "    取消" "使用白虎之精" 打败白虎
+goto 败白虎
+打败白虎:
+usegoods 14 9 没此物品
+setevent 256
+败白虎:
+callback
+南朱雀:
+if 257 败朱雀
+if 2002 斗朱雀
+goto lossto
+斗朱雀:
+CHOICE "    取消" "使用朱雀之精" 打败朱雀
+goto 败朱雀
+打败朱雀:
+usegoods 14 10 没此物品
+setevent 257
+败朱雀:
+callback
+北玄武:
+if 258 败玄武
+if 2002 斗玄武
+goto lossto
+斗玄武:
+CHOICE "    取消" "使用玄武之精" 打败玄武
+goto 败玄武
+打败玄武:
+usegoods 14 11 没此物品
+setevent 258
+败玄武:
+callback
+
+没此物品:
+message "没此物品"
+lossto:
+message "魂魄被吸走"
+gameover
+callback
+
+
+进诛仙阵:
+if 254 戴天星灯否
+goto 戴天星灯
+戴天星灯否:
+if 2002 戴天星灯
+goto lossto
+戴天星灯:
+callback
+
+战诛仙:
+if 2002 开战诛仙
+goto lossto
+开战诛仙:
+if 255 苍龙败
+goto lossto
+苍龙败:
+if 256 白虎败
+goto lossto
+白虎败:
+if 257 朱雀败
+goto lossto
+朱雀败:
+if 257 玄武败
+goto lossto
+玄武败:
+ENTERFIGHT 0 0 46 0 1 111 31 0 0 0 20 0 0 lossto 打败诛仙
+打败诛仙:
+setevent 259
+message "四象诛仙阵被破"
+delallnpc
+showscreen
+gaingoods 14 13
+callback
+
+诛仙话:
+say 0 "诛仙:谁人如此大胆，敢闯我诛仙阵，我叫你魂飞魄散！"
+callback
+
+gutevent 1 北玄武
+gutevent 2 北玄武
+gutevent 3 西白虎
+gutevent 4 西白虎
+gutevent 5 南朱雀
+gutevent 6 南朱雀
+gutevent 7 东苍龙
+gutevent 8 东苍龙
+gutevent 9 战诛仙
+gutevent 10 战诛仙
+gutevent 20 诛仙话
+gutevent 41 竖桥
+gutevent 42 步云桥
+gutevent 43 观星亭
+gutevent 44 进诛仙阵
+
+
+
+

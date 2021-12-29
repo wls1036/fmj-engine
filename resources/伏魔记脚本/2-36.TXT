@@ -1,0 +1,56 @@
+@歇息台子1
+
+
+SETSCENENAME "歇息台子"
+callback
+
+上出口:
+if 109 竖桥4下
+if 119 竖桥11下
+if 120 竖桥13下
+callback
+竖桥4下:
+clrevent 109
+setevent 104
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥11下:
+clrevent 119
+setevent 111
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥13下:
+clrevent 119
+setevent 113
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+
+下出口:
+if 109 台13上
+if 119 台21上
+if 120 台24上
+callback
+台13上:
+clrevent 109
+setevent 113
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+台21上:
+clrevent 119
+setevent 121
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+台24上:
+clrevent 120
+setevent 124
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+
+gutevent 41 上出口
+gutevent 42 下出口

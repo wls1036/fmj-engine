@@ -1,0 +1,98 @@
+@歇息台子4
+
+if 260 回马枪
+if 118 开闭18
+if 126 开闭26
+if 128 开闭28
+开闭18:
+if 71 箱子开
+goto 箱子
+开闭26:
+if 72 箱子开
+goto 箱子
+开闭28:
+if 73 箱子开
+goto 箱子
+回马枪:
+if 118 开闭1101
+if 126 开闭1102
+if 128 开闭1103
+开闭1101:
+if 1101 箱子开
+goto 箱子
+开闭1102:
+if 1102 箱子开
+goto 箱子
+开闭1103:
+if 1103 箱子开
+箱子:
+CREATEBOX 1 9 12 12
+箱子开:
+SETSCENENAME "歇息台子"
+callback
+
+上出口:
+delallnpc
+if 118 台12下
+if 126 台24下
+if 128 台21下
+callback
+台12下:
+clrevent 118
+setevent 112
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+台24下:
+clrevent 126
+setevent 124
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+台21下:
+clrevent 128
+setevent 121
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+
+宝箱:
+if 260 回箱子
+deletenpc 1
+if 118 开18
+if 126 开26
+if 128 开28
+callback
+开18:
+setevent 71
+GAINGOODS 1 3
+callback
+开26:
+setevent 72
+GAINGOODS 1 7
+callback
+开28:
+setevent 73
+GAINGOODS 3 7
+callback
+回箱子:
+deletenpc 1
+if 118 开1101
+if 126 开1102
+if 128 开1103
+callback
+开1101:
+setevent 1101
+GAINGOODS 1 15
+callback
+开1102:
+setevent 1102
+GAINGOODS 3 13
+callback
+开1103:
+setevent 1103
+GAINGOODS 5 5
+callback
+
+gutevent 1 宝箱
+gutevent 41 上出口

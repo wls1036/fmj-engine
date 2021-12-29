@@ -1,0 +1,12 @@
+@忘忧坟场
+
+SETSCENENAME "忘忧坟场"
+callback
+转折路口:
+delallnpc
+setevent 101
+loadmap 1 30 16 7
+STARTCHAPTER 2 50
+callback
+
+gutevent 41 转折路口

@@ -1,0 +1,28 @@
+@忘忧村
+
+SETSCENENAME "忘忧村"
+SHOWSCENENAME
+CREATEBOX 1 4 15 3
+callback
+
+原野阡2右:
+setevent 102
+loadmap 1 21 22 0
+STARTCHAPTER 2 45
+callback
+原野阡3左:
+say 1 "先上山再说。"
+callback
+
+原野陌:
+setevent 102
+loadmap 1 22 0 1
+STARTCHAPTER 2 46
+callback
+
+
+
+gutevent 41 原野阡2右
+gutevent 42 原野阡3左
+gutevent 43 原野陌
+

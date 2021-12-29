@@ -1,0 +1,20 @@
+@森林道路
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "森林道路"
+callback
+
+
+毒瘴林入口:
+FIGHTDISENABLE
+loadmap 1 33 15 13
+STARTCHAPTER 4 1
+callback
+森林道路2:
+FIGHTDISENABLE
+loadmap 1 38 2 2
+STARTCHAPTER 4 4
+callback
+
+gutevent 41 毒瘴林入口
+gutevent 42 森林道路2

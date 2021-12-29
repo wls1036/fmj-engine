@@ -1,0 +1,136 @@
+@鹤鸣山洞
+
+
+INITFIGHT 50 51 52 53 54 0 0 0 2 112 32
+createbox 21 9 11 11
+createbox 22 9 15 11
+
+if 1099 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1100 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 22
+宝箱2未开:
+
+createbox 1 10 24 35
+createbox 2 32 10 7
+createbox 3 33 12 7
+createbox 4 34 14 7
+createbox 5 35 16 7
+SETSCENENAME "鹤鸣山洞"
+callback
+
+
+鹤鸣山洞口:
+@loadmap 1 46 7 0
+@STARTCHAPTER 14 8
+callback
+陵墓迷宫:
+FIGHTDISENABLE
+delallnpc
+loadmap 3 10 7 0
+STARTCHAPTER 14 10
+callback
+
+字替:
+if 1100 知道机关
+callback
+知道机关:
+SET 1 1
+message "叮"
+callback
+字天:
+IFCMP 1 1 第二字
+goto 未第一字
+第二字:
+SET 1 2
+message "当"
+callback
+未第一字:
+SET 1 0
+callback
+字行:
+IFCMP 1 2 第三字
+goto 未第二字
+第三字:
+SET 1 3
+message "咚"
+callback
+未第二字:
+SET 1 0
+callback
+字道:
+IFCMP 1 3 第四字
+goto 未第三字
+第四字:
+message "呛"
+if 253 机关已触发
+say 1 "那边好象有石头破碎的声音。"
+goto 战玄武
+callback
+未第三字:
+SET 1 0
+机关已触发:
+callback
+
+战玄武:
+ENTERFIGHT 0 0 43 0 2 112 32 0 2 0 30 31 0 lossto 打败玄武
+打败玄武:
+gaingoods 14 11
+deletenpc 1
+setevent 253
+callback
+
+lossto:
+gameover
+callback
+
+玄武话1:
+say 0 "玄武:闯陵者死。"
+callback
+玄武话2:
+say 0 "玄武:哼哼，知道我玄武的厉害了吧！"
+say 2 "你是玄武，那你有玄武之精咯？"
+say 0 "玄武:哦，那就要看你们的本事了。"
+callback
+
+宝箱1:
+if 1099 宝箱1开
+CHOICE "取消" "使用万能钥匙" 打开
+callback
+没有钥匙:
+message "没有钥匙"
+callback
+打开:
+usegoods 14 2 没有钥匙
+deletebox 21
+GAINGOODS 14 7
+setevent 2010
+setevent 1099
+宝箱1开:
+callback
+宝箱2:
+if 1100 宝箱2开
+deletebox 22
+GAINGOODS 6 16
+setevent 1100
+say 2 "后面的几个字很是奇怪。"
+say 1 "仔细看看！"
+宝箱2开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 2 字替
+gutevent 3 字天
+gutevent 4 字行
+gutevent 5 字道
+gutevent 30 玄武话1
+gutevent 31 玄武话2
+gutevent 41 鹤鸣山洞口
+gutevent 42 陵墓迷宫
+

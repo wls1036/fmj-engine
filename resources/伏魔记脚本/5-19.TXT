@@ -1,0 +1,12 @@
+@李俯厨房
+
+SETSCENENAME "李俯厨房"
+callback
+
+石梦城:
+loadmap 1 37 39 9
+STARTCHAPTER 5 1
+callback
+
+gutevent 41 石梦城
+

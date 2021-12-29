@@ -1,0 +1,17 @@
+@响应游戏热键F1——查找
+
+menu 230 "允许存盘 禁止存盘"
+ifcmp 230 0 ExitLine
+ifcmp 230 1 OpenSave
+ifcmp 230 2 CloseSave
+
+OpenSave:
+ENABLESAVE
+return
+
+CloseSave:
+DISABLESAVE
+return
+
+ExitLine:
+return

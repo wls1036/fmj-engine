@@ -1,0 +1,43 @@
+@师傅居
+
+createbox 1 18 15 3
+createbox 2 18 7 12
+createbox 3 18 4 12
+SETSCENENAME "师傅居"
+SHOWSCENENAME
+callback
+
+三清宫:
+delallnpc
+loadmap 1 1 12 22
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+宝箱1:
+if 1006 宝箱1开
+GAINGOODS 8 3
+setevent 1006
+宝箱1开:
+callback
+宝箱2:
+if 1007 宝箱2开
+GAINGOODS 9 9
+setevent 1007
+宝箱2开:
+callback
+宝箱3:
+if 1008 宝箱3开
+GAINGOODS 9 27
+setevent 1008
+宝箱3开:
+callback
+
+gutevent 1 宝箱1
+gutevent 2 宝箱2
+gutevent 3 宝箱3
+gutevent 41 三清宫
+

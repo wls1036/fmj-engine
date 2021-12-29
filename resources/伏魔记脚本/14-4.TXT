@@ -1,0 +1,28 @@
+@台子5
+
+createbox 21 9 11 11
+if 1096 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+SETSCENENAME "台子"
+callback
+
+
+台子3:
+loadmap 1 15 5 0
+STARTCHAPTER 14 3
+callback
+
+宝箱1:
+if 1096 宝箱1开
+deletebox 21
+GAINGOODS 3 14
+setevent 1096
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 台子3
+

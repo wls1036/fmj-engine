@@ -1,0 +1,96 @@
+@洞口见师叔
+
+CREATENPC 1 2 12 17
+move 1 12 20
+say 0 "钟山道士:多亏柳师兄及时赶到，不然我们就遭殃了。"
+say 1 "快带我去见师叔。"
+say 0 "钟山道士:好，师父在后山等你。"
+movie 1 3 0 0 0
+delallnpc
+loadmap 1 35 5 3
+CREATENPC 1 1 10 6
+CREATENPC 2 6 6 4
+CREATENPC 3 7 6 5
+NPCSTEP 3 0 0
+NPCSTEP 2 2 0
+NPCSTEP 1 3 0
+NPCSTEP 0 1 0
+say 0 "冲虚道人:清风来得及时啊，正好解了此次群妖犯我钟山之围。"
+say 1 "师叔见外了，除魔卫道是我的本分。"
+say 0 "冲虚道人:好样的。此次群魔大举进犯我钟山，我想应该是为霸王钟而来，此物威力无比，如果落入妖魔之手，后果不堪设想。"
+say 1 "弟子一定会竭力保护霸王钟。"
+say 0 "冲虚道人:好，还有一件是要提醒你，你身后的袁姑娘身上带有很重的妖气，但又不乏正气，你要多留心。"
+say 1 "是。"
+say 0 "冲虚道人:你们先回去歇息吧。"
+movie 1 3 0 0 0
+delallnpc
+loadmap 2 4 6 5
+message "第二天黎明"
+say 1 "外面怎么这么吵？？？"
+CREATENPC 1 2 4 8
+move 1 9 8
+facetoface 1 0
+say 0 "钟山道士:师父请你们到后山去。"
+movie 1 3 0 0 0
+delallnpc
+loadmap 1 35 5 3
+CREATENPC 1 1 10 6
+CREATENPC 2 6 6 4
+CREATENPC 3 7 6 5
+NPCSTEP 3 0 0
+NPCSTEP 2 2 0
+NPCSTEP 1 3 0
+NPCSTEP 0 1 0
+say 0 "冲虚道人:清风，我算出群妖会在今天大举进攻钟山，我怕弟子们顶不住。你应该能守住洞中宝钟，我去迎敌。"
+say 1 "是，我这就进洞去。"
+movie 1 3 0 0 0
+delallnpc
+loadmap 3 9 9 3
+CREATENPC 1 6 12 6
+CREATENPC 2 7 13 7
+NPCSTEP 2 1 0
+NPCSTEP 1 0 0
+NPCSTEP 0 3 0
+say 3 "不知外面战况如何。"
+say 1 "我有点担心。"
+CREATENPC 3 27 9 3
+move 3 9 6
+move 3 11 6
+ENTERFIGHT 0 0 18 0 2 112 32 0 0 0 1 0 0 lossto winto
+winto:
+say 0 "赤血:算你们有本事，不过,决挡不住我的绝招！"
+lossto:
+RESUMEACTORHP 1 30
+RESUMEACTORHP 2 30
+RESUMEACTORHP 3 30
+SHOWSCREEN
+deletenpc 3
+deletenpc 2
+setevent 221
+movie 1 3 0 0 0
+message "柳清风慕容小梅昏倒"
+movie 1 3 0 0 0
+DELETEACTOR 3
+say 1 "这老妖还真厉害."
+SHOWSCREEN
+facetoface 0 1
+say 2 "钟不见啦!"
+say 1 "啊……，完了完了……"
+NPCSTEP 0 2 0
+NPCSTEP 0 1 0
+NPCSTEP 0 0 0
+facetoface 0 1
+say 1 "袁姑娘呢？"
+say 2 "醒了就没见到她。"
+say 1 "莫非被师叔言中。去找师叔。"
+deletenpc 1
+message "慕容小梅加入队列"
+STARTCHAPTER 8 10
+callback
+
+赤血话:
+say 0 "赤血:哈哈哈哈，霸王钟是我的啦，哈哈……"
+say 1 "有我们在，你休想！"
+callback
+gutevent 1 赤血话
+

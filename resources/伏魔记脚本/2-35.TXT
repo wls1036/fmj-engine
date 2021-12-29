@@ -1,0 +1,206 @@
+@竖桥
+
+SETSCENENAME "竖桥"
+callback
+
+上出口:
+if 101 摩天顶
+if 102 台5
+if 103 台3下
+if 104 台4下
+if 105 台6下
+if 106 竖桥3
+if 107 竖桥5下
+if 108 台11下
+if 109 台13下
+if 110 台16下
+if 111 竖桥8下
+if 112 竖桥9下
+if 113 竖桥10下
+if 114 竖桥12下
+callback
+摩天顶:
+clrevent 101
+loadmap 1 9 8 17
+STARTCHAPTER 2 32
+callback
+台5:
+clrevent 102
+setevent 105
+loadmap 1 17 4 8
+STARTCHAPTER 2 40
+callback
+台3下:
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+台4下:
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+台6下:
+clrevent 105
+setevent 106
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+竖桥3:
+clrevent 106
+setevent 103
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥5下:
+clrevent 107
+setevent 105
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+台11下:
+clrevent 108
+setevent 104
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+台13下:
+clrevent 109
+setevent 113
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+台16下:
+clrevent 110
+setevent 116
+loadmap 1 15 4 9
+STARTCHAPTER 2 38
+callback
+竖桥8下:
+clrevent 111
+setevent 108
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥9下:
+clrevent 112
+setevent 109
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥10下:
+clrevent 113
+setevent 110
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+竖桥12下:
+clrevent 114
+setevent 112
+loadmap 1 11 0 33
+STARTCHAPTER 2 35
+callback
+
+
+
+下出口:
+if 101 台4
+if 102 台6
+if 103 竖桥6
+if 104 台9上
+if 105 竖桥7
+if 106 台12上
+if 107 台16上
+if 108 竖桥11上
+if 109 竖桥12上
+if 110 竖桥13上
+if 111 台19上
+if 112 竖桥14上
+if 113 台20上
+if 114 台22上
+callback
+台4:
+clrevent 101
+setevent 104
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+台6:
+clrevent 102
+setevent 104
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+竖桥6:
+clrevent 103
+setevent 106
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台9上:
+clrevent 104
+setevent 109
+loadmap 1 13 4 2
+STARTCHAPTER 2 36
+callback
+竖桥7:
+clrevent 105
+setevent 107
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台12上:
+clrevent 106
+setevent 112
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+台16上:
+clrevent 107
+setevent 116
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+竖桥11上:
+clrevent 108
+setevent 111
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+竖桥12上:
+clrevent 109
+setevent 112
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+竖桥13上:
+clrevent 110
+setevent 113
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台19上:
+clrevent 111
+setevent 119
+loadmap 1 13 4 2
+STARTCHAPTER 2 36
+callback
+竖桥14上:
+clrevent 112
+setevent 114
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台20上:
+clrevent 113
+setevent 120
+loadmap 1 13 4 2
+STARTCHAPTER 2 36
+callback
+台22上:
+clrevent 114
+setevent 122
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+
+gutevent 41 上出口
+gutevent 42 下出口

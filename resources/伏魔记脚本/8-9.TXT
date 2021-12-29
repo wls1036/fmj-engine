@@ -1,0 +1,142 @@
+@霸王迷宫
+
+
+INITFIGHT 13 10 22 25 49 0 0 0 2 112 32
+createbox 21 9 14 5
+createbox 22 9 12 2
+createbox 23 9 10 41
+createbox 24 9 27 43
+createbox 25 9 31 28
+createbox 26 9 29 12
+createbox 27 9 40 26
+createbox 28 9 45 34
+
+if 1069 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1070 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 22
+宝箱2未开:
+if 1071 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 23
+宝箱3未开:
+if 1072 宝箱4已开
+goto 宝箱5开否
+宝箱4已开:
+deletebox 24
+宝箱5开否:
+if 1073 宝箱5已开
+goto 宝箱5未开
+宝箱5已开:
+deletebox 25
+宝箱5未开:
+if 1074 宝箱6已开
+goto 宝箱6未开
+宝箱6已开:
+deletebox 26
+宝箱6未开:
+if 1075 宝箱7已开
+goto 宝箱8开否
+宝箱7已开:
+deletebox 27
+宝箱8开否:
+if 1076 宝箱8已开
+goto 宝箱8未开
+宝箱8已开:
+deletebox 28
+宝箱8未开:
+
+
+CREATEBOX 1 11 43 19
+NPCSTEP 1 0 1
+CREATEBOX 2 11 31 3
+NPCSTEP 1 0 0
+SETSCENENAME "霸王迷宫"
+callback
+
+霸王钟洞:
+FIGHTDISENABLE
+delallnpc
+loadmap 3 9 10 9
+STARTCHAPTER 8 10
+callback
+霸王钟洞口:
+FIGHTDISENABLE
+delallnpc
+loadmap 1 35 7 0
+STARTCHAPTER 8 2
+callback
+
+宝箱1:
+if 1069 宝箱1开
+deletebox 21
+GAINGOODS 5 6
+setevent 1069
+宝箱1开:
+callback
+宝箱2:
+if 1070 宝箱2开
+deletebox 22
+GAINGOODS 1 2
+setevent 1070
+宝箱2开:
+callback
+宝箱3:
+if 1071 宝箱3开
+deletebox 23
+GAINGOODS 3 2
+setevent 1071
+宝箱3开:
+callback
+宝箱4:
+if 1072 宝箱4开
+deletebox 24
+GAINGOODS 9 2
+setevent 1072
+宝箱4开:
+callback
+宝箱5:
+if 1073 宝箱5开
+deletebox 25
+GAINGOODS 9 9
+setevent 1073
+宝箱5开:
+callback
+宝箱6:
+if 1074 宝箱6开
+deletebox 26
+GAINGOODS 9 25
+setevent 1074
+宝箱6开:
+callback
+宝箱7:
+if 1075 宝箱7开
+deletebox 27
+GAINGOODS 11 1
+setevent 1075
+宝箱7开:
+callback
+宝箱8:
+if 1076 宝箱8开
+deletebox 28
+GAINGOODS 12 3
+setevent 1076
+宝箱8开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 25 宝箱5
+gutevent 26 宝箱6
+gutevent 27 宝箱7
+gutevent 28 宝箱8
+gutevent 51 霸王钟洞
+gutevent 54 霸王钟洞口

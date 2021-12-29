@@ -1,0 +1,43 @@
+@三清宫厨房
+
+createbox 1 18 6 6
+createbox 2 18 15 14
+createbox 3 18 6 3
+SETSCENENAME "三清宫厨房"
+SHOWSCENENAME
+callback
+
+三清宫:
+delallnpc
+loadmap 1 1 25 28
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+宝箱1:
+if 1017 宝箱1开
+GAINGOODS 9 3
+setevent 1017
+宝箱1开:
+callback
+宝箱2:
+if 1018 宝箱2开
+GAINGOODS 9 22
+setevent 1018
+宝箱2开:
+callback
+宝箱3:
+if 1019 宝箱3开
+GAINGOODS 9 16
+setevent 1019
+宝箱3开:
+callback
+
+gutevent 1 宝箱1
+gutevent 2 宝箱2
+gutevent 3 宝箱3
+gutevent 41 三清宫
+

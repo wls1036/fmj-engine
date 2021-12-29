@@ -1,0 +1,22 @@
+@步云桥
+
+SETSCENENAME "步云桥"
+SHOWSCENENAME
+callback
+
+摩天顶:
+loadmap 1 9 8 0
+STARTCHAPTER 2 32
+callback
+三清宫:
+loadmap 1 1 18 39
+if 259 回马枪
+STARTCHAPTER 2 1
+callback
+回马枪:
+STARTCHAPTER 1 2
+callback
+
+gutevent 41 摩天顶
+gutevent 42 三清宫
+

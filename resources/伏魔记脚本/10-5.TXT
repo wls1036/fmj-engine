@@ -1,0 +1,15 @@
+@皮皮家
+
+SETSCENENAME "皮皮家"
+callback
+
+南北村:
+loadmap 1 23 16 4
+STARTCHAPTER 10 1
+交易事件:
+callback
+
+
+gutevent 41 南北村
+gutevent 42 交易事件
+

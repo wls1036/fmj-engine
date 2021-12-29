@@ -1,0 +1,125 @@
+@忘忧村
+
+CREATEBOX 21 18 6 2
+CREATEBOX 22 18 4 11
+CREATEBOX 23 18 23 26
+if 206 蔡开门
+goto 关门
+蔡开门:
+CREATEBOX 2 19 10 7
+NPCSTEP 2 0 0
+关门:
+SETSCENENAME "忘忧村"
+SHOWSCENENAME
+CREATEBOX 1 4 15 3
+callback
+
+原野阡2右:
+setevent 102
+loadmap 1 21 22 0
+STARTCHAPTER 2 45
+callback
+原野阡3左:
+if 216 看小梅
+已加入:
+setevent 103
+loadmap 1 21 1 0
+STARTCHAPTER 2 45
+callback
+看小梅:
+if 217 已加入
+say 1 "对了，先去看看小梅。"
+callback
+
+原野陌:
+setevent 102
+loadmap 1 22 0 1
+STARTCHAPTER 2 46
+callback
+
+村长家:
+delallnpc
+loadmap 1 24 8 1
+STARTCHAPTER 3 9
+callback
+
+武器店:
+delallnpc
+loadmap 2 17 4 9
+STARTCHAPTER 3 2
+callback
+
+杂货店:
+delallnpc
+loadmap 2 16 5 1
+STARTCHAPTER 3 3
+callback
+
+东东家:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 3 4
+callback
+
+老孟家:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 3 5
+callback
+
+疯子家:
+delallnpc
+loadmap 2 13 12 1
+STARTCHAPTER 3 6
+callback
+
+阿霞家:
+delallnpc
+loadmap 2 12 11 1
+STARTCHAPTER 3 7
+callback
+
+蔡婆家:
+if 206 找蔡婆婆
+callback
+找蔡婆婆:
+delallnpc
+loadmap 2 10 8 15
+STARTCHAPTER 3 8
+callback
+
+宝箱1:
+if 1036 宝箱1开
+GAINGOODS 12 6
+setevent 1036
+宝箱1开:
+callback
+宝箱2:
+if 1037 宝箱2开
+GAINGOODS 9 16
+setevent 1037
+宝箱2开:
+callback
+宝箱3:
+if 1038 宝箱3开
+GAINGOODS 9 27
+setevent 1038
+宝箱3开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 41 原野阡2右
+gutevent 42 原野阡3左
+gutevent 43 原野陌
+gutevent 44 村长家
+gutevent 46 武器店
+gutevent 47 杂货店
+gutevent 48 东东家
+gutevent 49 老孟家
+gutevent 50 疯子家
+gutevent 51 阿霞家
+gutevent 52 蔡婆家
+
+

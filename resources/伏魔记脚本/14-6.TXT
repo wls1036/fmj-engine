@@ -1,0 +1,47 @@
+@横桥
+
+SETSCENENAME "横桥"
+callback
+
+右出口:
+if 101 台子3
+if 102 横桥1左
+callback
+
+
+台子3:
+clrevent 101
+loadmap 1 15 0 5
+STARTCHAPTER 14 3
+callback
+
+横桥1左:
+clrevent 102
+setevent 101
+loadmap 1 10 0 1
+STARTCHAPTER 14 6
+callback
+
+
+
+左出口:
+if 101 横桥2右
+if 102 森林道路
+callback
+
+横桥2右:
+clrevent 101
+setevent 102
+loadmap 1 10 31 1
+STARTCHAPTER 14 6
+callback
+森林道路:
+clrevent 102
+loadmap 1 38 15 13
+STARTCHAPTER 14 7
+callback
+
+gutevent 41 右出口
+gutevent 42 左出口
+
+

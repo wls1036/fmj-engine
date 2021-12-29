@@ -1,0 +1,41 @@
+@无机洞
+
+
+createbox 1 25 9 3
+if 260 正常
+createnpc 2 1 9 8
+正常:
+SETSCENENAME "无机洞"
+SHOWSCENENAME
+
+callback
+
+
+无机洞:
+delallnpc
+loadmap 3 10 13 25
+STARTCHAPTER 1 4
+callback
+
+战无机:
+if 260 无机已死
+facetoface 0 2
+say 0 "无机:清风，师父在这里……"
+say 1 "师父——"
+say 2 "柳大哥，醒醒，他已经是魔了！"
+ENTERFIGHT 0 0 47 0 2 112 32 0 0 0 0 0 0 lossto 打败无机
+打败无机:
+say 0 "啊，哈哈，清风，谢……谢……你，我的心魔已被你打……散，将……混元金斗放在伏……伏……魔洞中的先天伏魔阵中心位置，可以将天下所有由万魔幻化变换成的妖怪吸收到阵中封印。我可以走得轻……松了……"
+deletenpc 2
+message "无机得到解脱"
+setevent 260
+无机已死:
+callback
+
+lossto:
+gameover
+callback
+
+gutevent 1 无机洞
+gutevent 45 战无机
+

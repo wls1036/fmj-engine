@@ -1,0 +1,27 @@
+@李俯密道
+
+INITFIGHT 2 4 6 7 8 0 0 0 2 112 32
+CREATEBOX 1 11 4 3
+NPCSTEP 1 0 2
+CREATEBOX 2 14 17 3
+NPCSTEP 2 0 1
+SETSCENENAME "李俯密道"
+callback
+
+石梦城:
+FIGHTDISENABLE
+delallnpc
+loadmap 1 37 41 2
+STARTCHAPTER 5 1
+callback
+
+李俯宝库:
+FIGHTDISENABLE
+delallnpc
+loadmap 3 9 0 8
+STARTCHAPTER 5 21
+callback
+
+gutevent 41 石梦城
+gutevent 50 李俯宝库
+

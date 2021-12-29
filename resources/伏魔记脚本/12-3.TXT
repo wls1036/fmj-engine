@@ -1,0 +1,92 @@
+@南山虎穴
+
+createbox 21 9 4 24
+createbox 22 18 11 2
+createbox 23 9 8 24
+
+if 1087 宝箱1已开
+goto 宝箱3开否
+宝箱1已开:
+deletebox 21
+宝箱3开否:
+if 1089 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 23
+宝箱3未开:
+createbox 2 13 13 6
+createbox 3 10 25 4
+@createbox 4 30 4 20
+
+createbox 1 30 4 20
+SETSCENENAME "南山虎穴"
+callback
+
+找白虎:
+if 238 白虎已死
+say 1 "咦!怎么没人嗄?"
+say 2 "我们好好找找,别再让它给逃了."
+白虎已死:
+callback
+
+战白虎:
+say 0 "白虎:Shit,都变成草堆了，这样都骗不了你!!!"
+ENTERFIGHT 0 0 40 0 2 112 32 0 5 0 30 31 0 lossto 打死白虎
+打死白虎:
+gaingoods 14 9
+deletenpc 1
+SHOWSCREEN
+setevent 238
+say 0 "白虎:青山不改，绿水常流，我们后会有期。"
+say 1 "哇，好大的一股腥臭味啊……"
+callback
+
+lossto:
+gameover
+callback
+
+比功夫:
+say 0 "白虎:来吧,我们功夫上见真章."
+callback
+白虎抱怨:
+say 0 "白虎:哼，要不是你们乘我练腥风魔功的时候来，要是我练成腥风魔功，你们肯定撑不到现在。"
+callback
+
+出虎穴:
+FIGHTDISENABLE
+delallnpc
+loadmap 1 35 7 1
+STARTCHAPTER 12 1
+callback
+
+宝箱1:
+if 1087 宝箱1开
+deletebox 21
+GAINMONEY 500
+setevent 1087
+宝箱1开:
+callback
+宝箱2:
+if 1088 宝箱2开
+GAINMONEY 300
+setevent 1088
+宝箱2开:
+callback
+宝箱3:
+if 1089 宝箱3开
+deletebox 23
+GAINMONEY 100
+setevent 1089
+宝箱3开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 1 战白虎
+gutevent 30 比功夫
+gutevent 31 白虎抱怨
+gutevent 43 找白虎
+gutevent 255 出虎穴
+
+

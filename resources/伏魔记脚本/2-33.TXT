@@ -1,0 +1,43 @@
+@观星亭
+
+SETSCENENAME "观星亭"
+SHOWSCENENAME
+if 260 回马枪
+if 90 箱子开
+CREATEBOX 1 9 13 3
+箱子开:
+callback
+回马枪:
+if 1104 箱子开
+CREATEBOX 1 9 13 3
+callback
+
+摩天顶:
+setevent 100
+delallnpc
+loadmap 1 10 1 1
+STARTCHAPTER 2 34
+callback
+
+开箱子:
+if 260 回箱子
+setevent 90
+GAINGOODS 6 8
+deletenpc 1
+callback
+回箱子:
+CHOICE "取消" "使用万能钥匙" 打开
+callback
+没有钥匙:
+message "没有钥匙"
+callback
+打开:
+usegoods 14 2 没有钥匙
+setevent 1104
+GAINGOODS 7 32
+deletenpc 1
+callback
+
+gutevent 1 开箱子
+gutevent 41 摩天顶
+

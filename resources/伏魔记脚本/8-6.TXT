@@ -1,0 +1,22 @@
+@冲虚居
+
+createbox 21 18 7 12
+SETSCENENAME "冲虚居"
+callback
+
+钟山道院:
+delallnpc
+loadmap 1 44 3 9
+STARTCHAPTER 8 1
+callback
+
+宝箱1:
+if 1068 宝箱1开
+GAINGOODS 3 3
+setevent 1068
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 钟山道院
+

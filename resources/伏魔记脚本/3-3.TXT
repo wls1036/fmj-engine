@@ -1,0 +1,19 @@
+@杂货店
+
+CREATENPC 1 16 11 11
+NPCMOVEMOD 1 0
+SETSCENENAME "杂货店"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 2 7
+STARTCHAPTER 3 1
+callback
+买武器:
+facetoface 1 0
+say 0 "我这里有许多上好货物。"
+BUY "6001 6002 5001 5005 1001 1002 1007 1008 3001 3002 3007 3008 8003 8008 8010 8011 8012 8026 12004"
+callback
+gutevent 41 忘忧村
+gutevent 42 买武器

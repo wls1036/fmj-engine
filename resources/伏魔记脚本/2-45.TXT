@@ -1,0 +1,73 @@
+@原野阡
+
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "原野阡"
+callback
+
+
+左出口:
+FIGHTDISENABLE
+if 101 野外斜路
+if 102 转折路口3右
+if 103 忘忧村右
+if 104 转折路口3右-
+callback
+野外斜路:
+clrevent 101
+loadmap 1 25 21 5
+STARTCHAPTER 2 44
+callback
+转折路口3右:
+clrevent 102
+setevent 101
+loadmap 1 28 3 9
+STARTCHAPTER 2 49
+callback
+忘忧村右:
+clrevent 103
+loadmap 1 23 18 7
+STARTCHAPTER 3 1
+callback
+转折路口3右-:
+clrevent 104
+setevent 102
+loadmap 1 28 3 9
+STARTCHAPTER 2 49
+callback
+
+
+右出口:
+FIGHTDISENABLE
+if 101 转折路口2左
+if 102 忘忧村左
+if 103 转折路口2左-
+if 104 转折路口1左
+callback
+转折路口2左:
+@clrevent 101
+@setevent 101
+loadmap 1 27 1 0
+STARTCHAPTER 2 48
+callback
+忘忧村左:
+clrevent 102
+loadmap 1 23 1 5
+STARTCHAPTER 3 1
+callback
+转折路口2左-:
+clrevent 103
+setevent 102
+loadmap 1 27 1 0
+STARTCHAPTER 2 48
+callback
+转折路口1左:
+clrevent 104
+loadmap 1 26 0 10
+STARTCHAPTER 2 51
+callback
+
+
+gutevent 41 左出口
+gutevent 42 右出口
+

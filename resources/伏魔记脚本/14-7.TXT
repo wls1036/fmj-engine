@@ -1,0 +1,38 @@
+@森林道路
+
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+createbox 21 9 6 21
+if 1098 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+SETSCENENAME "森林道路"
+callback
+
+鹤鸣山洞口:
+FIGHTDISENABLE
+loadmap 1 46 8 14
+STARTCHAPTER 14 8
+callback
+横桥2:
+FIGHTDISENABLE
+setevent 102
+loadmap 1 10 0 1
+STARTCHAPTER 14 6
+callback
+
+
+宝箱1:
+if 1098 宝箱1开
+deletebox 21
+GAINGOODS 7 13
+setevent 1098
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 鹤鸣山洞口
+gutevent 42 横桥2
+

@@ -1,0 +1,16 @@
+@药店
+
+SETSCENENAME "药店"
+callback
+
+石梦城:
+loadmap 1 37 1 12
+STARTCHAPTER 5 1
+callback
+买武器:
+say 0 "我这里有许多上好药物。"
+BUY "9001 9002 9003 9004 9008 9009 9010 9018 9022 9024 9026 9027 10001 12001 12002 12003 12006 8021 8022 8027"
+callback
+gutevent 42 买武器
+gutevent 41 石梦城
+

@@ -1,0 +1,41 @@
+@民宅3
+
+createnpc 1 15 17 5
+SETSCENENAME "民宅3"
+callback
+
+建业城:
+delallnpc
+loadmap 1 39 16 12
+STARTCHAPTER 7 1
+callback
+
+阿军话:
+if 264 想回家
+say 0 "阿军:我在城里人称万锁开,什么锁都能开.不知道老孟的信什么时候能到！"
+if 201 送信
+callback
+送信:
+say 1 "这么说你就是老孟的男友阿军咯？"
+facetoface 1 0
+say 0 "阿军:是啊，你认识她？"
+say 1 "我在忘忧村时她托我送了这封信给你。"
+message "把情书交给阿军"
+usegoods 14 3 没情书
+say 0 "阿军:多谢你这么远来送信，我这里有三把钥匙，是我研究多年所制，就算是薄谢吧。"
+setevent 264
+say 1 "客气了。"
+gaingoods 14 2
+gaingoods 14 2
+gaingoods 14 2
+callback
+想回家:
+say 0 "阿军:好久没回家了,该回去看看了."
+callback
+
+没情书:
+message "没此物品"
+callback
+
+gutevent 1 阿军话
+gutevent 41 建业城

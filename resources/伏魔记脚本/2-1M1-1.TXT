@@ -1,0 +1,148 @@
+@三清宫
+
+FIGHTDISENABLE
+CREATEBOX 10 1 19 43
+CREATEBOX 12 2 21 43
+CREATEBOX 13 3 25 43
+SETSCENENAME "三清宫"
+SHOWSCENENAME
+
+CREATENPC 1 11 12 7
+CREATENPC 2 12 17 22
+CREATENPC 3 13 23 22
+CREATENPC 4 14 25 27
+CREATENPC 5 15 23 23
+CREATENPC 6 16 38 34
+CREATENPC 7 17 31 17
+CREATENPC 8 18 18 11
+
+@CREATEBOX 4 4 7  10
+@CREATEBOX 5 4 33 10
+callback
+
+三清山道:
+@setevent 25	@调试用
+if 25 步云桥
+if 21 下山
+if 19 见师父
+if 1 见师父
+say 1 "还是先去取伏魔剑吧！"
+callback
+见师父:
+say 1 "见师父去。"
+callback
+下山:
+say 1 "终于可以下山了，哈哈……"
+setevent 25
+步云桥:
+DELALLNPC
+loadmap 1 8 0 1
+STARTCHAPTER 2 31
+callback
+
+百草地:
+DELALLNPC
+loadmap 1 2 14 8
+STARTCHAPTER 2 12
+callback
+
+无机阁:
+DELALLNPC
+loadmap 2 7 8 17
+STARTCHAPTER 2 2
+callback
+
+三清宫药房:
+DELALLNPC
+loadmap 2 9 5 8
+STARTCHAPTER 2 3
+callback
+
+三清宫丹房:
+DELALLNPC
+loadmap 2 6 6 13
+STARTCHAPTER 2 4
+callback
+
+师傅居:
+DELALLNPC
+loadmap 2 1 11 7
+STARTCHAPTER 2 5
+callback
+
+普通弟子居1:
+DELALLNPC
+loadmap 2 4 1 5
+STARTCHAPTER 2 6
+callback
+
+大师兄居:
+DELALLNPC
+loadmap 2 2 12 7
+STARTCHAPTER 2 7
+callback
+
+普通弟子居2:
+DELALLNPC
+loadmap 2 4 1 5
+STARTCHAPTER 2 8
+callback
+
+清风居:
+DELALLNPC
+loadmap 2 3 12 7
+STARTCHAPTER 2 10
+callback
+
+三清宫厨房:
+DELALLNPC
+loadmap 2 5 1 6
+STARTCHAPTER 2 11
+callback
+
+游人1:
+say 0 "这里好大哦，我要小心点，不然要迷路。"
+callback
+游人2:
+say 0 "三清宫风景的确一流。"
+callback
+游人3:
+say 0 "清幽脱俗，不愧为道家圣地。"
+callback
+游人4:
+say 0 "听说这里的神仙很灵，有求必应。"
+callback
+游人5:
+say 0 "据说无机道人是道仙转世，今日一见，果然一副仙像。"
+callback
+游人6:
+say 0 "听说三清山的山门是名匠所琢，果然非凡。"
+callback
+游人7:
+say 0 "这里环境这么好，在这里住应该会长寿。"
+callback
+游人8:
+say 0 "世人只顾烟火起，吾自壬外云雾出；此身虽属归俗尘，但心无意凡土中……"
+callback
+
+
+gutevent 1 游人1
+gutevent 2 游人2
+gutevent 3 游人3
+gutevent 4 游人4
+gutevent 5 游人5
+gutevent 6 游人6
+gutevent 7 游人7
+gutevent 8 游人8
+
+gutevent 41 三清山道
+gutevent 42 百草地
+gutevent 43 无机阁
+gutevent 44 三清宫药房
+gutevent 45 三清宫丹房
+gutevent 46 师傅居
+gutevent 47 普通弟子居1
+gutevent 48 大师兄居
+gutevent 49 普通弟子居2
+gutevent 50 清风居
+gutevent 51 三清宫厨房

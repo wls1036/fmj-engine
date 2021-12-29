@@ -1,0 +1,31 @@
+@北海
+
+if 245 不能下海
+if 242 不能下海
+if 238 可以下海
+goto 不能下海
+可以下海:
+createbox 1 27 10 2
+不能下海:
+SETSCENENAME "北海"
+callback
+
+原野阡:
+setevent 106
+loadmap 1 22 0 1
+STARTCHAPTER 6 2
+callback
+
+北海迷宫:
+say 1 "有旋涡，这样我们就可以下海去了。"
+loadmap 3 10 9 5
+STARTCHAPTER 13 1
+callback
+海水:
+say 1 "这里海水比重这么大，就是石头也难下沉，更别说是人了。"
+callback
+
+gutevent 1 北海迷宫
+gutevent 41 原野阡
+gutevent 42 海水
+

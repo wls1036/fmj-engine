@@ -1,0 +1,121 @@
+@北海龙潭
+
+createbox 1 28 7 5
+createbox 2 29 28 5
+NPCMOVEMOD 1 0
+NPCMOVEMOD 2 0
+SETSCENENAME "北海龙潭"
+SHOWSCENENAME
+callback
+
+战蛟龙:
+if 245 战胜苍龙
+if 243 是否龙
+goto 蛟未死
+是否龙:
+if 244 大战蛟龙
+蛟未死:
+callback
+大战蛟龙:
+ENTERFIGHT 0 35 36 0 2 112 32 0 0 0 35 0 0 lossto 打败蛟龙
+打败蛟龙:
+say 1 "功夫这么菜，也敢自称蛟龙。"
+ENTERFIGHT 0 0 41 0 2 112 32 0 7 0 36 37 0 lossto 打败苍龙
+打败苍龙:
+setevent 245
+gaingoods 14 8
+战胜苍龙:
+callback
+
+发现蛟:
+say 1 "这只蜥蜴好奇怪哦！!$#@$%!!"
+ENTERFIGHT 0 0 35 0 2 112 32 0 5 0 30 31 0 lossto 打败蛟
+打败蛟:
+say 0 "北海蛟:你们等着，我还!@#$!#!$#!@@#$!"
+setevent 243
+deletenpc 1
+SHOWSCREEN
+callback
+
+发现龙:
+say 2 "好可爱的小狗哦。"
+ENTERFIGHT 0 0 36 0 2 112 32 0 5 0 32 33 0 lossto 打败龙
+打败龙:
+say 0 "北海龙:你们给我记住，我不会@#$!#!$#!@@#$!"
+setevent 244
+deletenpc 2
+callback
+
+lossto:
+gameover
+callback
+
+蛟话1:
+if 244 龙已败
+say 0 "北海蛟:什么，你敢说我北海蛟是蜥蜴，说什么我也要跟你理论理论……"
+say 1 "哇，我好怕怕……"
+say 0 "北海蛟:哼，怕了吧，怕也没用，我要割了你的舌头。"
+say 1 "我怕你太大了，我们吃不完哦，哈哈……"
+say 0 "北海蛟:气死我了。"
+callback
+龙已败:
+say 0 "北海蛟:什么，你说我龙兄弟是狗也就算了，不跟你计较，你还敢侮辱我，你是找死。"
+say 1 "哎，又一个，真烦……"
+callback
+蛟话2:
+say 0 "北海蛟:知道我的厉害了吧。"
+say 1 "哎，看来真的吃不完了。"
+say 0 "北海蛟:!@#$!#$!@#$!@#$"
+callback
+龙话1:
+if 243 蛟已败
+say 0 "北海龙:什么，你敢说我北海蛟是小狗，说什么我也要跟你理论理论……"
+say 1 "哇，我好怕怕……"
+say 0 "北海龙:哼，怕了吧，怕也没用，我要割了你的舌头。"
+say 1 "我怕你太大了，我们吃不完哦，哈哈……"
+say 0 "北海龙:气死我了。"
+callback
+蛟已败:
+say 0 "北海龙:什么，你说我蛟兄弟是蜥蜴也就算了，不跟你计较，你还敢侮辱我是狗，你是找死。"
+say 1 "哎，又一个，真烦……"
+callback
+龙话2:
+say 0 "北海龙:侮辱我的无论是人还是魔，从来都没有好下场。"
+say 1 "那就看谁功夫硬吧！"
+callback
+蛟龙话:
+say 0 "北海蛟:刚才你们趁我们分开打败了我们,我们不服气。"
+say 0 "北海龙:现在我们一起来。"
+say 1 "放马过来吧！"
+callback
+
+苍龙话1:
+say 0 "苍龙:哈哈哈哈……我没有估计错你们的实力，能打败白虎，应该也不会输给我的蛟护院和龙护院才对。不过，你们想战胜我是不可能的。让你们尝尝我的血雨大法。"
+say 1 "终于来了个称头的。"
+callback
+苍龙话2:
+say 0 "苍龙:还真有点水平，可惜，你们是打不过我的。"
+callback
+
+回北海面:
+if 245 出去
+goto 苍龙未死
+出去:
+loadmap 1 45 6 0
+STARTCHAPTER 6 14
+苍龙未死:
+callback
+
+
+gutevent 1 发现蛟
+gutevent 2 发现龙
+gutevent 30 蛟话1
+gutevent 31 蛟话2
+gutevent 32 龙话1
+gutevent 33 龙话2
+gutevent 35 蛟龙话
+gutevent 36 苍龙话1
+gutevent 37 苍龙话2
+gutevent 43 战蛟龙
+gutevent 255 回北海面
+

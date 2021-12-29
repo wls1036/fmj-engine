@@ -1,0 +1,22 @@
+@炼丹房
+
+createbox 21 18 12 2
+SETSCENENAME "炼丹房"
+callback
+
+钟山道院:
+delallnpc
+loadmap 1 44 12 1
+STARTCHAPTER 8 1
+callback
+
+宝箱1:
+if 1067 宝箱1开
+GAINGOODS 12 1
+setevent 1067
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 钟山道院
+

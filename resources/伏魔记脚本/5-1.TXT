@@ -1,0 +1,231 @@
+@石梦城
+
+
+createbox 22 18 40 26
+CREATENPC 5 15 4 8
+CREATENPC 6 16 11 7
+CREATENPC 7 17 8 22
+CREATENPC 8 18 40 23
+CREATENPC 9 13 22 25
+CREATENPC 10 14 25 10
+if 209 打败门卫
+CREATENPC 1 10 28 10
+NPCMOVEMOD 1 0
+NPCSTEP 1 3 0
+CREATENPC 2 10 28 11
+NPCMOVEMOD 2 0
+NPCSTEP 2 3 0
+打败门卫:
+if 212 得知密道
+CREATEBOX 21 10 41 4
+得知密道:
+SETSCENENAME "石梦城"
+SHOWSCENENAME
+callback
+
+
+转折路口:
+delallnpc
+setevent 102
+loadmap 1 30 8 0
+STARTCHAPTER 2 50
+callback
+老王家:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 5 2
+callback
+药店:
+delallnpc
+loadmap 2 9 6 9
+STARTCHAPTER 5 3
+callback
+民宅1:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 5 4
+callback
+民宅2:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 5 5
+callback
+民宅3:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 5 6
+callback
+杂货店:
+delallnpc
+loadmap 2 16 5 0
+STARTCHAPTER 5 7
+callback
+民宅4:
+delallnpc
+loadmap 2 13 12 0
+STARTCHAPTER 5 8
+callback
+当铺:
+delallnpc
+loadmap 2 19 6 0
+STARTCHAPTER 5 9
+callback
+客栈:
+delallnpc
+loadmap 2 21 6 9
+STARTCHAPTER 5 10
+callback
+武器店:
+delallnpc
+loadmap 2 17 4 9
+STARTCHAPTER 5 11
+callback
+民宅5:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 5 12
+callback
+鲁斧家:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 5 13
+callback
+李俯西厢房:
+delallnpc
+loadmap 2 25 6 11
+STARTCHAPTER 5 14
+callback
+李俯客厅:
+delallnpc
+loadmap 2 20 6 12
+STARTCHAPTER 5 15
+callback
+李俯东厢房:
+if 1130 得钥匙
+goto 未得钥匙
+得钥匙:
+CHOICE "取消" "使用钥匙" 使用钥匙
+未得钥匙:
+callback
+使用钥匙:
+usegoods 14 4 没有钥匙
+delallnpc
+loadmap 2 25 7 11
+STARTCHAPTER 5 16
+callback
+没有钥匙:
+message "没有钥匙"
+callback
+李俯密道:
+delallnpc
+loadmap 3 10 0 1
+STARTCHAPTER 5 17
+callback
+李俯下人房:
+delallnpc
+loadmap 2 4 0 5
+STARTCHAPTER 5 18
+callback
+李俯厨房:
+delallnpc
+loadmap 2 5 0 6
+STARTCHAPTER 5 19
+callback
+李俯下房:
+delallnpc
+loadmap 2 15 8 0
+STARTCHAPTER 5 20
+callback
+
+李虎门卫:
+if 208 开打
+say 0 "这里不是玩的地方，到别处去！"
+callback
+开打:
+say 0 "谁要是敢在这里撒野，他的腿就要被打断！"
+say 1 "这两条狗还挺凶的@#%@#!@#"
+ENTERFIGHT 0 6 7 0 1 111 31 0 0 0 39 0 0 lossto winto
+lossto:
+gameover
+winto:
+setevent 209
+DELETENPC 1
+DELETENPC 2
+say 1 "哼，收拾你们还不是小菜一碟。"
+callback
+对骂:
+say 0 "门卫一:小子，想死是吧，我成全你。"
+say 0 "门卫二:把那小妞送给霸爷。"
+say 1 "小梅，不用怕，这两个小意思。"
+say 3 "嗯，不要跟他们多说，打狗。"
+callback
+
+闯李俯:
+if 210 无战斗
+INITFIGHT 6 7 8 0 0 0 0 0 1 111 31
+无战斗:
+callback
+
+出李俯:
+FIGHTDISENABLE
+callback
+游人1:
+say 0 "有空来城里玩玩也不错。"
+callback
+游人2:
+say 0 "城里就是繁华。"
+callback
+say 0 "不知道哪里有卖花。"
+游人3:
+say 0 "今年的雨水不错，应该有个好收成。"
+callback
+游人4:
+say 0 "这座城中有一户大宅，是李虎的府上。"
+callback
+游人5:
+say 0 "得饶人处且饶人，你会有好报的。"
+callback
+游人6:
+say 0 "非淡泊无以明志，非宁静无以至远。"
+callback
+
+宝箱1:
+if 1059 宝箱1开
+GAINGOODS 8 6
+setevent 1059
+宝箱1开:
+callback
+
+gutevent 22 宝箱1
+gutevent 1 李虎门卫
+gutevent 2 李虎门卫
+gutevent 5 游人1
+gutevent 6 游人2
+gutevent 7 游人3
+gutevent 8 游人4
+gutevent 9 游人5
+gutevent 10 游人6
+gutevent 39 对骂
+gutevent 41 转折路口
+gutevent 42 老王家
+gutevent 43 药店
+gutevent 44 民宅1
+gutevent 45 民宅2
+gutevent 46 民宅3
+gutevent 47 杂货店
+gutevent 48 民宅4
+gutevent 49 当铺
+gutevent 50 客栈
+gutevent 51 武器店
+gutevent 52 民宅5
+gutevent 53 鲁斧家
+gutevent 54 李俯西厢房
+gutevent 55 李俯客厅
+gutevent 56 李俯东厢房
+gutevent 57 李俯密道
+gutevent 58 李俯下人房
+gutevent 59 李俯厨房
+gutevent 60 李俯下房
+gutevent 61 闯李俯
+gutevent 62 出李俯
+

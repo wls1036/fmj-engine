@@ -1,0 +1,48 @@
+@蔡婆家
+
+CREATEBOX 21 18 15 3
+CREATENPC 1 8 15 5
+SETSCENENAME "蔡婆家"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 6 5
+STARTCHAPTER 3 1
+callback
+
+蔡大妈:
+if 222 送完宝
+if 214 得救
+if 207 答应救人
+setevent 207
+say 0 "我的女儿啊……现在剩下我一个老人家，孤苦伶仃的，不如死了一了百了！"
+say 1 "婆婆请不要轻生，我愿将你女儿救出。"
+say 0 "那李虎是城中恶霸，打手上百人，你还是别去送死了。"
+say 1 "婆婆不要当心，我功夫很好的。不是我吹牛，别说上百人，就是上千人我也能顷刻撂倒。"
+say 0 "真的！如能救出小女，我愿不惜任何代价！拜托了，道长。"
+答应救人:
+say 0 "拜托了"
+callback
+得救:
+setevent 222
+say 0 "哎呀，恩公，你来啦，我女儿已经回来了，现在在他姨夫家住了。"
+say 0 "我有件家传之宝，送给恩公,请不要嫌弃。"
+GAINGOODS 6 17
+say 1 "多谢了。"
+callback
+送完宝:
+say 0 "有空多来坐坐。"
+callback
+
+宝箱1:
+if 1041 宝箱1开
+GAINGOODS 12 4
+setevent 1041
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 1 蔡大妈
+gutevent 41 忘忧村
+

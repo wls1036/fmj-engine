@@ -1,0 +1,19 @@
+@杂货店
+
+CREATENPC 1 16 11 11
+NPCMOVEMOD 1 0
+SETSCENENAME "杂货店"
+callback
+
+石梦城:
+loadmap 1 37 1 6
+STARTCHAPTER 5 1
+callback
+买武器:
+facetoface 1 0
+say 0 "我这里有许多上好货物。"
+BUY "6001 6002 6003 6004 5001 5005 1001 1002 1007 1008 1009 3001 3002 3003 3007 3008 3009 8003 8008 8009 8010 8011 8012 8026 12003 12004"
+callback
+gutevent 41 石梦城
+gutevent 42 买武器
+

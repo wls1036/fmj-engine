@@ -1,0 +1,54 @@
+@小客栈
+
+createbox 21 18 10 2
+SETSCENENAME "小客栈"
+callback
+
+酆都城:
+loadmap 1 43 11 2
+STARTCHAPTER 11 1
+callback
+
+交易事件:
+if 247 打听
+say 0 "掌柜:客官是吃饭还是住店？"
+say 1 "不了，还早。"
+callback
+打听:
+say 1 "请问掌柜的，这里的人怎么有点象见了鬼似的？"
+say 0 "掌柜:客官还真是说对了，他们还真是被鬼吓的。"
+say 1 "哦……"
+say 0 "掌柜:客官有所不知，这里是酆都鬼城。这里的规矩是晚上绝对不能有人在街上行走，因为在这里是人占白天，鬼占黑夜，互不侵扰。但最近好象有些鬼白天也会出来，经常把人吓一跳。"
+say 1 "哦，是吗。掌柜的，我们今天就在这里住下了。"
+movie 1 3 0 0 0
+SHOWSCREEN
+message "天黑后"
+say 0 "掌柜:客官要去哪里？"
+say 1 "我们到处瞧瞧。"
+say 0 "掌柜:客官千万不要出去，现在外面全都不是人。我连店门都不开的。"
+say 1 "没事，我们只是找老友聊聊天。"
+movie 1 3 0 0 0
+loadmap 1 43 11 2
+STARTCHAPTER 11 10
+callback
+
+宝箱1:
+if 1095 宝箱1开
+CHOICE "取消" "使用万能钥匙" 打开
+callback
+没有钥匙:
+message "没有钥匙"
+callback
+打开:
+usegoods 14 2 没有钥匙
+GAINGOODS 14 6
+setevent 2009
+setevent 1095
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 酆都城
+gutevent 43 交易事件
+
+

@@ -1,0 +1,90 @@
+@原野陌
+
+INITFIGHT 2 3 2 3 2 3 2 3 2 112 32
+SETSCENENAME "原野陌"
+callback
+
+
+上出口:
+FIGHTDISENABLE
+if 101 转折路口2下
+if 102 忘忧村下
+if 103 转折路口2下-
+if 104 转折路口5下
+if 105 原野陌2下
+callback
+转折路口2下:
+@clrevent 101
+@setevent 101
+loadmap 1 27 7 10
+STARTCHAPTER 2 48
+callback
+忘忧村下:
+clrevent 102
+loadmap 1 23 1 24
+if 254 最后回村
+STARTCHAPTER 3 1
+callback
+最后回村:
+STARTCHAPTER 3 13
+callback
+转折路口2下-:
+clrevent 103
+setevent 102
+loadmap 1 27 7 10
+STARTCHAPTER 2 48
+callback
+转折路口5下:
+clrevent 104
+setevent 102
+loadmap 1 30 8 15
+STARTCHAPTER 2 50
+callback
+原野陌2下:
+clrevent 105
+setevent 102
+loadmap 1 22 0 26
+STARTCHAPTER 2 46
+callback
+
+
+下出口:
+FIGHTDISENABLE
+if 101 转折路口3上
+if 102 原野陌5上
+if 103 转折路口3上-
+if 104 转折路口1上
+if 105 转折路口5上
+callback
+转折路口3上:
+@clrevent 101
+@setevent 101
+loadmap 1 28 0 0
+STARTCHAPTER 2 49
+callback
+原野陌5上:
+clrevent 102
+setevent 105
+loadmap 1 22 0 0
+STARTCHAPTER 2 46
+callback
+转折路口3上-:
+clrevent 103
+setevent 102
+loadmap 1 28 0 0
+STARTCHAPTER 2 49
+callback
+转折路口1上:
+clrevent 104
+loadmap 1 26 6 0
+STARTCHAPTER 2 51
+callback
+转折路口5上:
+clrevent 105
+setevent 101
+loadmap 1 30 8 0
+STARTCHAPTER 2 50
+callback
+
+gutevent 41 下出口
+gutevent 42 上出口

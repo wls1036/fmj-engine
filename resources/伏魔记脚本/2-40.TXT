@@ -1,0 +1,68 @@
+@歇息台子5
+
+if 101 开闭18
+if 105 开闭26
+if 108 开闭28
+开闭18:
+if 74 箱子开
+goto 箱子
+开闭26:
+if 252 回马枪箱
+goto 箱子开
+回马枪箱:
+if 75 箱子开
+goto 箱子
+开闭28:
+if 76 箱子开
+箱子:
+CREATEBOX 1 9 4 5
+箱子开:
+SETSCENENAME "歇息台子"
+callback
+
+下出口:
+delallnpc
+if 101 台3上
+if 105 竖桥2上
+if 108 台11上
+callback
+台3上:
+clrevent 101
+setevent 103
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+竖桥2上:
+clrevent 105
+setevent 102
+loadmap 1 11 0 1
+STARTCHAPTER 2 35
+callback
+台11上:
+clrevent 108
+setevent 111
+loadmap 1 15 4 1
+STARTCHAPTER 2 38
+callback
+
+宝箱:
+deletenpc 1
+if 101 开18
+if 105 开26
+if 108 开28
+callback
+开18:
+setevent 74
+GAINGOODS 4 3
+callback
+开26:
+setevent 75
+GAINGOODS 5 4
+callback
+开28:
+setevent 76
+GAINGOODS 7 24
+callback
+
+gutevent 1 宝箱
+gutevent 41 下出口

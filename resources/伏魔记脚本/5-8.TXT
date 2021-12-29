@@ -1,0 +1,12 @@
+@民宅4
+
+SETSCENENAME "民宅4"
+callback
+
+石梦城:
+loadmap 1 37 9 6
+STARTCHAPTER 5 1
+callback
+
+gutevent 41 石梦城
+

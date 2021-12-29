@@ -1,0 +1,12 @@
+@民宅2
+
+SETSCENENAME "民宅2"
+callback
+
+建业城:
+delallnpc
+loadmap 1 39 7 12
+STARTCHAPTER 7 1
+callback
+
+gutevent 41 建业城

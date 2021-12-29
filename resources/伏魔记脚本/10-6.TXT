@@ -1,0 +1,17 @@
+@药店
+
+SETSCENENAME "药店"
+callback
+
+南北村:
+loadmap 1 23 17 12
+STARTCHAPTER 10 1
+交易事件:
+say 0 "我这里的药材都是我亲自采办的，保证质量。"
+buy "9003 9004 9010 9011 9021 9025 9026 12002 12006 8022 8027 8018"
+callback
+
+
+gutevent 41 南北村
+gutevent 42 交易事件
+

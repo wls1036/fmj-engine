@@ -1,0 +1,16 @@
+@当铺
+
+SETSCENENAME "当铺"
+callback
+
+石梦城:
+loadmap 1 37 14 6
+STARTCHAPTER 5 1
+callback
+当货:
+say 0 "我这里是最公道的。"
+sale
+callback
+gutevent 41 石梦城
+gutevent 42 当货
+

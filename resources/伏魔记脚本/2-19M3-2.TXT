@@ -1,0 +1,54 @@
+@灯洞1
+
+CREATEBOX 21 9 6 5
+SETSCENENAME "灯洞1"
+SHOWSCENENAME
+CREATEBOX 1 7 12 6
+CREATEBOX 2 11 4 3
+CREATEBOX 3 10 20 3
+NPCSTEP 2 0 0
+if 11 灯灭
+callback
+灯灭:
+NPCMOVEMOD 1 0
+NPCSTEP 1 0 0
+callback
+
+战护灯兽:
+if 11 已战胜
+ENTERFIGHT 0 0 10 0 2 112 32 0 0 0 10 0 0 lost win
+lost:
+gameover
+callback
+win:
+say 1 "搞定灯一。"
+setevent 11
+NPCMOVEMOD 1 0
+NPCSTEP 1 0 0
+已战胜:
+callback
+
+护灯兽话:
+say 0 "护灯兽一：谁在这里撒野。"
+callback
+
+伏魔洞:
+delallnpc
+loadmap 3 1 21 18
+STARTCHAPTER 2 18
+callback
+
+宝箱3:
+if 1022 宝箱3开
+GAINMONEY 100
+deletebox 21
+setevent 1022
+宝箱3开:
+callback
+
+gutevent 21 宝箱3
+gutevent 1 战护灯兽
+gutevent 10 护灯兽话
+gutevent 41 伏魔洞
+
+

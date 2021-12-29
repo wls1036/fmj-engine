@@ -1,0 +1,12 @@
+@民宅1
+
+SETSCENENAME "民宅"
+callback
+
+南北村:
+loadmap 1 23 2 11
+STARTCHAPTER 10 1
+
+
+gutevent 41 南北村
+

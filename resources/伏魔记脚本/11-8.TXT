@@ -1,0 +1,13 @@
+@民宅2
+
+SETSCENENAME "民宅"
+callback
+
+酆都城:
+loadmap 1 43 13 2
+STARTCHAPTER 11 1
+callback
+
+gutevent 41 酆都城
+
+

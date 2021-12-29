@@ -1,0 +1,55 @@
+@鹤鸣山入口
+
+createbox 1 23 13 7
+createnpc 2 13 13 6
+createnpc 3 14 12 7
+NPCMOVEMOD 2 0
+NPCMOVEMOD 3 0
+NPCSTEP 2 2 0
+NPCSTEP 3 1 0
+createnpc 4 15 7 6
+createnpc 5 16 6 9
+say 1 "这里是村落吗，为何景象如此苍凉……"
+SETSCENENAME "鹤鸣山脚"
+SHOWSCENENAME
+callback
+
+原野陌:
+if 250 杀上山
+setevent 108
+loadmap 1 22 0 0
+STARTCHAPTER 6 2
+callback
+杀上山:
+say 1 "还等什么，直接上山！"
+callback
+竖桥:
+setevent 101
+loadmap 1 11 0 34
+STARTCHAPTER 14 2
+callback
+
+村民死:
+say 0 "村民甲:那些妖怪三天两头的来一次，可能下次躺在地上的就是我们了。"
+say 0 "村民乙:哎，真是老天无眼啊……"
+say 3 "魔族太过分了。"
+say 2 "我们杀上山去！"
+say 1 "好！"
+setevent 250
+callback
+村民1:
+say 0 "村民:怎么办，怎么办？那些妖怪肯定会……"
+callback
+村民2:
+say 0 "村民:死定了，还是逃吧……"
+callback
+
+gutevent 1 村民死
+gutevent 2 村民死
+gutevent 3 村民死
+gutevent 4 村民1
+gutevent 5 村民2
+gutevent 41 原野陌
+gutevent 42 竖桥
+
+

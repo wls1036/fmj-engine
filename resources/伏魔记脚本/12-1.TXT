@@ -1,0 +1,27 @@
+@南山入口
+
+SETSCENENAME "南山入口"
+callback
+
+转折路口3:
+setevent 101
+loadmap 1 28 7 9
+STARTCHAPTER 6 6
+callback
+南山迷宫:
+say 1 "哇，好大的腥味@#$!#"
+say 2 "我觉得有点反胃。"
+if 238 白虎已死
+if 236 进迷宫
+白虎已死:
+callback
+进迷宫:
+loadmap 3 7 12 13
+STARTCHAPTER 12 2
+callback
+
+
+gutevent 41 转折路口3
+gutevent 42 南山迷宫
+
+

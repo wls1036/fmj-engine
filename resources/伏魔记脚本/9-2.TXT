@@ -1,0 +1,45 @@
+@老宅子
+
+SETSCENENAME "老宅子"
+createbox 1 19 5 5
+NPCSTEP 1 0 1
+if 231 正常
+if 230 冒烟
+goto 正常
+冒烟:
+createbox 2 25 17 4
+createbox 3 26 18 4
+正常:
+callback
+
+白水镇:
+if 231 出老宅
+goto 到处看
+出老宅:
+loadmap 1 42 8 18
+STARTCHAPTER 9 1
+callback
+到处看:
+say 2 "我们先四处查看查看吧？"
+say 1 "好。"
+callback
+
+老宅主房:
+loadmap 2 13 12 0
+STARTCHAPTER 9 11
+callback
+
+枯井迷宫:
+say 1 "这口井有点古怪。"
+say 2 "声音好象是从井里传出来的。"
+say 1 "下去看看。"
+loadmap 3 10 10 18
+STARTCHAPTER 9 12
+callback
+
+gutevent 2 枯井迷宫
+gutevent 3 枯井迷宫
+gutevent 41 白水镇
+gutevent 42 老宅主房
+
+

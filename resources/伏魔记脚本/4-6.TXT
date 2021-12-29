@@ -1,0 +1,172 @@
+@蛇窟山洞
+
+CREATEBOX 21 9 9 6
+CREATEBOX 22 9 11 6
+CREATEBOX 23 9 13 6
+CREATEBOX 24 9 15 6
+CREATEBOX 25 9 17 6
+CREATEBOX 26 9 10 11
+CREATEBOX 27 9 12 11
+CREATEBOX 28 9 14 11
+CREATEBOX 29 9 16 11
+CREATEBOX 30 9 21 36
+
+if 1046 1已开
+goto 1未开
+1已开:
+deletebox 21
+1未开:
+if 1047 2已开
+goto 2未开
+2已开:
+deletebox 22
+2未开:
+if 1048 3已开
+goto 3未开
+3已开:
+deletebox 23
+3未开:
+if 1049 4已开
+goto 4未开
+4已开:
+deletebox 24
+4未开:
+if 1050 5已开
+goto 5未开
+5已开:
+deletebox 25
+5未开:
+if 1051 6已开
+goto 6未开
+6已开:
+deletebox 26
+6未开:
+if 1052 7已开
+goto 7未开
+7已开:
+deletebox 27
+7未开:
+if 1053 8已开
+goto 8未开
+8已开:
+deletebox 28
+8未开:
+if 1054 9已开
+goto 9未开
+9已开:
+deletebox 29
+9未开:
+if 1055 10已开
+goto 10未开
+10已开:
+deletebox 30
+10未开:
+
+INITFIGHT 12 13 15 16 15 15 15 15 2 112 32
+SETSCENENAME "蛇窟山洞"
+callback
+
+人蛇窟入口:
+loadmap 1 35 7 0
+STARTCHAPTER 4 5
+callback
+
+蛇窟山洞2:
+loadmap 3 7 16 1
+STARTCHAPTER 4 7
+callback
+
+蛇窟隐洞:
+if 1055 宝箱已拿
+setevent 1055
+loadmap 3 9 0 0
+STARTCHAPTER 4 10
+宝箱已拿:
+callback
+
+宝箱1:
+if 1046 宝箱1开
+GAINGOODS 8 8
+setevent 1046
+deletebox 21
+宝箱1开:
+callback
+宝箱2:
+if 1047 宝箱2开
+deletebox 22
+GAINGOODS 8 9
+setevent 1047
+宝箱2开:
+callback
+宝箱3:
+if 1048 宝箱3开
+deletebox 23
+GAINGOODS 8 10
+setevent 1048
+宝箱3开:
+callback
+宝箱4:
+if 1049 宝箱4开
+deletebox 24
+GAINGOODS 8 11
+setevent 1049
+宝箱4开:
+callback
+宝箱5:
+if 1050 宝箱5开
+deletebox 25
+GAINGOODS 8 12
+setevent 1050
+宝箱5开:
+callback
+宝箱6:
+if 1051 宝箱6开
+deletebox 26
+GAINGOODS 8 24
+setevent 1051
+宝箱6开:
+callback
+宝箱7:
+if 1052 宝箱7开
+deletebox 27
+GAINGOODS 8 27
+setevent 1052
+宝箱7开:
+callback
+宝箱8:
+if 1053 宝箱8开
+deletebox 28
+GAINGOODS 9 9
+setevent 1053
+宝箱8开:
+callback
+宝箱9:
+if 1054 宝箱9开
+deletebox 29
+GAINmoney 200
+setevent 1054
+宝箱9开:
+callback
+宝箱10:
+if 1055 宝箱10开
+deletebox 30
+GAINGOODS 11 3
+setevent 1055
+宝箱10开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 25 宝箱5
+gutevent 26 宝箱6
+gutevent 27 宝箱7
+gutevent 28 宝箱8
+gutevent 29 宝箱9
+gutevent 30 宝箱10
+gutevent 41 人蛇窟入口
+gutevent 42 蛇窟山洞2
+gutevent 43 蛇窟隐洞
+
+

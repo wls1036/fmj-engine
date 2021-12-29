@@ -1,0 +1,118 @@
+@蛇窟山洞3
+
+CREATEBOX 21 9 4 24
+CREATEBOX 22 18 11 2
+CREATEBOX 23 9 8 24
+CREATEBOX 24 9 25 27
+if 1331 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1333 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 23
+宝箱2未开:
+if 1334 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 24
+宝箱3未开:
+
+if 215 动石
+createbox 3 24 4 20
+createbox 2 10 13 6
+goto 正常
+动石:
+createbox 2 10 22 5
+正常:
+createbox 1 13 4 8
+SETSCENENAME "蛇窟山洞3"
+callback
+
+蛇窟山洞2:
+delallnpc
+loadmap 3 7 2 1
+STARTCHAPTER 4 7
+callback
+
+蛇窟宝洞:
+delallnpc
+loadmap 3 9 5 0
+STARTCHAPTER 4 9
+callback
+
+开打:
+if 215 打败蛇妖
+say 0 "蛇妖:我是叫你们天黑后将童男送到瘴气林口，你们现在来这里干嘛？"
+say 1 "老妖，看清楚，道爷我是来收拾你的！"
+ENTERFIGHT 0 0 5 0 2 112 32 0 6 0 39 40 0 lossto winto
+打败蛇妖:
+callback
+
+lossto:
+gameover
+callback
+winto:
+setevent 215
+say 0 "蛇妖:你们够狠，我要把你们封死在洞里。"
+movie 1 3 0 0 0
+deletenpc 3
+showscreen
+message "蛇妖逃走"
+deletenpc 2
+createbox 2 10 22 5
+say 1 "这回可麻烦了！"
+say 2 "到处看看吧。"
+callback
+
+对话:
+say 0 "蛇妖:呀，口气不小，正好有点饿了，拿你们当点心。"
+callback
+对话2:
+say 0 "蛇妖:看来这点心还不太容易吃到。"
+say 1 "小梅，柳大哥今晚请你吃蛇羹。"
+say 0 "蛇妖:小子还越来越狂了。"
+callback
+
+
+宝箱1:
+if 1331 宝箱1开
+deletebox 21
+GAINGOODS 11 15
+setevent 1331
+宝箱1开:
+callback
+宝箱2:
+if 1332 宝箱2开
+GAINGOODS 11 10
+setevent 1332
+宝箱2开:
+callback
+宝箱3:
+if 1333 宝箱3开
+deletebox 23
+GAINGOODS 11 11
+setevent 1333
+宝箱3开:
+callback
+宝箱4:
+if 1334 宝箱4开
+deletebox 24
+GAINGOODS 9 1
+setevent 1334
+宝箱4开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 39 对话
+gutevent 40 对话2
+gutevent 41 蛇窟山洞2
+gutevent 42 蛇窟宝洞
+gutevent 43 开打
+
+

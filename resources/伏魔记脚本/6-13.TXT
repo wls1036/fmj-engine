@@ -1,0 +1,29 @@
+@钟山入口
+
+if 219 正常
+STARTCHAPTER 8 11
+正常:
+SETSCENENAME "钟山入口"
+callback
+
+转折路口:
+if 224 下山
+if 219 支援
+下山:
+setevent 103
+loadmap 1 26 6 0
+STARTCHAPTER 6 4
+callback
+支援:
+say 1 "赶快上山支援！"
+callback
+
+竖桥:
+setevent 101
+loadmap 1 11 0 34
+STARTCHAPTER 6 8
+callback
+
+gutevent 41 转折路口
+gutevent 42 竖桥
+

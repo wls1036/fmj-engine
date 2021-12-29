@@ -1,0 +1,18 @@
+@武器店
+
+CREATENPC 1 14 12 10
+NPCMOVEMOD 1 0
+SETSCENENAME "武器店"
+callback
+
+白水镇:
+loadmap 1 42 12 3
+STARTCHAPTER 9 1
+callback
+交易事件:
+say 0 "武功高不一定有用，但是武器好定能占上风。"
+buy "7007 7008 7020 7021 7028 7029 4005 4006 2005 2010 2011 8004 8006 8020 8023 8024"
+callback
+
+gutevent 41 白水镇
+gutevent 42 交易事件

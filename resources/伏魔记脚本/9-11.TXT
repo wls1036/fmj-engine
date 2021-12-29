@@ -1,0 +1,21 @@
+@老宅主房
+
+createbox 1 16 19 11
+SETSCENENAME "老宅主房"
+callback
+
+老宅子:
+loadmap 1 24 3 7
+STARTCHAPTER 9 2
+callback
+
+老宅机关:
+if 230 机关已开
+setevent 230
+say 1 "外面好象有什么声音。"
+say 2 "好象哭声更大了。"
+机关已开:
+callback
+
+gutevent 1 老宅机关
+gutevent 41 老宅子

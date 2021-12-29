@@ -1,0 +1,17 @@
+@横桥
+
+SETSCENENAME "横桥"
+callback
+
+台子:
+loadmap 1 15 9 5
+STARTCHAPTER 6 9
+callback
+
+钟山道院:
+loadmap 1 44 0 4
+STARTCHAPTER 8 1
+callback
+
+gutevent 41 钟山道院
+gutevent 42 台子

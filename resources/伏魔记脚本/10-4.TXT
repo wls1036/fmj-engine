@@ -1,0 +1,19 @@
+@杂货店
+
+CREATENPC 1 16 11 11
+NPCMOVEMOD 1 0
+SETSCENENAME "杂货店"
+callback
+
+南北村:
+loadmap 1 23 2 7
+STARTCHAPTER 10 1
+交易事件:
+say 0 "现在世道不好，只能便宜点卖了。"
+buy "10002 12004 12005 8003 8007 8010 8026 1003 1004 1011 1012 6006 6007 6008 3005 3010 3011 9007"
+callback
+
+
+gutevent 41 南北村
+gutevent 42 交易事件
+

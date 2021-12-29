@@ -1,0 +1,72 @@
+@蛇窟山洞2
+
+CREATEBOX 21 9 9 5
+CREATEBOX 22 18 20 20
+CREATEBOX 23 9 8 9
+if 1057 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1058 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 23
+宝箱3未开:
+CREATEBOX 1 9 18 17
+if 89 宝箱已开
+goto 宝箱未开
+宝箱已开:
+deletebox 1
+宝箱未开:
+
+SETSCENENAME "蛇窟山洞2"
+callback
+
+蛇窟山洞1:
+loadmap 3 6 20 3
+STARTCHAPTER 4 6
+callback
+
+蛇窟山洞3:
+loadmap 3 8 21 1
+STARTCHAPTER 4 8
+callback
+
+宝箱:
+if 89 宝箱开
+setevent 89
+GAINGOODS 4 4
+deletenpc 1
+宝箱开:
+callback
+
+宝箱1:
+if 1056 宝箱1开
+deletebox 21
+GAINGOODS 9 2
+setevent 1056
+宝箱1开:
+callback
+宝箱2:
+if 1057 宝箱2开
+GAINGOODS 11 10
+setevent 1057
+宝箱2开:
+callback
+宝箱3:
+if 1058 宝箱3开
+deletebox 23
+GAINGOODS 11 14
+setevent 1058
+宝箱3开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 1 宝箱
+gutevent 41 蛇窟山洞1
+gutevent 42 蛇窟山洞3
+
+

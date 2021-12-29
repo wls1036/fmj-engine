@@ -1,0 +1,67 @@
+@蛇妖逃走后场景
+
+loadmap 1 32 0 10
+say 1 "怎么到了这里了。"
+say 2 "慕容小梅:这里是忘忧坟场，离忘忧村很近。"
+say 1 "不好，如果那老妖从这里出来，肯定到村里去了，快回去看看。"
+
+movie 1 3 0 0 0
+loadmap 1 23 8 4
+
+CREATEBOX 1 24 15 6
+CREATEBOX 2 23 15 7
+
+say 0 "蛇妖:竟敢找人来对付我，我要杀光所有人……"
+say 1 "住手——"
+CREATENPC 3 6  14 7
+NPCSTEP   1 1 1
+say 2 "啊！爹——"
+MESSAGE "慕容小梅昏倒了！"
+DELETEACTOR 2
+say 1 "我和你拼了！"
+ENTERFIGHT 0 0 5 0 2 112 32 0 0 0 0 0 0 lossto winto
+lossto:
+gameover
+callback
+winto:
+say 1 "小梅，醒醒！"
+delallnpc
+movie 1 3 0 0 0
+loadmap 1 32 10 5
+CREATENPC 1 6 14 6
+NPCSTEP 1 1 0
+NPCSTEP 0 0 0
+say 1 "小梅，不要太伤心，节哀……"
+say 0 "嗯.我会照顾自己的。"
+delallnpc
+movie 1 3 0 0 0
+loadmap 1 25 21 5
+CREATENPC 1 6 26 8
+CREATENPC 2 20 27 9
+NPCSTEP 1 3 0
+NPCSTEP 2 3 0
+NPCSTEP 0 1 0
+NPCMOVEMOD 1 0
+NPCMOVEMOD 2 0
+say 1 "我要回去复师命了，你们不用再送了。"
+say 2 "保重，以后要多回来看我们。"
+say 0 "小画家:柳大哥再见。"
+callback
+
+慕容小梅:
+say 2 "一路小心。"
+callback
+小画家:
+say 0 "小画家:柳大哥再见。"
+callback
+
+回山:
+delallnpc
+loadmap 1 20 22 7
+STARTCHAPTER 2 43
+callback
+
+gutevent 1 慕容小梅
+gutevent 2 小画家
+gutevent 42 回山
+

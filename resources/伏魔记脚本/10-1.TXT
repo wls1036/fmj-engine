@@ -1,0 +1,215 @@
+@南北村
+
+createbox 21 18 20 22
+createbox 22 18 22 16
+createbox 23 18 4 11
+
+createnpc 3 14 17 6
+createnpc 4 15 17 8
+createnpc 5 16 11 11
+createnpc 6 17 19 17
+createnpc 7 18 20 17
+NPCMOVEMOD 6 0
+NPCMOVEMOD 7 0
+facetoface 6 7
+
+createbox 1 19 10 7
+NPCSTEP 1 0 0
+createbox 2 20 10 6
+NPCSTEP 2 0 2
+SETSCENENAME "南北村"
+SHOWSCENENAME
+callback
+
+酆都阡:
+if 246 去酆都
+if 245 没得重谢
+goto 到处看看
+去酆都:
+delallnpc
+setevent 110
+loadmap 1 21 23 0
+STARTCHAPTER 6 1
+callback
+白水阡:
+if 246 往前走
+delallnpc
+setevent 109
+loadmap 1 21 0 0
+STARTCHAPTER 6 1
+callback
+往前走:
+say 1 "还是往前走吧。"
+callback
+南山陌:
+delallnpc
+setevent 107
+loadmap 1 22 0 0
+STARTCHAPTER 6 2
+callback
+周处庙:
+if 235 找周公
+goto 到处看看
+找周公:
+delallnpc
+loadmap 1 36 5 1
+STARTCHAPTER 10 2
+callback
+北海陌:
+delallnpc
+setevent 106
+loadmap 1 22 0 26
+STARTCHAPTER 6 2
+callback
+武器店:
+delallnpc
+loadmap 2 17 4 9
+STARTCHAPTER 10 3
+callback
+杂货店:
+delallnpc
+loadmap 2 16 5 0
+STARTCHAPTER 10 4
+callback
+皮皮家:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 10 5
+callback
+药店:
+delallnpc
+loadmap 2 18 3 9
+STARTCHAPTER 10 6
+callback
+民宅2:
+delallnpc
+loadmap 2 12 11 0
+STARTCHAPTER 10 7
+callback
+民宅1:
+delallnpc
+loadmap 2 13 12 0
+STARTCHAPTER 10 8
+callback
+小客栈:
+delallnpc
+loadmap 2 26 6 9
+STARTCHAPTER 10 9
+callback
+
+村民1:
+say 0 "村民:这里是周公的故乡。我听说这村中藏有一件魔族至宝，特远道来寻。哎，可不想直到现在还没找到！"
+callback
+村民2:
+say 0 "村民:前几天周公显灵，说最近南北村将有血光之灾。"
+callback
+村民3:
+if 235 夸周公
+facetoface 5 0
+setevent 235
+say 0 "村民:周公显灵说村中将会有一男两女三个外人到来，只有他们才能化解这场灾难。"
+say 1 "一男两女？"
+say 0 "村民:咦，一男两女，你们不就是一男两女，周公真是灵验啊！"
+夸周公:
+say 0 "村民:周公真是灵验啊！"
+callback
+村民4:
+村民5:
+if 245 北海回
+if 241 送丹药
+if 240 救村民
+if 239 知村民昏迷
+if 238 村民昏迷
+say 0 "村民甲:周公显灵了，说我们有血光之灾。"
+say 0 "村民乙:我倒不怕，平日不做亏心事，夜半敲门也不惊。"
+callback
+村民昏迷:
+setevent 239
+say 0 "村民甲:刚才不知道从那里刮来的一阵醒风，好难闻哦。"
+say 0 "村民乙:可不是吗！村口有两个人被这股风给熏倒了，现在还在昏迷中呢！"
+say 1 "这死白虎，@@$%@#$%#%@#@#@#@#!!!"
+callback
+知村民昏迷:
+say 0 "村民甲:这世道，真是……哎……"
+callback
+救村民:
+facetoface 6 0
+facetoface 7 0
+setevent 241
+say 1 "两位，请问昏迷的村民现在怎么样了?"
+say 0 "村民甲:还是没醒，估计是凶多吉少。"
+say 1 "我这里有两颗丹药，给他们服用，可保性命。"
+usegoods 11 6 没有药
+usegoods 11 6 没有药
+送丹药:
+facetoface 6 0
+facetoface 7 0
+say 0 "村民乙:你们真是好人啊！"
+callback
+北海回:
+say 0 "村民乙:听说酆都是鬼城，不知是否真的是。"
+callback
+没有药:
+message "无此物品"
+callback
+
+
+到处看看:
+say 1 "到处看看再说。"
+callback
+没得重谢:
+say 1 "还没得到周处的重谢，这样走太可惜了吧……"
+callback
+
+宝箱1:
+if 1114 宝箱1开
+CHOICE "取消" "使用万能钥匙" 打开
+callback
+没有钥匙:
+message "没有钥匙"
+callback
+打开:
+usegoods 14 2 没有钥匙
+GAINGOODS 6 13
+say 3 "此物本为魔界的一大法宝，后在神魔大战时，被不遗落到了人间。"
+say 1 "你怎么对这个这么清楚?"
+say 3 "我……呃……这个……"
+say 2 "袁姐姐知道东西多，忘了很正常嘛。"
+setevent 1114
+宝箱1开:
+callback
+宝箱2:
+if 1115 宝箱2开
+GAINGOODS 9 8
+setevent 1115
+宝箱2开:
+callback
+宝箱3:
+if 1116 宝箱3开
+GAINGOODS 11 8
+setevent 1116
+宝箱3开:
+callback
+
+gutevent 21 宝箱1
+gutevent 21 宝箱1
+gutevent 21 宝箱1
+gutevent 3 村民1
+gutevent 4 村民2
+gutevent 5 村民3
+gutevent 6 村民4
+gutevent 7 村民5
+gutevent 41 酆都阡
+gutevent 42 白水阡
+gutevent 43 南山陌
+gutevent 44 周处庙
+gutevent 45 北海陌
+gutevent 46 武器店
+gutevent 47 杂货店
+gutevent 48 皮皮家
+gutevent 49 药店
+gutevent 50 民宅2
+gutevent 51 民宅1
+gutevent 52 小客栈
+
+

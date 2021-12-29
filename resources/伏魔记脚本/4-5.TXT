@@ -1,0 +1,18 @@
+@人蛇窟入口
+
+FIGHTDISENABLE
+SETSCENENAME "人蛇窟入口"
+callback
+
+
+森林道路2:
+loadmap 1 38 15 13
+STARTCHAPTER 4 4
+callback
+人蛇窟入口:
+loadmap 3 6 10 54
+STARTCHAPTER 4 6
+callback
+
+gutevent 41 森林道路2
+gutevent 42 人蛇窟入口

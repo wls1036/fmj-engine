@@ -1,0 +1,18 @@
+@疯子家
+
+CREATENPC 1 23 15 5
+SETSCENENAME "疯子家"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 17 16
+STARTCHAPTER 3 1
+callback
+
+疯子:
+say 0 "别人都叫我“疯子”，其实我很帅的！"
+callback
+gutevent 1 疯子
+gutevent 41 忘忧村
+

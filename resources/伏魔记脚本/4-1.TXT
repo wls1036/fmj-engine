@@ -1,0 +1,42 @@
+@毒瘴林入口
+
+CREATEBOX 21 18 11 4
+SETSCENENAME "毒瘴林入口"
+callback
+
+转折路口:
+setevent 101
+loadmap 1 30 8 15
+STARTCHAPTER 2 50
+callback
+
+
+森林道路:
+if 2000 芦藤雌甲
+无法进入:
+setevent 203
+say 1 "此处瘴气如此之重，根本不法进入！"
+callback
+芦藤雌甲:
+if 2001 芦藤雄甲
+goto 无法进入
+芦藤雄甲:
+loadmap 1 34 0 0
+STARTCHAPTER 4 3
+callback
+猎人居:
+loadmap 2 11 8 13
+STARTCHAPTER 4 2
+callback
+
+宝箱1:
+if 1045 宝箱1开
+GAINGOODS 9 17
+setevent 1045
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 41 转折路口
+gutevent 42 森林道路
+gutevent 43 猎人居

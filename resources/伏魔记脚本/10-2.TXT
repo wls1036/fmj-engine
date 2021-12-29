@@ -1,0 +1,54 @@
+@周处庙
+
+SETSCENENAME "周处庙"
+callback
+
+南北村:
+loadmap 1 23 12 23
+STARTCHAPTER 10 1
+周处显灵:
+if 246 最后显灵结束
+if 245 最后显灵
+if 240 第二次显灵结束
+if 239 第二次显灵
+if 236 第一次显灵结束
+createnpc 1 5 8 6
+NPCSTEP 1 0 0
+say 0 "周处:我待三位多时了。"
+say 3 "原来是周处。"
+say 0 "周处:根据最近我的推算，当初已经被我除去的南山白虎和北海苍龙，似有复活之象，但是此次与以往很不同，我的推算结果很杂乱，似有干扰。"
+say 0 "周处:我想让你们去搞清楚怎么回事，将来必有重谢。"
+setevent 236
+deletenpc 1
+第一次显灵结束:
+第二次显灵结束:
+最后显灵结束:
+callback
+第二次显灵:
+createnpc 1 5 8 6
+NPCSTEP 1 0 0
+say 0 "周处:我想三位应该已经除去了白虎。"
+say 1 "哼，你说话也不说清楚，是，白虎是除了，现在有两个村民受白虎的醒风袭击昏迷，你说怎么办。"
+say 0 "周处:哦，我这里有两颗无忧丹，你尽快给那两人服用，不然不但其性命不保，还可能引起瘟疫。"
+gaingoods 11 6
+gaingoods 11 6
+say 1 "这还差不多。"
+say 0 "周处:苍龙血雨与白虎醒风同样祸害人间，你们要尽快将其除去。"
+setevent 240
+deletenpc 1
+callback
+最后显灵:
+createnpc 1 5 8 6
+NPCSTEP 1 0 0
+say 0 "周处:三位果然守信，我代苍生谢你们。"
+say 1 "就只是谢吗，不是说要重谢吗？"
+say 0 "周处:我这里有本书，就送给三位吧。"
+gaingoods 6 18
+setevent 246
+deletenpc 1
+callback
+
+
+gutevent 41 南北村
+gutevent 42 周处显灵
+

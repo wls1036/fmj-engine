@@ -1,0 +1,49 @@
+@李俯下人房
+
+if 211 正常
+if 213 正常
+if 210 老王
+goto 正常
+老王:
+CREATENPC 1 13 5 13
+正常:
+SETSCENENAME "李俯下人房"
+callback
+
+石梦城:
+delallnpc
+loadmap 1 37 39 7
+STARTCHAPTER 5 1
+callback
+
+老王对话:
+say 0 "老王:我可是一个普通的下人，你别杀我好吗？"
+CHOICE "放走" "杀死" 杀死
+goto 放走
+杀死:
+say 2 "不要听他的鬼话，每次干坏事都是他带的路。"
+ENTERFIGHT 0 0 19 0 1 111 31 0 0 0 39 0 0 lossto winto
+lossto:
+gameover
+callback
+winto:
+setevent 213
+deletenpc 1
+say 1 "不知悔改，死不足惜！"
+callback
+放走:
+say 1 "你走吧，好自为之。"
+say 0 "多谢大侠！我家就住在石梦城，有事可以去找我。"
+movie 1 3 0 0 0
+deletenpc 1
+message "老王离开了"
+setevent 211
+callback
+
+老王战:
+say 0 "老王:老虎不发威，当我是病猫，我才不怕你们，放马过来吧！"
+callback
+gutevent 1 老王对话
+gutevent 39 老王战
+gutevent 41 石梦城
+

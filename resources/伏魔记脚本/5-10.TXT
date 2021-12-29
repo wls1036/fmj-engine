@@ -1,0 +1,12 @@
+@客栈
+
+SETSCENENAME "客栈"
+callback
+
+石梦城:
+loadmap 1 37 2 5
+STARTCHAPTER 5 1
+callback
+
+gutevent 41 石梦城
+

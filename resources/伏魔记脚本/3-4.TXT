@@ -1,0 +1,37 @@
+@东东家
+
+CREATEBOX 21 18 4 11
+CREATENPC 1 22 15 5
+SETSCENENAME "东东家"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 16 4
+STARTCHAPTER 3 1
+callback
+
+东东:
+if 216 妖怪已死
+if 205 妖怪
+setevent 205
+say 0 "最近蔡婆婆很是奇怪，老把自己关在房里。"
+callback
+妖怪:
+say 0 "东东:哎，最近妖魔太厉害了，搞得人心惶惶……"
+callback
+妖怪已死:
+say 0 "东东:妖怪死了，现在宽松多了，晚上也可以出去走走了。"
+callback
+
+宝箱1:
+if 1040 宝箱1开
+GAINGOODS 4 1
+setevent 1040
+宝箱1开:
+callback
+
+gutevent 21 宝箱1
+gutevent 1 东东
+gutevent 41 忘忧村
+

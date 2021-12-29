@@ -1,0 +1,19 @@
+@杂货店
+
+CREATENPC 1 16 11 11
+NPCMOVEMOD 1 0
+SETSCENENAME "杂货店"
+callback
+
+白水镇:
+loadmap 1 42 14 13
+STARTCHAPTER 9 1
+callback
+交易事件:
+facetoface 1 0
+say 0 "我这里虽小，但是好东西还是有的。"
+buy "10003 12004 12005 8009 8011 8012 1003 1004 1010 1011 6004 3004 3009 3010 9007 9022 9026"
+callback
+
+gutevent 41 白水镇
+gutevent 42 交易事件

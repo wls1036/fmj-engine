@@ -1,0 +1,40 @@
+@转折路口3
+
+SETSCENENAME "转折路口"
+callback
+
+上出口:
+if 101 原野陌7
+if 102 原野陌8
+callback
+原野陌7:
+clrevent 101
+setevent 107
+goto 原野陌
+原野陌8:
+clrevent 102
+setevent 108
+原野陌:
+loadmap 1 22 0 25
+STARTCHAPTER 6 2
+callback
+
+右出口:
+if 101 南山
+if 102 原野阡
+callback
+原野阡:
+clrevent 102
+setevent 113
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+
+南山:
+clrevent 101
+loadmap 1 35 0 11
+STARTCHAPTER 12 1
+callback
+
+gutevent 41 右出口
+gutevent 42 上出口

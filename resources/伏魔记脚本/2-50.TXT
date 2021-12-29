@@ -1,0 +1,88 @@
+@转折路口5
+
+SETSCENENAME "转折路口"
+if 254 回马枪
+callback
+回马枪:
+callback
+
+
+上出口:
+if 101 原野陌5下
+if 102 石梦城
+callback
+原野陌5下:
+clrevent 101
+setevent 105
+loadmap 1 22 0 26
+STARTCHAPTER 2 46
+callback
+石梦城:
+if 216 贪玩
+clrevent 102
+loadmap 1 37 5 24
+STARTCHAPTER 5 1
+callback
+
+
+下出口:
+if 101 毒瘴林
+if 102 原野陌4上
+callback
+毒瘴林:
+clrevent 101
+loadmap 1 33 1 0
+STARTCHAPTER 4 1
+callback
+原野陌4上:
+clrevent 102
+setevent 104
+loadmap 1 22 0 0
+STARTCHAPTER 2 46
+callback
+
+
+
+左出口:
+if 101 愚人居
+if 102 工地
+callback
+愚人居:
+if 254 无法回去
+clrevent 101
+loadmap 1 31 10 4
+STARTCHAPTER 2 52
+无法回去:
+callback
+工地:
+MESSAGE "前方施工中，行人止步！"
+callback
+
+右出口:
+if 101 忘忧坟场
+if 102 建业城
+callback
+忘忧坟场:
+clrevent 101
+loadmap 1 32 1 4
+STARTCHAPTER 2 53
+callback
+建业城:
+if 216 去钟山
+goto 贪玩
+去钟山:
+clrevent 102
+setevent 101
+loadmap 1 21 1 0
+STARTCHAPTER 6 1
+callback
+贪玩:
+say 1 "还是办正事要紧。"
+callback
+
+gutevent 41 左出口
+gutevent 42 上出口
+gutevent 43 右出口
+gutevent 44 下出口
+
+

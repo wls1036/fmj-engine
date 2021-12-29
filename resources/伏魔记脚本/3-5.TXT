@@ -1,0 +1,26 @@
+@老孟家
+
+CREATENPC 1 24 15 5
+SETSCENENAME "老孟家"
+callback
+
+忘忧村:
+delallnpc
+loadmap 1 23 17 12
+STARTCHAPTER 3 1
+callback
+
+老孟:
+if 201 送信
+say 0 "老孟:我男友阿军好久没回来看我了，我很想他，请你帮我带封信给他。"
+gaingoods 14 3
+say 1 "那他现在在哪里呢？"
+say 0 "他现在在建业城"
+setevent 201
+送信:
+say 0 "不知道他什么时候会回来。"
+callback
+
+gutevent 1 老孟
+gutevent 41 忘忧村
+

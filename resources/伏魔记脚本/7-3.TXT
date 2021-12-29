@@ -1,0 +1,20 @@
+@武器店
+CREATENPC 1 14 12 10
+NPCMOVEMOD 1 0
+SETSCENENAME "武器店"
+callback
+
+建业城:
+delallnpc
+loadmap 1 39 18 5
+STARTCHAPTER 7 1
+callback
+
+买武器:
+facetoface 1 0
+say 0 "我这里有许多上好武器。"
+BUY "7004 7005 7006 7018 7019 7020 7027 7028 7029 4003 4004 4005 4006 2003 2004 2009 2010 2011 8001 8002 8004 8005 8006 8017 8020 8029"
+callback
+
+gutevent 41 建业城
+gutevent 42 买武器

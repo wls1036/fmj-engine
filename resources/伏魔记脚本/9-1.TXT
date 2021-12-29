@@ -1,0 +1,213 @@
+@白水镇
+
+SETSCENENAME "白水镇"
+createbox 21 18 7 4
+@if 1077 宝箱1已开
+@goto 宝箱2开否
+@宝箱1已开:
+@deletebox 21
+@宝箱2开否:
+if 234 全镇正常
+if 227 镇长
+goto 守卫
+镇长:
+createnpc 3 26 12 19
+NPCMOVEMOD 3 0
+守卫:
+if 229 让路
+createnpc 1 14 11 20
+createnpc 2 15 12 20
+goto 守卫动作
+让路:
+createnpc 1 14 10 20
+createnpc 2 15 13 20
+守卫动作:
+NPCMOVEMOD 1 0
+NPCMOVEMOD 2 0
+if 232 镇长道谢
+if 233 全镇正常
+createnpc 10 13 12 9
+createnpc 11 14 4 9
+createnpc 12 15 17 15
+createnpc 13 16 7 12
+createnpc 14 17 8 15
+全镇正常:
+SHOWSCENENAME
+callback
+
+镇长道谢:
+facetoface 3 0
+say 0 "镇长:你们都回来了，没受伤吧。"
+say 1 "我们都没事。"
+say 0 "镇长:好好，里面情况如何？"
+say 1 "里面的妖魔已经被我我们给灭了，那些丢失的小孩被老妖放在老宅的枯井里，你们去把他们救出来，他们现在处于昏死状态，七天后他们就会苏醒过来。"
+say 0 "镇长:你们两个，去救人。"
+move 2 11 20
+move 2 11 24
+deletenpc 2
+move 1 11 20
+move 1 11 24
+deletenpc 1
+say 0 "镇长:几位是我镇的大恩人，小镇没什么好的物品招待，但请到寒舍喝杯茶。"
+say 1 "那就多谢了。"
+STARTCHAPTER 9 14
+callback
+
+原野阡:
+if 234 向北走 
+delallnpc
+setevent 107
+loadmap 1 21 0 0
+STARTCHAPTER 6 1
+callback
+向北走:
+say 1 "我们还是向北去追霸王钟吧。"
+callback
+
+老宅子:
+delallnpc
+loadmap 1 24 8 0
+STARTCHAPTER 9 2
+callback
+原野陌:
+if 234 出镇
+goto 先找找
+出镇:
+delallnpc
+setevent 105
+loadmap 1 22 0 26
+STARTCHAPTER 6 2
+callback
+先找找:
+say 1 "我们先在镇上找找。"
+callback
+武器店:
+delallnpc
+loadmap 2 17 4 9
+STARTCHAPTER 9 3
+callback
+村长家:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 9 4
+callback
+客栈:
+delallnpc
+loadmap 2 26 6 9
+STARTCHAPTER 9 5
+callback
+民宅1:
+delallnpc
+loadmap 2 11 8 13
+STARTCHAPTER 9 6
+callback
+药店:
+delallnpc
+loadmap 2 18 3 9
+STARTCHAPTER 9 7
+callback
+杂货店:
+delallnpc
+loadmap 2 16 5 0
+STARTCHAPTER 9 8
+callback
+当铺:
+delallnpc
+loadmap 2 19 6 0
+STARTCHAPTER 9 9
+callback
+民宅2:
+delallnpc
+loadmap 2 10 8 16
+STARTCHAPTER 9 10
+callback
+
+守宅人:
+if 227 守宅人话
+facetoface 1 0
+facetoface 2 0
+say 0 "守宅人：这里不能进去。"
+if 226 想进宅
+callback
+想进宅:
+setevent 228
+say 1 "我们想进去看看。"
+say 0 "守宅人：里面有鬼，村长叫我们守在这里，以免有人进去了受害。"
+callback
+守宅人话:
+say 0 "守宅人：我们听镇长的吩咐。"
+callback
+
+镇长人:
+facetoface 3 0
+say 0 "镇长:你们要小心啊！"
+if 229 进老宅门
+move 1 10 20
+move 2 13 20
+NPCMOVEMOD 1 0
+NPCMOVEMOD 2 0
+setevent 229
+进老宅门:
+callback
+
+
+宝箱1:
+if 1077 宝箱1开
+CHOICE "取消" "使用万能钥匙" 打开
+callback
+没有钥匙:
+message "没有钥匙"
+callback
+打开:
+usegoods 14 2 没有钥匙
+@deletebox 21
+GAINGOODS 14 5
+setevent 2008
+setevent 1077
+宝箱1开:
+callback
+
+疯癫人1:
+facetoface 10 0
+say 0 "游人:诶，儿子，你长这么大了，你旁边是儿媳妇吧。"
+say 2 "你疯了。"
+say 0 "游人:我是你爹啊……"
+say 1 "别理他，走。"
+callback
+疯癫人2:
+facetoface 11 0
+say 0 "游人:你不是我儿子，你是谁，你是谁？"
+callback
+疯癫人3:
+say 0 "游人:我的儿啊，儿啊……儿……"
+callback
+疯癫人4:
+facetoface 11 0
+say 0 "游人:你们干吗带走我儿子？你们……"
+say 1 "怎么这人这么奇怪。"
+callback
+疯癫人5:
+say 0 "游人:天将降大任于我儿也，必将……"
+callback
+
+gutevent 21 宝箱1
+gutevent 1 守宅人
+gutevent 2 守宅人
+gutevent 3 镇长人
+gutevent 10 疯癫人1
+gutevent 11 疯癫人2
+gutevent 12 疯癫人3
+gutevent 13 疯癫人4
+gutevent 14 疯癫人5
+gutevent 41 原野阡
+gutevent 42 老宅子
+gutevent 43 原野陌
+gutevent 44 武器店
+gutevent 45 村长家
+gutevent 46 客栈
+gutevent 47 民宅1
+gutevent 48 药店
+gutevent 49 杂货店
+gutevent 50 当铺
+gutevent 51 民宅2
+

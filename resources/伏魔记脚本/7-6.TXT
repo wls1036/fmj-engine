@@ -1,0 +1,16 @@
+@药铺
+
+SETSCENENAME "药铺"
+callback
+
+建业城:
+delallnpc
+loadmap 1 39 5 5
+STARTCHAPTER 7 1
+callback
+买武器:
+say 0 "我这里有许多上好药物。"
+BUY "9002 9003 9004 9006 9009 9010 9011 9015 9023 9025 9026 12001 12002 12003 12006 8021 8028"
+callback
+gutevent 42 买武器
+gutevent 41 建业城

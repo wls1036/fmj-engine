@@ -1,0 +1,95 @@
+@南山迷宫
+
+
+INITFIGHT 21 24 17 22 55 0 0 0 2 112 32
+createbox 21 9 12 23
+createbox 22 9 27 43
+createbox 23 9 29 12
+createbox 24 9 45 34
+
+if 1083 宝箱1已开
+goto 宝箱2开否
+宝箱1已开:
+deletebox 21
+宝箱2开否:
+if 1084 宝箱2已开
+goto 宝箱2未开
+宝箱2已开:
+deletebox 22
+宝箱2未开:
+if 1085 宝箱3已开
+goto 宝箱3未开
+宝箱3已开:
+deletebox 23
+宝箱3未开:
+if 1086 宝箱4已开
+goto 宝箱5开否
+宝箱4已开:
+deletebox 24
+宝箱5开否:
+
+createbox 1 10 4 4
+createbox 2 14 20 4
+NPCSTEP 2 0 0
+if 237 伥鬼死
+ENTERFIGHT 0 33 33 33 2 112 32 0 5 0 30 31 0 lossto 伥鬼死
+伥鬼死:
+say 1 "白虎肯定在附近，咱们仔细找找。"
+SETSCENENAME "南山迷宫"
+callback
+
+南山虎穴:
+loadmap 3 8 0 22
+STARTCHAPTER 12 3
+callback
+
+lossto:
+gameover
+callback
+
+伥鬼话1:
+say 0 "伥鬼:喂，小子，乱闯我们的山洞，你可知道要死！"
+say 1 "哦，是吗，我倒想试试。"
+say 0 "伥鬼:不知死活的家伙，兄弟们，上……"
+callback
+伥鬼话2:
+say 0 "伥鬼:不赖嘛，难怪大王有点忌讳。"
+callback
+
+宝箱1:
+if 1083 宝箱1开
+deletebox 21
+GAINGOODS 11 9
+setevent 1083
+宝箱1开:
+callback
+宝箱2:
+if 1084 宝箱2开
+deletebox 22
+GAINGOODS 12 5
+setevent 1084
+宝箱2开:
+callback
+宝箱3:
+if 1085 宝箱3开
+deletebox 23
+GAINGOODS 9 22
+setevent 1085
+宝箱3开:
+callback
+宝箱4:
+if 1086 宝箱4开
+deletebox 24
+GAINGOODS 9 1
+setevent 1086
+宝箱4开:
+callback
+
+gutevent 21 宝箱1
+gutevent 22 宝箱2
+gutevent 23 宝箱3
+gutevent 24 宝箱4
+gutevent 30 伥鬼话1
+gutevent 31 伥鬼话2
+gutevent 41 南山虎穴
+

@@ -1,0 +1,29 @@
+@竹林山道
+
+SETSCENENAME "竹林山道"
+SHOWSCENENAME
+callback
+
+百草地:
+delallnpc
+loadmap 1 2 1 1
+STARTCHAPTER 2 12
+callback
+
+后山浮桥:
+delallnpc
+loadmap 1 4 22 6
+STARTCHAPTER 2 15
+callback
+
+三清坟场:
+delallnpc
+loadmap 1 7 1 15
+STARTCHAPTER 2 14
+callback
+
+gutevent 41 百草地
+gutevent 42 后山浮桥
+gutevent 43 三清坟场
+
+

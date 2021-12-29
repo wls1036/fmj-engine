@@ -1,0 +1,44 @@
+@结识袁萍芷
+
+setevent 218
+
+loadmap 1 39 11 21
+say 0 "路人:抓小偷……"
+CREATENPC 1 13 20 22
+move 1 15 22
+move 1 15 23
+say 0 "小偷:闪开！闪开！"
+say 1 "抓小偷我最拿手了，让我来。"
+ENTERFIGHT 0 0 20 0 1 111 31 0 0 0 0 0 0 lossto winto
+lossto:
+gameover
+callback
+winto:
+deletenpc 1
+CREATENPC 1 7 15 23
+NPCSTEP 1 2 0
+say 1 "奇怪，怎么变成女的了……"
+movie 1 3 0 0 0
+delallnpc
+loadmap 2 22 12 9
+CREATENPC 1 7 16 13
+CREATENPC 2 6 17 12
+NPCSTEP 0 1 0
+NPCSTEP 1 1 0
+NPCSTEP 2 3 0
+say 2 "这位姐姐，看你身手不凡，为何会……"
+say 3 "我叫袁萍芷，往事我不想提。"
+say 1 "这么好的身手，可惜了。"
+say 2 "袁姐姐，当今妖魔横行，以你的身手，何不为民除害呢？"
+say 3 "这……"
+movie 1 3 0 0 0
+message "一夜过去了。"
+DELETENPC 1
+say 2 "今早我一醒来，就没看到袁姐姐，可能走了。"
+say 1 "算了，人各有志，咱们还是去钟山吧。"
+DELETENPC 2
+message "慕容小梅加入队列"
+STARTCHAPTER 7 2
+callback
+
+

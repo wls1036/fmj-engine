@@ -1,0 +1,91 @@
+@李俯宝库
+
+CREATEBOX 8 11 4 12
+NPCSTEP 8 0 0
+CREATEBOX 2 15 6 6
+CREATEBOX 3 15 6 7
+CREATEBOX 4 15 6 9
+CREATEBOX 5 15 12 6
+@if 69 宝箱7
+CREATEBOX 6 16 12 7
+@宝箱7:
+@if 69 宝箱1
+CREATEBOX 7 17 13 7
+@宝箱1:
+@if 65 宝箱1开
+@goto 宝箱2
+@宝箱1开:
+@DELETEBOX 2
+@宝箱2:
+@if 65 宝箱2开
+@goto 宝箱3
+@宝箱2开:
+@DELETEBOX 3
+@宝箱3:
+@if 65 宝箱3开
+@goto 宝箱4
+@宝箱3开:
+@DELETEBOX 4
+@宝箱4:
+@if 65 宝箱4开
+@goto 正常
+@宝箱4开:
+@DELETEBOX 5
+@正常:
+SETSCENENAME "李俯宝库"
+callback
+
+李俯密道:
+delallnpc
+loadmap 3 10 13 1
+STARTCHAPTER 5 17
+callback
+
+
+宝物1:
+if 65 宝物1开
+setevent 65
+GAINGOODS 6 7
+宝物1开:
+callback
+宝物2:
+if 66 宝物2开
+setevent 66
+GAINGOODS 9 12
+GAINGOODS 11 4
+宝物2开:
+callback
+宝物3:
+if 67 宝物3开
+setevent 67
+GAINGOODS 11 1
+宝物3开:
+callback
+宝物4:
+if 68 宝物4开
+setevent 68
+GAINGOODS 8 4
+GAINGOODS 8 25
+宝物4开:
+callback
+宝物5:
+if 69 宝物5开
+setevent 69
+GAINmoney 1000
+宝物5开:
+callback
+宝物6:
+if 70 宝物6开
+setevent 70
+GAINGOODS 9 11
+宝物6开:
+callback
+
+gutevent 2 宝物1
+gutevent 3 宝物2
+gutevent 4 宝物3
+gutevent 5 宝物4
+gutevent 6 宝物5
+gutevent 7 宝物6
+gutevent 43 李俯密道
+

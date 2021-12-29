@@ -1,0 +1,42 @@
+@伏魔洞口
+if 260 正常
+INITFIGHT 2 3 4 0 0 0 0 0 2 112 32
+SETSCENENAME "伏魔洞口"
+SHOWSCENENAME
+if 31 山已塌
+if 19 挡路石
+goto 正常
+挡路石:
+say 1 "手好痛哦。还好跑得快，不然准连命都丢了。"
+CREATEBOX 1 10 6 3
+CREATEBOX 2 10 7 3
+CREATEBOX 3 10 6 4
+CREATEBOX 4 10 7 4
+NPCSTEP 0 0 1
+say 1 "哇，又塌了，太恐怖了，回去见师父。"
+setevent 31
+正常:
+callback
+山已塌:
+CREATEBOX 1 10 6 3
+CREATEBOX 2 10 7 3
+CREATEBOX 3 10 6 4
+CREATEBOX 4 10 7 4
+callback
+
+伏魔山道:
+delallnpc
+loadmap 1 5 1 1
+STARTCHAPTER 2 16
+callback
+
+伏魔洞:
+delallnpc
+loadmap 3 1 13 25
+STARTCHAPTER 2 18
+callback
+
+gutevent 41 伏魔山道
+gutevent 42 伏魔洞
+
+

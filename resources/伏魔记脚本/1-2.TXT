@@ -1,0 +1,88 @@
+@三清宫
+
+CREATEBOX 10 1 19 43
+CREATEBOX 12 2 21 43
+CREATEBOX 13 3 25 43
+SETSCENENAME "三清宫"
+SHOWSCENENAME
+
+callback
+
+三清山道:
+步云桥:
+DELALLNPC
+loadmap 1 8 0 1
+STARTCHAPTER 2 31
+callback
+
+百草地:
+DELALLNPC
+loadmap 1 2 14 8
+STARTCHAPTER 2 12
+callback
+
+无机阁:
+DELALLNPC
+loadmap 2 8 8 17
+STARTCHAPTER 1 3
+callback
+
+三清宫药房:
+DELALLNPC
+loadmap 2 9 5 8
+STARTCHAPTER 2 3
+callback
+
+三清宫丹房:
+DELALLNPC
+loadmap 2 6 6 13
+STARTCHAPTER 2 4
+callback
+
+师傅居:
+DELALLNPC
+loadmap 2 1 11 7
+STARTCHAPTER 2 5
+callback
+
+普通弟子居1:
+DELALLNPC
+loadmap 2 4 1 5
+STARTCHAPTER 2 6
+callback
+
+大师兄居:
+DELALLNPC
+loadmap 2 2 12 7
+STARTCHAPTER 2 7
+callback
+
+普通弟子居2:
+DELALLNPC
+loadmap 2 4 1 5
+STARTCHAPTER 2 8
+callback
+
+清风居:
+DELALLNPC
+loadmap 2 3 12 7
+STARTCHAPTER 2 10
+callback
+
+三清宫厨房:
+DELALLNPC
+loadmap 2 5 1 6
+STARTCHAPTER 2 11
+callback
+
+gutevent 41 三清山道
+gutevent 42 百草地
+gutevent 43 无机阁
+@gutevent 44 三清宫药房
+gutevent 45 三清宫丹房
+gutevent 46 师傅居
+gutevent 47 普通弟子居1
+gutevent 48 大师兄居
+gutevent 49 普通弟子居2
+gutevent 50 清风居
+gutevent 51 三清宫厨房

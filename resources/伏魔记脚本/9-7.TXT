@@ -1,0 +1,16 @@
+@药店
+
+SETSCENENAME "药店"
+callback
+
+白水镇:
+loadmap 1 42 13 11
+STARTCHAPTER 9 1
+callback
+交易事件:
+say 0 "本店是老字号，这里人人都知。"
+buy "9002 9003 9009 9010 9011 9022 9025 9026 12001 12002 12003 12006 8021 8027"
+callback
+
+gutevent 41 白水镇
+gutevent 42 交易事件

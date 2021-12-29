@@ -1,0 +1,13 @@
+@神童家
+
+SETSCENENAME "神童家"
+callback
+
+酆都城:
+loadmap 1 43 20 2
+STARTCHAPTER 11 1
+callback
+
+gutevent 41 酆都城
+
+
