@@ -11,8 +11,8 @@ import com.xinyou.game.GameContext;
  */
 public class CreateActor extends Command {
 
-    //玩家坐标
-    private int playerIndex;
+    //玩家
+    private int actorId;
 
     //x
     private int x;
@@ -29,7 +29,7 @@ public class CreateActor extends Command {
     public void build(byte[] data, int start) {
         this.name = "创建玩家";
         this.commandIndex = this.readByteInt(data, start);
-        this.playerIndex = this.readInt2(data, start + 1);
+        this.actorId = this.readInt2(data, start + 1);
         this.x = this.readInt2(data, start + 3);
         this.y = this.readInt2(data, start + 5);
         this.length = 7;
@@ -37,6 +37,6 @@ public class CreateActor extends Command {
 
     @Override
     public String commandString() {
-        return String.format("CREATEACTOR %d %d %d", playerIndex, x, y);
+        return String.format("CREATEACTOR %d %d %d", actorId, x, y);
     }
 }

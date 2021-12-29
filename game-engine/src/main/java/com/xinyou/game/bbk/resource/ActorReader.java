@@ -1,10 +1,8 @@
 package com.xinyou.game.bbk.resource;
 
 import com.xinyou.game.GameContext;
-import com.xinyou.game.bbk.Constant;
 import com.xinyou.game.bbk.RomBlock;
-import com.xinyou.game.resource.Bitmaps;
-import com.xinyou.game.resource.GamePlayer;
+import com.xinyou.game.resource.GameActor;
 
 /**
  * @Description:
@@ -12,15 +10,15 @@ import com.xinyou.game.resource.GamePlayer;
  * @since: 2021/12/28 1:57 下午
  * @history: 1.2021/12/28 created by jianfeng.zheng
  */
-public class PlayerReader extends ResourceReader<GamePlayer> {
+public class ActorReader extends ResourceReader<GameActor> {
 
 
-    public PlayerReader(byte[] rom, RomBlock block, GameContext context) {
+    public ActorReader(byte[] rom, RomBlock block, GameContext context) {
         super(rom, block, context);
     }
 
     @Override
-    public GamePlayer read() {
+    public GameActor read() {
         int offset = this.block.getOffset();
         int type = rom[offset] & 0xFF;
         int index = rom[offset + 1] & 0xFF;

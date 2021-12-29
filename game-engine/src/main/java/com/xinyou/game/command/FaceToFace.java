@@ -12,10 +12,10 @@ import com.xinyou.game.GameContext;
 public class FaceToFace extends Command {
 
     //角色1 0为主角
-    private int player1;
+    private int actor1;
 
     //角色2 0为主角
-    private int player2;
+    private int actor2;
 
     @Override
     public void execute(GameContext gameContext) {
@@ -26,13 +26,13 @@ public class FaceToFace extends Command {
     public void build(byte[] data, int start) {
         this.name = "面对面";
         this.commandIndex = this.readByteInt(data, start);
-        this.player1 = this.readInt2(data, start + 1);
-        this.player1 = this.readInt2(data, start + 3);
+        this.actor1 = this.readInt2(data, start + 1);
+        this.actor2 = this.readInt2(data, start + 3);
         this.length = 5;
     }
 
     @Override
     public String commandString() {
-        return String.format("FACETOFACE %d %d", player1, player2);
+        return String.format("FACETOFACE %d %d", actor1, actor2);
     }
 }

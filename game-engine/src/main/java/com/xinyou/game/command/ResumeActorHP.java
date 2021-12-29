@@ -12,7 +12,7 @@ import com.xinyou.game.GameContext;
 public class ResumeActorHP extends Command {
 
     //主角编号
-    private int playerId;
+    private int actorId;
 
     //恢复百分比
     private int rate;
@@ -26,14 +26,14 @@ public class ResumeActorHP extends Command {
     public void build(byte[] data, int start) {
         this.name = "恢复HP";
         this.commandIndex = this.readByteInt(data, start);
-        this.playerId = this.readInt2(data, start + 1);
+        this.actorId = this.readInt2(data, start + 1);
         this.rate = this.readInt2(data, start + 3);
         this.length = 5;
     }
 
     @Override
     public String commandString() {
-        return String.format("RESUMEACTORHP %d %d", playerId, rate);
+        return String.format("RESUMEACTORHP %d %d", actorId, rate);
     }
 }
 

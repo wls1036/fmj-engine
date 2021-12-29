@@ -146,8 +146,8 @@ public class RomReader {
             Object resource = null;
             if (block.getResourceType() == 1) {
                 //玩家
-                PlayerReader playerReader = new PlayerReader(this.romData, block, context);
-                resource = playerReader.read();
+                ActorReader actorReader = new ActorReader(this.romData, block, context);
+                resource = actorReader.read();
             } else if (block.getResourceType() == 3) {
                 //怪物
                 MonsterReader monsterReader = new MonsterReader(this.romData, block, context);
