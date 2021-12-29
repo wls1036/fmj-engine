@@ -55,7 +55,7 @@ public class ScriptReader extends ResourceReader<GameScript> {
                 command.build(this.rom, start);
                 start = start + command.getLength();
                 script.addCommand(command);
-              //  System.out.println(command.commandString());
+                System.out.println(command.commandString());
             } else {
                 break;
             }

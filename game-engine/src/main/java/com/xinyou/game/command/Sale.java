@@ -3,16 +3,13 @@ package com.xinyou.game.command;
 import com.xinyou.game.GameContext;
 
 /**
- * @Description: DELETEBOX id
- * 删除操作号为id的宝箱
+ * @Description: SALE
+ * 卖出
  * @author: jianfeng.zheng
- * @since: 2021/12/29 9:16 下午
+ * @since: 2021/12/29 11:57 下午
  * @history: 1.2021/12/29 created by jianfeng.zheng
  */
-public class DeleteBox extends Command {
-
-    //箱子ID
-    private int boxId;
+public class Sale extends Command {
 
     @Override
     public void execute(GameContext gameContext) {
@@ -21,14 +18,14 @@ public class DeleteBox extends Command {
 
     @Override
     public void build(byte[] data, int start) {
-        this.name = "删除宝箱";
+        this.name = "卖出";
         this.commandIndex = this.readByteInt(data, start);
-        this.boxId = this.readInt2(data, start + 1);
-        this.length = 3;
+        this.length = 1;
     }
 
     @Override
     public String commandString() {
-        return String.format("DELETEBOX %d", boxId);
+        return "SALE";
     }
 }
+

@@ -3,16 +3,17 @@ package com.xinyou.game.command;
 import com.xinyou.game.GameContext;
 
 /**
- * @Description: DELETEBOX id
- * 删除操作号为id的宝箱
+ * @Description: GAINMONEY money
+ * 得到数目为money的钱
  * @author: jianfeng.zheng
- * @since: 2021/12/29 9:16 下午
+ * @since: 2021/12/29 10:57 下午
  * @history: 1.2021/12/29 created by jianfeng.zheng
  */
-public class DeleteBox extends Command {
+public class GainMoney extends Command {
 
-    //箱子ID
-    private int boxId;
+    //金钱
+    private int money;
+
 
     @Override
     public void execute(GameContext gameContext) {
@@ -21,14 +22,14 @@ public class DeleteBox extends Command {
 
     @Override
     public void build(byte[] data, int start) {
-        this.name = "删除宝箱";
+        this.name = "获得金钱";
         this.commandIndex = this.readByteInt(data, start);
-        this.boxId = this.readInt2(data, start + 1);
-        this.length = 3;
+        this.money = this.readInt4(data, start + 1);
+        this.length = 5;
     }
 
     @Override
     public String commandString() {
-        return String.format("DELETEBOX %d", boxId);
+        return String.format("GAINMONEY %d", money);
     }
 }
