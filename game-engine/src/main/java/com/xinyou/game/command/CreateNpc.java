@@ -12,7 +12,7 @@ import com.xinyou.game.GameContext;
 public class CreateNpc extends Command {
 
     //npc编号
-    private int id;
+    private int npcId;
 
     //npc索引
     private int npcIndex;
@@ -32,7 +32,7 @@ public class CreateNpc extends Command {
     public void build(byte[] data, int start) {
         this.name = "创建NPC";
         this.commandIndex = this.readByteInt(data, start);
-        this.id = this.readInt2(data, start + 1);
+        this.npcId = this.readInt2(data, start + 1);
         this.npcIndex = this.readInt2(data, start + 3);
         this.x = this.readInt2(data, start + 5);
         this.y = this.readInt2(data, start + 7);
@@ -41,6 +41,6 @@ public class CreateNpc extends Command {
 
     @Override
     public String commandString() {
-        return String.format("CREATENPC %d %d %d %d", id, npcIndex, x, y);
+        return String.format("CREATENPC %d %d %d %d", npcId, npcIndex, x, y);
     }
 }
